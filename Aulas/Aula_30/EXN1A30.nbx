@@ -1,0 +1,14 @@
+// AULA 30 — EXERCÍCIO DE CÓDIGO
+// Validação defensiva de metadados
+//
+// Objetivo:
+// Crie um validador de metadados que rejeite tamanho excessivo, índice fora da tabela, referência inexistente e soma que exceda o limite. Inclua casos válidos e inválidos.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
