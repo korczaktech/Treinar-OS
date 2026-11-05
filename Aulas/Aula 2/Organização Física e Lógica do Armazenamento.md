@@ -84,3 +84,10 @@
 ##### 5. Se dois SSDs possuem estruturas físicas diferentes, como o ZenithOS pode utilizar ambos através de uma mesma arquitetura?
 > - Através do Controlador de SSDs.
 [!WARNING] Sua resposta está no caminho certo. O controlador interno do SSD abstrai as particularidades da memória NAND. Além disso, o ZenithOS precisa de uma camada de drivers e comunicação com interfaces NVMe e SATA.
+
+
+## Método de estudo
+Desenhe duas representações do mesmo dispositivo: primeiro, componentes físicos simplificados; depois, a sequência lógica de endereços apresentada ao sistema. Compare o que cada camada conhece e o que permanece escondido pelo controlador.
+
+## Exemplo adicional
+Um SSD apresenta setores lógicos de 512 bytes. Internamente, sua NAND pode usar páginas de programação e blocos de apagamento maiores. O sistema operacional continua solicitando LBAs; o controlador traduz esses pedidos para suas operações internas. A camada de blocos não deve presumir que um setor lógico corresponda a uma página NAND.

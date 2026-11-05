@@ -82,3 +82,6 @@ $$
 > R | Deve dar erro, Mas não sei qual erro exato, por que voce disse que ia explicar posteriormente
 ##### 5. Por que precisamos separar a camada de armazenamento do driver do dispositivo?
 > R | Porque cada uma possui uma funcionalidade diferente
+
+## Método de estudo
+Sempre separe quantidade de blocos, intervalo válido, tamanho lógico e deslocamento em bytes. Faça primeiro um exemplo de um único LBA e depois uma faixa. Por último, explique qual camada valida e qual camada traduz o endereço.
