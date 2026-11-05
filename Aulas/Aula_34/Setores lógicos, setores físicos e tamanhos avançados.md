@@ -26,13 +26,30 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Qual é a diferença entre setor lógico e setor físico?
+2. O que caracteriza um dispositivo 512e?
+3. O que caracteriza um dispositivo 4Kn?
+4. Quantos setores lógicos de 512 bytes correspondem a 4.096 bytes?
+5. Por que uma gravação pequena pode exigir trabalho adicional em um dispositivo 512e?
+6. Qual tamanho deve ser usado para calcular o deslocamento de um LBA?
 
-## 6. Critério de conclusão
+## 6. Formatos 512n, 512e e 4Kn
+Em 512n, setores lógicos e físicos têm 512 bytes. Em 512e, o dispositivo apresenta setores lógicos de 512 bytes, mas usa setores físicos de 4.096 bytes. Em 4Kn, ambos são de 4.096 bytes.
+
+Esses nomes descrevem como o dispositivo apresenta e organiza setores, não o tamanho de página NAND nem de bloco de apagamento.
+
+## 7. Por que 512e pode exigir trabalho extra?
+Se uma gravação de 512 bytes altera apenas parte de um setor físico de 4.096 bytes, o dispositivo pode precisar ler, modificar e regravar a unidade física. Uma gravação alinhada e agrupada pode evitar parte desse trabalho.
+
+O controlador administra os detalhes internos. O sistema operacional pode usar as informações reportadas para escolher operações mais adequadas, mas não deve presumir o layout interno além do que a interface informa.
+
+## 8. Exemplo guiado
+Com setor lógico de 512 bytes e setor físico de 4.096 bytes, oito setores lógicos correspondem a um setor físico. O LBA 8 começa em 4.096 bytes e coincide com a próxima fronteira física nesse exemplo.
+
+## 9. Método de aprendizagem
+Faça uma tabela separando tamanho lógico, tamanho físico, unidade de endereçamento e impacto possível de uma gravação desalinhada.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

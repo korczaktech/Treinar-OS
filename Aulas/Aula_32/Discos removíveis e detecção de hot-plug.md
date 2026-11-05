@@ -26,13 +26,30 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. O que significa hot-plug e de quais componentes depende?
+2. Por que o kernel deve bloquear novas requisições após detectar remoção?
+3. Qual é a função de um contador de geração da conexão?
+4. Como tratar uma conclusão tardia depois que o dispositivo foi removido?
+5. Por que o buffer de uma operação pendente não pode ser liberado imediatamente?
+6. O que deve ocorrer quando outro dispositivo ocupa o mesmo endereço de barramento?
 
-## 6. Critério de conclusão
+## 6. Ciclo de vida de um dispositivo removível
+Uma unidade pode passar por PRESENTE, REMOVENDO, AUSENTE e ERRO. Ao detectar remoção, o kernel impede novas requisições, marca referências como indisponíveis e trata operações pendentes. Não deve esperar indefinidamente por uma resposta que talvez nunca chegue.
+
+A remoção física pode acontecer enquanto uma gravação está em andamento. O driver precisa comunicar o resultado real: sucesso confirmado, falha ou resultado desconhecido. Não invente conclusão.
+
+## 7. Geração de conexão
+Um identificador de geração distingue diferentes instâncias de conexão. Uma solicitação criada para a geração 4 não pode ser aceita como pertencente à geração 5 só porque o mesmo endereço de barramento foi reutilizado.
+
+Isso evita que uma conclusão atrasada de uma unidade removida seja atribuída a uma unidade recém-conectada.
+
+## 8. Exemplo guiado
+Uma operação de leitura está pendente quando um pendrive é removido. O registro muda para REMOVENDO; novas operações são rejeitadas; a fila é encerrada conforme o protocolo; o pedido pendente recebe erro apropriado; os buffers só são liberados quando não houver mais acesso DMA possível.
+
+## 9. Método de aprendizagem
+Simule conexão, operação, remoção, conclusão tardia e reconexão. Verifique se nenhuma referência da conexão antiga pode afetar a nova.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

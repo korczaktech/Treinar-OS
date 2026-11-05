@@ -26,13 +26,35 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Como encontrar o LBA relativo a partir de um offset em bytes?
+2. O que representa o resto da divisão pelo tamanho do setor?
+3. Com setores de 512 bytes, em qual LBA relativo está o offset 1.300 e qual é o deslocamento interno?
+4. Uma alteração de 20 bytes começa no offset 500. Quantos bytes afetam o primeiro e o segundo setor?
+5. Por que leitura-modificação-escrita pode perder atualizações concorrentes?
+6. Por que a gravação parcial não deve ser considerada automaticamente atômica?
 
-## 6. Critério de conclusão
+## 6. Converter offset em LBA e deslocamento interno
+Para uma posição em bytes, divida o offset pelo tamanho do setor lógico. O quociente indica o LBA relativo e o resto indica a posição dentro do setor.
+
+Exemplo: setor lógico de 512 bytes e offset 1.300:
+- 1.300 / 512 = 2, com resto 276;
+- LBA relativo = 2;
+- deslocamento interno = 276 bytes.
+
+Se a operação atravessar o fim do setor, será necessário acessar o próximo LBA.
+
+## 7. Leitura-modificação-escrita
+Quando o dispositivo só aceita setores completos, uma gravação parcial pode exigir ler o setor, modificar os bytes desejados e gravar o setor inteiro. Essa sequência não é automaticamente atômica.
+
+Se duas threads modificarem regiões diferentes do mesmo setor ao mesmo tempo, uma gravação pode sobrescrever a alteração da outra. A camada precisa serializar ou coordenar operações que compartilham o setor.
+
+## 8. Exemplo guiado
+Alterar 20 bytes a partir do offset 500 em um setor de 512 bytes afeta 12 bytes do primeiro setor e 8 bytes do seguinte. A implementação precisa ler e preservar as partes não alteradas de ambos os setores.
+
+## 9. Método de aprendizagem
+Divida a operação em três partes: bytes antes da região alterada, bytes modificados e bytes depois. Marque em quais setores cada parte está localizada e determine quais leituras e gravações são necessárias.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

@@ -26,13 +26,30 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Cite quatro capacidades que um dispositivo pode anunciar.
+2. Qual a diferença entre não suportado e desconhecido?
+3. Por que o limite máximo de transferência precisa indicar sua unidade?
+4. Um dispositivo anuncia suporte a flush. Isso garante que toda gravação futura terá sucesso? Explique.
+5. O que o driver deve fazer com uma capacidade incoerente?
+6. Por que a camada de arquivos não deve depender de comandos específicos do protocolo?
 
-## 6. Critério de conclusão
+## 6. Capacidades não são promessas absolutas
+O dispositivo pode anunciar tamanho lógico, capacidade, limite máximo de transferência, alinhamento, profundidade de fila e suporte a flush ou discard. Essas informações descrevem o que a interface declara suportar, mas uma operação específica ainda pode falhar.
+
+O sistema deve distinguir três estados: suportado, não suportado e desconhecido. Tratar desconhecido como suportado pode levar a comandos inválidos ou perda de dados.
+
+## 7. Normalização
+Drivers diferentes podem reportar propriedades com representações distintas. O ZenithOS deve normalizar os dados em um descritor comum, mantendo unidades explícitas e preservando informações necessárias para o driver.
+
+Por exemplo, tamanho de bloco deve ser expresso em bytes por bloco lógico. Limite de transferência deve declarar se está em blocos ou bytes.
+
+## 8. Exemplo guiado
+Um dispositivo anuncia tamanho lógico de 4.096 bytes, máximo de 128 blocos por comando e suporte a flush, mas não informa suporte a discard. O ZenithOS pode dividir pedidos maiores que 128 blocos e usar flush conforme o contrato. Não deve enviar discard até obter confirmação de suporte.
+
+## 9. Método de aprendizagem
+Para cada capacidade, registre nome, unidade, origem, validade, comportamento quando ausente e qual camada a utiliza.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 
