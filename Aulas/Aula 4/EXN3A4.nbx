@@ -26,3 +26,18 @@
 //
 // Não calcule inicio + quantidade antes de comprovar que a faixa cabe.
 // Escreva sua solução abaixo.
+variavel Bloco = 200
+incluir(EXN2A4.validarLBA)
+funcao iniciar(): {
+    variavel inicio: inteiro = entrada("Escolha um número de inicio")
+    variavel quantidade: inteiro = entrada("Escolha a quantidade de blocos que quer vistoriar")
+    fim
+    }
+iniciar()
+
+funcao CalcularFimExclusivo(inteiro: inicio, inteiro: quantidade): {
+    ValidarLBA(inicio, quantidade)
+    variavel final: inteiro = inicio + quantidade
+    exibir(f"Fim Exclusivo: {final}")
+
+}
