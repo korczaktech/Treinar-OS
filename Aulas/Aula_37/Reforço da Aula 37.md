@@ -1,20 +1,17 @@
 # Reforço da Aula 37 — Atomicidade e limites de operações
 
-## 1. Ideia principal
+## Três garantias distintas
+Atomicidade: operação observada como unidade. Consistência: invariantes continuam verdadeiras. Durabilidade: alteração persiste conforme a garantia prometida.
 
-Atomicidade é indivisibilidade segundo um contrato; durabilidade é persistência. Uma não implica automaticamente a outra.
+## Exemplo
+Se o dispositivo garante atomicidade de 4 KiB, duas gravações de 4 KiB não formam automaticamente uma transação de 8 KiB. A camada superior precisa de mecanismo próprio para coordenar as duas.
 
-## 2. Cuidados que não podem ser esquecidos
+## Cuidados
+Flush trata de ordenação/persistência conforme o contrato; não torna várias operações indivisíveis. Sempre consulte tamanho, alinhamento e condições da garantia atômica.
 
-Conheça limites e condições anunciados pelo dispositivo. Journal e copy-on-write ajudam quando hardware não oferece atomicidade ampla.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. O que é atomicidade?
+2. Como ela difere de durabilidade?
+3. Por que duas gravações atômicas não formam automaticamente uma operação atômica maior?
+4. O que flush garante e o que não garante?
+5. Cite um mecanismo de sistema de arquivos que ajude a preservar consistência.

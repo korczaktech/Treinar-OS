@@ -1,20 +1,17 @@
-# Reforço da Aula 40 — Despacho e escalonamento de requisições
+# Reforço da Aula 40 — Despacho e escalonamento
 
-## 1. Ideia principal
+## Políticas
+FIFO atende por ordem de chegada. Prioridade atende primeiro pedidos importantes. Aging aumenta a prioridade de quem espera. Deadline tenta limitar o tempo de espera.
 
-O despachante escolhe o próximo pedido. FIFO, prioridade e agrupamento equilibram throughput, latência e justiça.
+## Métricas
+Throughput mede dados por tempo; latência mede tempo de cada pedido; justiça mede oportunidade de atendimento. Melhorar uma pode piorar outra.
 
-## 2. Cuidados que não podem ser esquecidos
+## Exemplo
+Uma política de prioridade estrita pode deixar um pedido comum esperando indefinidamente. Aging aumenta sua prioridade ao longo do tempo e reduz starvation.
 
-Uma política rápida pode causar starvation. Limite filas e meça resultados antes de otimizar.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Qual a diferença entre despacho e escalonamento?
+2. O que é starvation?
+3. Como aging ajuda?
+4. Por que throughput alto pode coexistir com latência ruim?
+5. Por que medir a carga real antes de otimizar?
