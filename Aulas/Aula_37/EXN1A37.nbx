@@ -1,0 +1,14 @@
+// AULA 37 — EXERCÍCIO DE CÓDIGO
+// Atomicidade e limites de operações
+//
+// Objetivo:
+// Modele capacidades de escrita atômica: tamanho máximo e alinhamento. Classifique operações como cobertas ou não cobertas pela garantia; não confunda conclusão com persistência.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
