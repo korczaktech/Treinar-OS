@@ -1,0 +1,14 @@
+// AULA 46 — EXERCÍCIO DE CÓDIGO
+// Falhas parciais e degradação de conjuntos RAID
+//
+// Objetivo:
+// Modele membros saudáveis, ausentes e com erro. Atualize estado geral do conjunto após falhas e rejeite operações que excedam a tolerância do nível simulado.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
