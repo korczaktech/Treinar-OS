@@ -1,0 +1,14 @@
+// AULA 39 — EXERCÍCIO DE CÓDIGO
+// Agrupamento e divisão de requisições de I/O
+//
+// Objetivo:
+// Receba requisições de um mesmo dispositivo e agrupe apenas faixas contíguas e compatíveis. Divida pedidos maiores que o limite configurado e preserve offsets de buffer.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
