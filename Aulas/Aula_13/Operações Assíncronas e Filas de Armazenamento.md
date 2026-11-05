@@ -57,3 +57,7 @@ A camada de armazenamento pode expor uma API assíncrona com identificador e res
 
 - EXN1A13.nbx — modelar fila limitada de solicitações.
 - EXN2A13.nbx — correlacionar identificadores e conclusões sem reutilização prematura.
+
+
+## Método de estudo e exemplo guiado
+Envie três pedidos com identificadores 10, 11 e 12. Simule as conclusões chegando na ordem 12, 10 e 11. O sistema deve associar cada resultado ao pedido correto, independentemente da ordem de conclusão. Depois limite a fila a dois pedidos e decida como tratar o terceiro. Simule cancelamento e uma conclusão tardia para verificar se o buffer continua protegido.

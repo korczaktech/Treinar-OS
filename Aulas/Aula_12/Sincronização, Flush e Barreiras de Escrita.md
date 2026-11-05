@@ -62,3 +62,7 @@ O ZenithOS precisa oferecer uma operação explícita de sincronização e docum
 
 - EXN1A12.nbx — verificar se uma sequência de operações respeita dependências de ordenação.
 - EXN2A12.nbx — modelar um grupo de gravações e identificar quais ainda precisam de sincronização.
+
+
+## Método de estudo e exemplo guiado
+Desenhe duas gravações: A grava os dados de um arquivo; B atualiza o metadado que aponta para esses dados. Marque a dependência A antes de B. Agora imagine que o dispositivo pode reordenar comandos. Identifique onde uma barreira ou flush é necessário e qual garantia precisa ser obtida antes de confirmar a atualização. Repita o raciocínio com dados temporários, que podem aceitar uma política menos rigorosa.

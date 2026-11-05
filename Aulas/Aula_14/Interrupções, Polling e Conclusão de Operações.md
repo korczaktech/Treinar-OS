@@ -65,3 +65,7 @@ O ZenithOS deve manter o tratamento de interrupção separado do processamento c
 
 - EXN1A14.nbx — implementar polling limitado com timeout.
 - EXN2A14.nbx — processar eventos de conclusão e ignorar notificações que não pertencem à operação ativa.
+
+
+## Método de estudo e exemplo guiado
+Considere uma operação curta e outra que demora. Para a curta, polling limitado pode ser simples; para a longa, consultar continuamente desperdiça CPU e uma interrupção pode ser mais adequada. Desenhe a rotina de interrupção como uma etapa curta que registra o evento, e o trabalho pesado como processamento adiado. Inclua um timeout e diferencie “não chegou a conclusão” de “hardware destruído”.
