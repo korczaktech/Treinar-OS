@@ -1,0 +1,33 @@
+// AULA 4 — EXERCÍCIO 2
+// Validação de intervalo de blocos
+//
+// Implemente uma função chamada faixa_valida que receba:
+// - inicio: primeiro LBA solicitado
+// - quantidade: número de blocos consecutivos solicitados
+// - total: quantidade total de blocos do dispositivo
+//
+// A função deve devolver logico (verdadeiro ou falso).
+//
+// Regras:
+// 1. total deve ser maior que zero.
+// 2. inicio não pode ser negativo.
+// 3. quantidade deve ser maior que zero.
+// 4. inicio deve ser menor que total.
+// 5. quantidade deve ser menor ou igual a (total - inicio).
+//
+// IMPORTANTE:
+// Faça as verificações na ordem adequada.
+// Não some inicio + quantidade para validar a faixa.
+// Só calcule total - inicio depois de garantir que inicio está dentro
+// dos limites do dispositivo.
+//
+// Casos para conferir:
+// faixa_valida(0, 1, 100)    -> verdadeiro
+// faixa_valida(97, 3, 100)   -> verdadeiro
+// faixa_valida(97, 4, 100)   -> falso
+// faixa_valida(100, 1, 100)  -> falso
+// faixa_valida(-1, 1, 100)   -> falso
+// faixa_valida(10, 0, 100)   -> falso
+// faixa_valida(10, 1, 0)     -> falso
+//
+// Escreva sua solução abaixo.

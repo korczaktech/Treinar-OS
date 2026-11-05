@@ -1,0 +1,22 @@
+// AULA 4 — EXERCÍCIO 1
+// Conversão de LBA para deslocamento em bytes
+//
+// Implemente uma função chamada calcular_deslocamento que receba:
+// - lba: inteiro
+// - tamanho_setor: inteiro
+//
+// A função deve devolver o deslocamento inicial em bytes:
+// lba * tamanho_setor
+//
+// Considere, neste exercício, que os dois valores recebidos são válidos
+// e não causam estouro do tipo inteiro.
+//
+// Casos para conferir:
+// calcular_deslocamento(0, 512)   -> 0
+// calcular_deslocamento(1, 512)   -> 512
+// calcular_deslocamento(5, 4096)  -> 20480
+// calcular_deslocamento(10, 4096) -> 40960
+//
+// Não confunda o deslocamento em bytes com o endereço físico da NAND.
+//
+// Escreva sua solução abaixo.

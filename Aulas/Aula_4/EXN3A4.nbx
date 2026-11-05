@@ -1,0 +1,28 @@
+// AULA 4 — EXERCÍCIO 3
+// Cálculo do limite final exclusivo
+//
+// Implemente uma função chamada calcular_fim_exclusivo que receba:
+// - inicio: primeiro LBA solicitado
+// - quantidade: número de blocos solicitados
+// - total: quantidade total de blocos do dispositivo
+//
+// A função deve:
+// 1. Validar os parâmetros e a faixa.
+// 2. Rejeitar total <= 0, inicio < 0, quantidade <= 0 ou inicio >= total.
+// 3. Verificar quantidade <= total - inicio ANTES de somar.
+// 4. Se a faixa for válida, devolver inicio + quantidade.
+// 5. Se a faixa for inválida, devolver -1.
+//
+// Neste exercício, -1 é um valor sentinela reservado para indicar erro.
+// Os endereços válidos nunca são negativos.
+//
+// Casos para conferir:
+// calcular_fim_exclusivo(10, 3, 100) -> 13
+// calcular_fim_exclusivo(97, 3, 100) -> 100
+// calcular_fim_exclusivo(97, 4, 100) -> -1
+// calcular_fim_exclusivo(100, 1, 100) -> -1
+// calcular_fim_exclusivo(-1, 1, 100) -> -1
+// calcular_fim_exclusivo(10, 0, 100) -> -1
+//
+// Não calcule inicio + quantidade antes de comprovar que a faixa cabe.
+// Escreva sua solução abaixo.
