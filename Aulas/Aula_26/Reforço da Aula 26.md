@@ -1,20 +1,19 @@
-# Reforço da Aula 26 — Volumes, regiões reservadas e limites de uso
+# Reforço da Aula 26 — Volumes, regiões reservadas e limites
 
-## 1. Ideia principal
+## 1. Três conceitos
+- Dispositivo: unidade física ou virtual que apresenta blocos.
+- Partição: região descrita no mapa do dispositivo.
+- Volume: unidade lógica que o sistema disponibiliza para uso.
 
-Disco é o dispositivo; partição é uma região descrita; volume é uma unidade lógica oferecida ao sistema. Reservas não podem ser entregues ao sistema de arquivos.
+## 2. Tradução de endereço
+Volume começa no LBA 2.000 e possui 500 blocos. Uma requisição relativa no LBA 20 corresponde ao LBA absoluto 2.020. Primeiro valide a faixa dentro do volume; só depois some o início.
 
-## 2. Cuidados que não podem ser esquecidos
+## 3. Regiões reservadas
+Áreas de boot, metadados e recuperação não podem ser contadas como espaço livre de outro volume. A propriedade de cada faixa precisa ser inequívoca.
 
-Valide faixa do volume antes de converter LBA relativo em absoluto. Exclua regiões reservadas da capacidade utilizável.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## 4. Perguntas de revisão
+1. Uma partição sempre corresponde a um volume?
+2. Por que reservar regiões?
+3. Qual é o LBA absoluto para início de volume 2.000 e LBA relativo 20?
+4. Um volume de 500 blocos aceita início relativo 499 e quantidade 1?
+5. Por que a tradução precisa validar a faixa antes de somar os endereços?

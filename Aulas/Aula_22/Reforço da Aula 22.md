@@ -1,20 +1,26 @@
 # Reforço da Aula 22 — Particionamento e tabelas de partição
 
-## 1. Ideia principal
+## 1. O que uma partição representa?
+Uma partição é uma faixa de LBAs dentro de um dispositivo. A tabela descreve início, tamanho, tipo e atributos. Ela não armazena a árvore de arquivos e não transforma a região em um disco físico separado.
 
-Partição é uma faixa de LBAs, definida por início e quantidade. A tabela descreve onde começa, quanto ocupa e qual finalidade declara.
+## 2. Exemplo passo a passo
+Dispositivo com 1.000 blocos. Partição começa em 100 e possui 300 blocos:
+- início incluído: 100;
+- limite final exclusivo: 400;
+- últimos blocos acessados: 398 e 399;
+- LBA 400 já pertence ao espaço posterior.
 
-## 2. Cuidados que não podem ser esquecidos
+Outra partição [400, 700) é adjacente, não sobreposta. A faixa [399, 600) se sobrepõe em um bloco.
 
-Valide capacidade, limites, soma sem overflow e sobreposição. Partição não é sinônimo de sistema de arquivos.
+## 3. Validações essenciais
+Confirme início e quantidade, valide a capacidade, rejeite overflow, detecte sobreposição e não presuma que o tipo seja conhecido. Uma região só deve ser publicada depois de todas as verificações.
 
-## 3. Ligação com o ZenithOS
+## 4. Ligação com o ZenithOS
+O gerenciador de partições interpreta o mapa. O sistema de arquivos só entra depois, quando o conteúdo da região for identificado e validado.
 
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## 5. Perguntas de revisão
+1. Calcule o limite exclusivo de [100, 400) descrito por início 100 e quantidade 300.
+2. [100, 400) e [400, 500) se sobrepõem?
+3. Por que uma partição não é sinônimo de sistema de arquivos?
+4. Cite três campos que uma entrada de partição pode conter.
+5. O que fazer com uma entrada que ultrapassa o dispositivo?

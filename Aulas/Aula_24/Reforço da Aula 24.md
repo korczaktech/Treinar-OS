@@ -1,20 +1,20 @@
-# Reforço da Aula 24 — Compatibilidade e leitura de tabelas MBR
+# Reforço da Aula 24 — Compatibilidade e leitura de MBR
 
-## 1. Ideia principal
+## 1. Estrutura básica
+O MBR clássico contém código de inicialização, identificador do disco, quatro entradas de partição e assinatura. Uma partição estendida permite descrever partições lógicas por meio de EBRs encadeados.
 
-MBR clássico possui quatro entradas primárias. Partições estendidas usam EBRs encadeados para descrever partições lógicas.
+## 2. Exemplo de validação
+Se uma partição estendida ocupa [10.000, 50.000), nenhuma partição lógica descrita por seus EBRs pode escapar desse intervalo. Uma entrada que termina em 50.001 é inválida, mesmo que a assinatura do EBR esteja correta.
 
-## 2. Cuidados que não podem ser esquecidos
+## 3. Cuidados com EBR
+O encadeamento pode estar corrompido. O parser precisa limitar passos, detectar endereços repetidos, impedir ciclos e validar a referência de cada registro. Os campos relativos devem ser interpretados conforme a regra do formato.
 
-Detecte ciclos, endereços repetidos e regiões fora da partição estendida. O MBR protetor GPT não é uma tabela MBR convencional.
+## 4. Compatibilidade
+MBR é legado e possui limites. GPT é preferível em cenários modernos compatíveis. MBR protetor não é mapa MBR convencional.
 
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## 5. Perguntas de revisão
+1. Quantas entradas primárias existem no MBR clássico?
+2. Qual é a função da partição estendida?
+3. O que o EBR descreve?
+4. Como detectar uma cadeia de EBRs cíclica?
+5. Por que uma partição lógica deve caber dentro da região estendida?

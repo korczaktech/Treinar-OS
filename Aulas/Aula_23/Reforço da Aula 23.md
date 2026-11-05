@@ -1,20 +1,20 @@
-# Reforço da Aula 23 — Estrutura e validação da tabela GPT
+# Reforço da Aula 23 — Estrutura e validação da GPT
 
-## 1. Ideia principal
+## 1. Componentes
+A GPT possui cabeçalho principal, matriz de entradas e cópia de backup. O MBR protetor ocupa o início do disco para reduzir incompatibilidades com ferramentas antigas.
 
-GPT usa cabeçalhos, matriz de entradas, CRCs e cópia de backup; um MBR protetor não deve ser lido como tabela principal.
+## 2. Exemplo de tamanho da matriz
+Se há 128 entradas de 128 bytes, a matriz possui 16.384 bytes. O parser deve validar a multiplicação e a região antes de ler ou alocar memória.
 
-## 2. Cuidados que não podem ser esquecidos
+## 3. CRC e segurança
+CRC32 permite detectar alterações acidentais em relação ao checksum registrado. Não prova autoria e não impede que alguém altere dados e recalcule o CRC.
 
-CRC detecta corrupção acidental, não autenticidade. Limite tamanhos e contagens antes de alocar ou ler entradas.
+## 4. Procedimento seguro
+Validar assinatura e cabeçalho; impor limites; validar posições; conferir CRC; ler entradas; validar cada partição; diagnosticar a cópia de backup. Divergência não deve provocar reparo automático sem análise.
 
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## 5. Perguntas de revisão
+1. Qual é a finalidade da cópia de backup da GPT?
+2. Para que serve o MBR protetor?
+3. Por que se valida o tamanho da matriz antes de alocar memória?
+4. CRC32 é um mecanismo de autenticação? Explique.
+5. Por que uma cópia válida pode ainda estar desatualizada?
