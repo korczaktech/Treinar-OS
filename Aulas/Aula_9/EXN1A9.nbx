@@ -1,15 +1,14 @@
 // AULA 9 — EXERCÍCIO 1
-// Bitmap de espaço livre
+// Validar um LBA
 //
-// Implemente operações para consultar, ocupar e liberar uma posição.
-// Cada posição representa uma unidade: 0 = livre; 1 = ocupada.
-// Rejeite índices fora dos limites e valores diferentes de 0 ou 1.
-// Não altere posições vizinhas.
+// Implemente lba_valido(lba, total_blocos).
+// Os endereços válidos começam em zero e terminam em total_blocos - 1.
 //
 // Casos:
-// mapa [1,0,1,0], consultar posição 1 -> livre
-// mapa [1,0,1,0], ocupar posição 1 -> [1,1,1,0]
-// mapa [1,0,1,0], liberar posição 2 -> [1,0,0,0]
-// consultar posição 4 em mapa de 4 posições -> inválido
+// lba_valido(0, 100) -> verdadeiro
+// lba_valido(99, 100) -> verdadeiro
+// lba_valido(100, 100) -> falso
+// lba_valido(-1, 100) -> falso
+// lba_valido(0, 0) -> falso
 //
 // Escreva sua solução abaixo.

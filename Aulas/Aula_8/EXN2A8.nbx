@@ -1,19 +1,15 @@
 // AULA 8 — EXERCÍCIO 2
-// Detecção de sobreposição
+// Ciclo de vida de uma requisição
 //
-// Implemente particoes_sobrepostas(inicio_a, quantidade_a,
-// inicio_b, quantidade_b).
-// Considere que as duas partições já foram validadas e que seus limites
-// finais exclusivos podem ser calculados sem estouro.
-//
-// Devolva verdadeiro quando compartilham pelo menos um LBA.
-// Partições adjacentes não se sobrepõem.
+// Modele os estados CRIADA, VALIDADA, EM_EXECUCAO, CONCLUIDA e FALHOU.
+// Implemente uma função para validar transições.
+// Uma operação não pode ser concluída antes de entrar em execução.
 //
 // Casos:
-// [100, 200) e [200, 300) -> falso
-// [100, 200) e [150, 250) -> verdadeiro
-// [0, 100) e [0, 100) -> verdadeiro
-// [0, 50) e [50, 80) -> falso
-// [10, 20) e [19, 30) -> verdadeiro
+// CRIADA -> VALIDADA -> permitido
+// VALIDADA -> EM_EXECUCAO -> permitido
+// EM_EXECUCAO -> CONCLUIDA -> permitido
+// CRIADA -> CONCLUIDA -> rejeitado
+// CONCLUIDA -> EM_EXECUCAO -> rejeitado
 //
-// Escreva sua solução abaixo.
+// Documente a representação escolhida para os estados.

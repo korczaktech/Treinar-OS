@@ -1,17 +1,15 @@
 // AULA 9 — EXERCÍCIO 2
-// Quantidade de unidades de alocação
+// Validar faixa de blocos
 //
-// Implemente unidades_necessarias(tamanho_arquivo, tamanho_unidade).
-// Devolva a quantidade mínima de unidades inteiras necessárias.
-// Rejeite tamanho_unidade <= 0 e tamanho_arquivo negativo.
-// Arquivo vazio exige zero unidades. Considere resultado representável.
+// Implemente faixa_valida(inicio, quantidade, total_blocos).
+// Valide sem calcular inicio + quantidade antes das verificações.
 //
 // Casos:
-// unidades_necessarias(0, 4096) -> 0
-// unidades_necessarias(1, 4096) -> 1
-// unidades_necessarias(4096, 4096) -> 1
-// unidades_necessarias(4097, 4096) -> 2
-// unidades_necessarias(8192, 4096) -> 2
-// unidades_necessarias(5000, 0) -> inválido
+// faixa_valida(0, 1, 100) -> verdadeiro
+// faixa_valida(97, 3, 100) -> verdadeiro
+// faixa_valida(97, 4, 100) -> falso
+// faixa_valida(100, 1, 100) -> falso
+// faixa_valida(0, 0, 100) -> falso
+// faixa_valida(-1, 1, 100) -> falso
 //
 // Escreva sua solução abaixo.

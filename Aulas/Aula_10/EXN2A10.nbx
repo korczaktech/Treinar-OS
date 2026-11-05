@@ -1,25 +1,9 @@
 // AULA 10 — EXERCÍCIO 2
-// Análise de recuperação
+// Propagação de resultado
 //
-// Modele registros com identificador, intenção registrada,
-// estruturas principais atualizadas e conclusão registrada.
+// Simule uma leitura que pode retornar SUCESSO, ERRO_DE_VALIDACAO,
+// ERRO_DE_MIDIA ou TIMEOUT.
+// Preserve o resultado ao atravessar as camadas.
+// Nunca converta um erro em sucesso.
 //
-// Classifique cada operação como:
-// - concluída;
-// - precisa de recuperação;
-// - inconsistente/indeterminada.
-//
-// Não considere concluída sem confirmação de conclusão.
-// Intenção sem conclusão exige análise.
-// Não invente dados para resolver um estado indeterminado.
-//
-// Crie casos para:
-// 1. operação concluída normalmente;
-// 2. intenção registrada e atualização incompleta;
-// 3. atualização feita, mas conclusão não registrada;
-// 4. registro contraditório.
-//
-// Explique por que alguns casos não podem ser resolvidos apenas com
-// os campos disponíveis.
-//
-// Escreva sua solução abaixo.
+// Crie pelo menos um caso de teste para cada resultado.

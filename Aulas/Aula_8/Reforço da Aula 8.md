@@ -1,32 +1,21 @@
-# Reforço da Aula 8 — Particionamento e Mapa do Disco
+# Reforço da Aula 8 — Fluxo de leitura e escrita de blocos
 
-## 1. Uma divisão no mesmo dispositivo
+## Leitura e gravação têm direções opostas
+- Leitura: dispositivo para buffer de memória.
+- Gravação: buffer de memória para dispositivo.
 
-Um dispositivo com 1000 blocos pode ter uma partição de 0 a 199 e outra de 200 a 999. São regiões do mesmo dispositivo, não dois discos físicos.
+## Exemplo resolvido
+Uma operação transfere 4 blocos lógicos de 512 bytes. A transferência é 4 × 512 = 2.048 bytes. O buffer precisa comportar pelo menos 2.048 bytes. Um buffer de 2.047 bytes é insuficiente.
 
-## 2. Início e quantidade
+## O que uma requisição descreve?
+Dispositivo, LBA inicial, quantidade, direção, buffer e capacidade do buffer. Sem esses dados, a camada não consegue validar corretamente o pedido.
 
-Uma partição que começa em 200 e possui 300 blocos é [200, 500). Contém 200 até 499. O 500 é o limite exclusivo.
+## Estados
+Criada, validada, em execução e concluída. Também pode falhar. A validação não garante que o hardware responderá com sucesso.
 
-## 3. Cabe ou ultrapassa?
-
-Dispositivo: 1000 blocos.
-
-Início 800, quantidade 200: termina no limite 1000 e cabe. Início 800, quantidade 201: ultrapassa e deve ser rejeitada.
-
-## 4. Adjacência e sobreposição
-
-[100, 200) e [200, 300) são adjacentes. [100, 200) e [199, 300) se sobrepõem porque compartilham o bloco 199.
-
-## 5. Mapa não é conteúdo
-
-A tabela responde onde começam e terminam as regiões. O sistema de arquivos responde quais diretórios e arquivos existem. GPT organiza partições, não arquivos.
-
-## 6. Perguntas de fixação
-
-1. Uma partição começa em 900 e possui 100 blocos em um dispositivo de 1000. Cabe?
-2. Qual é o limite exclusivo de uma partição que começa em 20 e possui 10 blocos?
-3. [10, 20) e [20, 30) se sobrepõem?
-4. [10, 20) e [19, 30) se sobrepõem?
-5. GPT organiza arquivos ou partições?
-6. Uma partição vazia deixa de ser uma partição?
+## Perguntas de fixação
+1. Qual é a direção dos dados em uma leitura?
+2. Qual é a direção dos dados em uma gravação?
+3. Quantos bytes são transferidos em 5 blocos de 4.096 bytes?
+4. Por que um buffer pequeno deve ser rejeitado antes da execução?
+5. O que significa uma operação parcialmente concluída?
