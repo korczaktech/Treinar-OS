@@ -1,0 +1,14 @@
+// AULA 25 — EXERCÍCIO DE CÓDIGO
+// Descoberta e identificação de dispositivos
+//
+// Objetivo:
+// Modele o registro de dispositivos com identificador, capacidade, tamanho lógico e estado. Impeça registro de capacidades inválidas e rejeite operações com identificadores ausentes ou removidos.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
