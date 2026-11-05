@@ -44,45 +44,45 @@ Cada entrada abaixo segue o formato:
 
 ### Aula 1 — Fundamentos do armazenamento
 
-**Matéria da aula:** Unidades, capacidades e conversões.
+**Matéria da aula:** Fundamentos do armazenamento.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a bytes, KiB, MiB, GiB, capacidade decimal e binária, conversão e arredondamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de fundamentos do armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Fácil
 > - **Duração:** 35 minutos
 
 ### Aula 2 — Organização física e lógica do armazenamento
 
-**Matéria da aula:** Unidades, capacidades e conversões.
+**Matéria da aula:** Organização física e lógica do armazenamento.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a bytes, KiB, MiB, GiB, capacidade decimal e binária, conversão e arredondamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de organização física e lógica do armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Fácil
 > - **Duração:** 35 minutos
 
 ### Aula 3 — Identificação e endereçamento do armazenamento
 
-**Matéria da aula:** Unidades, capacidades e conversões.
+**Matéria da aula:** Identificação e endereçamento do armazenamento.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a bytes, KiB, MiB, GiB, capacidade decimal e binária, conversão e arredondamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de identificação e endereçamento do armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 35 minutos
 
 ### Aula 4 — Intervalos e validação de operações de armazenamento
 
-**Matéria da aula:** Unidades, capacidades e conversões.
+**Matéria da aula:** Intervalos e validação de operações de armazenamento.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a bytes, KiB, MiB, GiB, capacidade decimal e binária, conversão e arredondamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de intervalos e validação de operações de armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 35 minutos
 
 ### Aula 5 — Unidades de capacidade e conversões binárias e decimais
 
-**Matéria da aula:** Unidades, capacidades e conversões.
+**Matéria da aula:** Unidades de capacidade e conversões binárias e decimais.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a bytes, KiB, MiB, GiB, capacidade decimal e binária, conversão e arredondamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de unidades de capacidade e conversões binárias e decimais, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 35 minutos
@@ -91,403 +91,403 @@ Cada entrada abaixo segue o formato:
 
 **Matéria da aula:** Geometria lógica e organização de blocos.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a setores, blocos, tamanho lógico, alinhamento e mapeamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de geometria lógica e organização de blocos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 35 minutos
 
 ### Aula 7 — Controladores e comunicação com dispositivos de armazenamento
 
-**Matéria da aula:** Geometria lógica e organização de blocos.
+**Matéria da aula:** Controladores e comunicação com dispositivos de armazenamento.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a setores, blocos, tamanho lógico, alinhamento e mapeamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de controladores e comunicação com dispositivos de armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 35 minutos
 
 ### Aula 8 — Fluxo de leitura e escrita de blocos
 
-**Matéria da aula:** Geometria lógica e organização de blocos.
+**Matéria da aula:** Fluxo de leitura e escrita de blocos.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a setores, blocos, tamanho lógico, alinhamento e mapeamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de fluxo de leitura e escrita de blocos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 35 minutos
 
 ### Aula 9 — Limites de endereçamento e tratamento de erros
 
-**Matéria da aula:** Geometria lógica e organização de blocos.
+**Matéria da aula:** Limites de endereçamento e tratamento de erros.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a setores, blocos, tamanho lógico, alinhamento e mapeamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de limites de endereçamento e tratamento de erros, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 35 minutos
 
 ### Aula 10 — Camadas do subsistema de armazenamento
 
-**Matéria da aula:** Geometria lógica e organização de blocos.
+**Matéria da aula:** Camadas do subsistema de armazenamento.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a setores, blocos, tamanho lógico, alinhamento e mapeamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de camadas do subsistema de armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 35 minutos
 
 ### Aula 11 — Cache de armazenamento e coerência de dados
 
-**Matéria da aula:** Controladores e comunicação com dispositivos.
+**Matéria da aula:** Cache de armazenamento e coerência de dados.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a papéis do controlador, comandos, registradores e protocolo de comunicação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de cache de armazenamento e coerência de dados, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Difícil
 > - **Duração:** 45 minutos
 
 ### Aula 12 — Sincronização, flush e barreiras de escrita
 
-**Matéria da aula:** Controladores e comunicação com dispositivos.
+**Matéria da aula:** Sincronização, flush e barreiras de escrita.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a papéis do controlador, comandos, registradores e protocolo de comunicação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de sincronização, flush e barreiras de escrita, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Difícil
 > - **Duração:** 45 minutos
 
 ### Aula 13 — Operações assíncronas e filas de armazenamento
 
-**Matéria da aula:** Controladores e comunicação com dispositivos.
+**Matéria da aula:** Operações assíncronas e filas de armazenamento.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a papéis do controlador, comandos, registradores e protocolo de comunicação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de operações assíncronas e filas de armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Difícil
 > - **Duração:** 45 minutos
 
 ### Aula 14 — Interrupções, polling e conclusão de operações
 
-**Matéria da aula:** Controladores e comunicação com dispositivos.
+**Matéria da aula:** Interrupções, polling e conclusão de operações.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a papéis do controlador, comandos, registradores e protocolo de comunicação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de interrupções, polling e conclusão de operações, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Difícil
 > - **Duração:** 45 minutos
 
 ### Aula 15 — DMA e acesso do dispositivo à memória
 
-**Matéria da aula:** Controladores e comunicação com dispositivos.
+**Matéria da aula:** DMA e acesso do dispositivo à memória.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a papéis do controlador, comandos, registradores e protocolo de comunicação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de dma e acesso do dispositivo à memória, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Difícil
 > - **Duração:** 45 minutos
 
 ### Aula 16 — Timeouts, erros e recuperação de dispositivos
 
-**Matéria da aula:** Leitura e escrita de blocos.
+**Matéria da aula:** Timeouts, erros e recuperação de dispositivos.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a requisições, buffers, endereços, conclusão e erros. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de timeouts, erros e recuperação de dispositivos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Difícil
 > - **Duração:** 45 minutos
 
 ### Aula 17 — Arquitetura interna de SSDs e memória NAND
 
-**Matéria da aula:** Leitura e escrita de blocos.
+**Matéria da aula:** Arquitetura interna de SSDs e memória NAND.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a requisições, buffers, endereços, conclusão e erros. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de arquitetura interna de ssds e memória nand, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Difícil
 > - **Duração:** 45 minutos
 
 ### Aula 18 — Blocos defeituosos, saúde e confiabilidade
 
-**Matéria da aula:** Leitura e escrita de blocos.
+**Matéria da aula:** Blocos defeituosos, saúde e confiabilidade.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a requisições, buffers, endereços, conclusão e erros. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de blocos defeituosos, saúde e confiabilidade, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 45 minutos
 
 ### Aula 19 — Dispositivos virtuais e abstração de blocos
 
-**Matéria da aula:** Leitura e escrita de blocos.
+**Matéria da aula:** Dispositivos virtuais e abstração de blocos.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a requisições, buffers, endereços, conclusão e erros. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de dispositivos virtuais e abstração de blocos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Média
 > - **Duração:** 45 minutos
 
 ### Aula 20 — Segurança do armazenamento e proteção de dados
 
-**Matéria da aula:** Leitura e escrita de blocos.
+**Matéria da aula:** Segurança do armazenamento e proteção de dados.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a requisições, buffers, endereços, conclusão e erros. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de segurança do armazenamento e proteção de dados, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Difícil
 > - **Duração:** 45 minutos
 
 ### Aula 21 — Arquitetura integrada do subsistema de armazenamento
 
-**Matéria da aula:** Limites e validação de endereços.
+**Matéria da aula:** Arquitetura integrada do subsistema de armazenamento.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a intervalos válidos, overflow, limites do dispositivo e rejeição segura. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de arquitetura integrada do subsistema de armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 22 — Particionamento e tabelas de partição
 
-**Matéria da aula:** Limites e validação de endereços.
+**Matéria da aula:** Particionamento e tabelas de partição.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a intervalos válidos, overflow, limites do dispositivo e rejeição segura. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de particionamento e tabelas de partição, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 23 — Estrutura e validação da tabela GPT
 
-**Matéria da aula:** Limites e validação de endereços.
+**Matéria da aula:** Estrutura e validação da tabela GPT.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a intervalos válidos, overflow, limites do dispositivo e rejeição segura. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de estrutura e validação da tabela gpt, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 24 — Compatibilidade e leitura de tabelas MBR
 
-**Matéria da aula:** Limites e validação de endereços.
+**Matéria da aula:** Compatibilidade e leitura de tabelas MBR.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a intervalos válidos, overflow, limites do dispositivo e rejeição segura. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de compatibilidade e leitura de tabelas mbr, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 25 — Descoberta e identificação de dispositivos
 
-**Matéria da aula:** Limites e validação de endereços.
+**Matéria da aula:** Descoberta e identificação de dispositivos.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a intervalos válidos, overflow, limites do dispositivo e rejeição segura. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de descoberta e identificação de dispositivos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 26 — Volumes, regiões reservadas e limites de uso
 
-**Matéria da aula:** Camadas do subsistema de armazenamento.
+**Matéria da aula:** Volumes, regiões reservadas e limites de uso.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a API, gerenciador de blocos, driver, controlador e dispositivo. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de volumes, regiões reservadas e limites de uso, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 27 — Alinhamento de partições e limites físicos
 
-**Matéria da aula:** Camadas do subsistema de armazenamento.
+**Matéria da aula:** Alinhamento de partições e limites físicos.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a API, gerenciador de blocos, driver, controlador e dispositivo. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de alinhamento de partições e limites físicos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 28 — Montagem e desmontagem de volumes
 
-**Matéria da aula:** Camadas do subsistema de armazenamento.
+**Matéria da aula:** Montagem e desmontagem de volumes.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a API, gerenciador de blocos, driver, controlador e dispositivo. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de montagem e desmontagem de volumes, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 29 — Metadados e estruturas de armazenamento
 
-**Matéria da aula:** Camadas do subsistema de armazenamento.
+**Matéria da aula:** Metadados e estruturas de armazenamento.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a API, gerenciador de blocos, driver, controlador e dispositivo. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de metadados e estruturas de armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 30 — Validação defensiva de metadados
 
-**Matéria da aula:** Camadas do subsistema de armazenamento.
+**Matéria da aula:** Validação defensiva de metadados.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a API, gerenciador de blocos, driver, controlador e dispositivo. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de validação defensiva de metadados, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 31 — Integridade e recuperação de tabelas de partição
 
-**Matéria da aula:** Cache e coerência de dados.
+**Matéria da aula:** Integridade e recuperação de tabelas de partição.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a acertos, faltas, políticas, invalidação e dados sujos. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de integridade e recuperação de tabelas de partição, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 32 — Discos removíveis e detecção de hot-plug
 
-**Matéria da aula:** Cache e coerência de dados.
+**Matéria da aula:** Discos removíveis e detecção de hot-plug.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a acertos, faltas, políticas, invalidação e dados sujos. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de discos removíveis e detecção de hot-plug, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 33 — Capacidades e características anunciadas por dispositivos
 
-**Matéria da aula:** Cache e coerência de dados.
+**Matéria da aula:** Capacidades e características anunciadas por dispositivos.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a acertos, faltas, políticas, invalidação e dados sujos. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de capacidades e características anunciadas por dispositivos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 34 — Setores lógicos, setores físicos e tamanhos avançados
 
-**Matéria da aula:** Cache e coerência de dados.
+**Matéria da aula:** Setores lógicos, setores físicos e tamanhos avançados.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a acertos, faltas, políticas, invalidação e dados sujos. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de setores lógicos, setores físicos e tamanhos avançados, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 35 — Operações de leitura e escrita em múltiplos blocos
 
-**Matéria da aula:** Cache e coerência de dados.
+**Matéria da aula:** Operações de leitura e escrita em múltiplos blocos.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a acertos, faltas, políticas, invalidação e dados sujos. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de operações de leitura e escrita em múltiplos blocos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 36 — Leitura e escrita parcial de blocos
 
-**Matéria da aula:** Sincronização e ordenação de gravações.
+**Matéria da aula:** Leitura e escrita parcial de blocos.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a flush, barreiras, dependências e durabilidade. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de leitura e escrita parcial de blocos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 37 — Atomicidade e limites de operações
 
-**Matéria da aula:** Sincronização e ordenação de gravações.
+**Matéria da aula:** Atomicidade e limites de operações.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a flush, barreiras, dependências e durabilidade. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de atomicidade e limites de operações, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 38 — Ordenação de requisições de armazenamento
 
-**Matéria da aula:** Sincronização e ordenação de gravações.
+**Matéria da aula:** Ordenação de requisições de armazenamento.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a flush, barreiras, dependências e durabilidade. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de ordenação de requisições de armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 39 — Agrupamento e divisão de requisições de I/O
 
-**Matéria da aula:** Sincronização e ordenação de gravações.
+**Matéria da aula:** Agrupamento e divisão de requisições de I/O.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a flush, barreiras, dependências e durabilidade. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de agrupamento e divisão de requisições de i/o, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 40 — Despacho e escalonamento de requisições
 
-**Matéria da aula:** Sincronização e ordenação de gravações.
+**Matéria da aula:** Despacho e escalonamento de requisições.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a flush, barreiras, dependências e durabilidade. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de despacho e escalonamento de requisições, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
 
 ### Aula 41 — Diagnóstico de desempenho de armazenamento
 
-**Matéria da aula:** Filas e operações assíncronas.
+**Matéria da aula:** Diagnóstico de desempenho de armazenamento.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a submissão, identificadores, concorrência, conclusão e cancelamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de diagnóstico de desempenho de armazenamento, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 42 — Dispositivos compostos e encadeamento de volumes
 
-**Matéria da aula:** Filas e operações assíncronas.
+**Matéria da aula:** Dispositivos compostos e encadeamento de volumes.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a submissão, identificadores, concorrência, conclusão e cancelamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de dispositivos compostos e encadeamento de volumes, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 43 — Volumes distribuídos e espelhados
 
-**Matéria da aula:** Filas e operações assíncronas.
+**Matéria da aula:** Volumes distribuídos e espelhados.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a submissão, identificadores, concorrência, conclusão e cancelamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de volumes distribuídos e espelhados, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 44 — Níveis RAID e tolerância a falhas
 
-**Matéria da aula:** Filas e operações assíncronas.
+**Matéria da aula:** Níveis RAID e tolerância a falhas.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a submissão, identificadores, concorrência, conclusão e cancelamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de níveis raid e tolerância a falhas, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 45 — Reconstrução e sincronização de conjuntos RAID
 
-**Matéria da aula:** Filas e operações assíncronas.
+**Matéria da aula:** Reconstrução e sincronização de conjuntos RAID.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a submissão, identificadores, concorrência, conclusão e cancelamento. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de reconstrução e sincronização de conjuntos raid, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 46 — Falhas parciais e degradação de conjuntos RAID
 
-**Matéria da aula:** Interação avançada com dispositivos.
+**Matéria da aula:** Falhas parciais e degradação de conjuntos RAID.
 
-**Descrição breve da aula:** Estudo de o problema resolvido, os conceitos essenciais, os limites e os casos de uso aplicados a interrupções, polling, DMA, timeouts e recuperação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de falhas parciais e degradação de conjuntos raid, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 47 — Snapshots em nível de bloco
 
-**Matéria da aula:** Interação avançada com dispositivos.
+**Matéria da aula:** Snapshots em nível de bloco.
 
-**Descrição breve da aula:** Estudo de as estruturas de dados, os campos, os estados e a representação na memória aplicados a interrupções, polling, DMA, timeouts e recuperação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de snapshots em nível de bloco, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 48 — Clonagem e duplicação de volumes
 
-**Matéria da aula:** Interação avançada com dispositivos.
+**Matéria da aula:** Clonagem e duplicação de volumes.
 
-**Descrição breve da aula:** Estudo de o caminho de execução, as etapas, as dependências e as interações entre componentes aplicados a interrupções, polling, DMA, timeouts e recuperação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de clonagem e duplicação de volumes, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 49 — TRIM, discard e liberação de blocos
 
-**Matéria da aula:** Interação avançada com dispositivos.
+**Matéria da aula:** TRIM, discard e liberação de blocos.
 
-**Descrição breve da aula:** Estudo de as decisões de arquitetura, as interfaces e a implementação incremental no ZenithOS aplicados a interrupções, polling, DMA, timeouts e recuperação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de trim, discard e liberação de blocos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
 
 ### Aula 50 — Projeto do gerenciador de volumes do ZenithOS
 
-**Matéria da aula:** Interação avançada com dispositivos.
+**Matéria da aula:** Projeto do gerenciador de volumes do ZenithOS.
 
-**Descrição breve da aula:** Estudo de os casos inválidos, as falhas possíveis, os invariantes e os testes necessários aplicados a interrupções, polling, DMA, timeouts e recuperação. A aula delimita o que pertence a esta etapa e como o conhecimento será utilizado nas próximas partes do subsistema.
+**Descrição breve da aula:** A aula apresenta os conceitos, o funcionamento, os limites e as decisões técnicas de projeto do gerenciador de volumes do zenithos, com exemplos ligados ao subsistema de armazenamento do ZenithOS.
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 60 minutos
