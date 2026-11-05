@@ -1,0 +1,14 @@
+// AULA 26 — EXERCÍCIO DE CÓDIGO
+// Volumes, regiões reservadas e limites de uso
+//
+// Objetivo:
+// Modele um volume com início, quantidade e uma região reservada. Valide que a região útil não invade a reserva nem ultrapassa a capacidade do dispositivo. Teste conversão de LBA relativo.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
