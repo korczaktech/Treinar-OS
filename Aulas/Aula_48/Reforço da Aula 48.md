@@ -1,20 +1,19 @@
 # Reforço da Aula 48 — Clonagem e duplicação de volumes
 
-## 1. Ideia principal
+## Três operações diferentes
+- Cópia de arquivos: interpreta arquivos e diretórios.
+- Cópia bruta: transfere blocos no escopo definido.
+- Clone lógico: pode compartilhar blocos e copiar sob alteração.
 
-Cópia física transfere blocos; clone lógico pode compartilhar dados até a primeira alteração. Consistência da origem é essencial.
+## Exemplo
+Uma origem de 10.000 blocos não cabe integralmente em um destino de 8.000 blocos. A cópia bruta integral deve ser rejeitada. Antes de copiar uma origem ativa, coordene as gravações ou use snapshot.
 
-## 2. Cuidados que não podem ser esquecidos
+## Identificadores
+Clones podem duplicar UUIDs e GUIDs. Se origem e clone forem conectados juntos, o sistema precisa evitar ambiguidade.
 
-Evite sobreposição entre origem e destino. Identificadores duplicados podem conflitar; destino interrompido deve ficar marcado como incompleto.
-
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Qual a diferença entre cópia bruta e cópia de arquivos?
+2. Por que uma origem ativa pode gerar clone inconsistente?
+3. Por que identificadores precisam ser tratados?
+4. Quando o destino pode ser publicado?
+5. Como snapshot ajuda a criar uma cópia consistente?

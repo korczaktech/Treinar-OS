@@ -1,20 +1,17 @@
 # Reforço da Aula 47 — Snapshots em nível de bloco
 
-## 1. Ideia principal
+## O que é preservado?
+Snapshot mantém uma visão anterior do volume. Copy-on-write preserva a versão antiga antes de permitir que o volume ativo grave uma versão nova.
 
-Snapshot preserva uma visão anterior do volume. Copy-on-write guarda a versão antiga antes de sobrescrever o bloco.
+## Exemplo
+O volume e o snapshot apontam para o bloco X. O volume altera X de A para B. A versão A é preservada para o snapshot; o volume ativo passa a ver B.
 
-## 2. Cuidados que não podem ser esquecidos
+## Cuidados
+Snapshots ocupam espaço e metadados. Podem reter blocos antigos mesmo após exclusão no volume ativo. Não são backup e precisam de coordenação para consistência.
 
-Snapshot não é necessariamente backup. Gerencie espaço, mapas e referências e defina o que ocorre quando a reserva acaba.
-
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. O que é copy-on-write?
+2. Por que um snapshot mantém dados que o volume ativo já liberou?
+3. O que deve ocorrer se o espaço reservado acabar?
+4. Snapshot substitui backup?
+5. Como garantir uma visão consistente para uma aplicação?

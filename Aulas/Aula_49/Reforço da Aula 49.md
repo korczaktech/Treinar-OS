@@ -1,20 +1,17 @@
 # Reforço da Aula 49 — TRIM, discard e liberação de blocos
 
-## 1. Ideia principal
+## Fluxo correto
+O sistema de arquivos libera uma faixa; confirma que ela não possui referências ativas; agrupa pedidos compatíveis; consulta suporte, granularidade e limites; envia discard; trata o resultado.
 
-TRIM/discard informa ao dispositivo que faixas não precisam mais preservar dados, ajudando o gerenciamento interno de SSDs.
+## Exemplo
+A faixa [1.000, 1.100) foi liberada. Se um snapshot ainda referencia parte dos blocos, não descarte essa parte. O dispositivo precisa preservar dados que ainda podem ser usados.
 
-## 2. Cuidados que não podem ser esquecidos
+## O que discard não significa
+Não garante apagamento físico imediato, não é apagamento seguro e não garante que a leitura posterior retorne zeros.
 
-Não significa apagamento seguro ou imediato. Só descarte faixas comprovadamente livres e respeite granularidade e limites.
-
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. O que o comando discard comunica ao dispositivo?
+2. Por que uma faixa ainda referenciada não pode ser descartada?
+3. TRIM apaga fisicamente as células na hora?
+4. Por que o suporte e os limites precisam ser consultados?
+5. Qual a diferença entre liberar no sistema de arquivos e apagar fisicamente?

@@ -1,20 +1,23 @@
 # Reforço da Aula 50 — Projeto do gerenciador de volumes do ZenithOS
 
-## 1. Ideia principal
+## Responsabilidade
+O gerenciador descobre regiões, interpreta partições, valida limites, aplica reservas, cria volumes e traduz endereços relativos para o dispositivo de origem.
 
-Gerenciador interpreta partições, valida regiões, cria volumes, traduz endereços e publica unidades para sistemas de arquivos.
+## Exemplo de tradução
+Volume começa no LBA 4.000 e possui 2.000 blocos. Pedido relativo: início 1.990, quantidade 10. A faixa termina no limite exclusivo 2.000 e cabe. Depois de validar, o LBA absoluto inicial é 5.990. Se pedir 11 blocos, rejeite antes da soma.
 
-## 2. Cuidados que não podem ser esquecidos
+## Ordem incremental
+1. Modelo em memória.
+2. Funções puras de intervalos e tradução.
+3. Dispositivo em RAM.
+4. Testes de partições e reservas.
+5. Parsers GPT/MBR.
+6. Registro e ciclo de vida de volumes.
+7. Montagem e integração com drivers.
 
-Comece com modelo em memória e testes puros; depois conecte leitores GPT/MBR e montagem. Não publique volumes parcialmente validados.
-
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Quais são as responsabilidades do gerenciador?
+2. Por que validar o intervalo relativo antes da soma?
+3. O que impede publicar um volume parcialmente validado?
+4. Como a remoção do dispositivo de origem afeta o volume?
+5. Por que começar com dispositivo em RAM?
