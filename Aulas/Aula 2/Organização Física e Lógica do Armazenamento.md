@@ -72,11 +72,15 @@
 
 ##### 1. Qual é a diferença entre organização física e organização lógica?
 > - Na física, eles são armazenados de acordo com diferentes niveis de carga elétrica. Na lógica, é a maneira como o SO armazena essas informações e como enxerga
+[!WARNING] Organização Lógica não é necessariamente como o SO armazena os dados, mas a maneira como ele representa, endereça e organiza o espaço.
 ##### 2. Por que o ZenithOS não precisa conhecer diretamente as células NAND de um SSD?
 > - Por que o controlador já faz esse trabalho pelo SO.
 ##### 3. Qual é a diferença entre um setor lógico de 4096 bytes e um bloco de apagamento NAND?
 > - Não sei, não foi explicado na aula. Você disse que seria feito nas posteriores.
+[!IMPORTANT] **Setor Lógico de 4096 bytes:** unidade de endereçamento apresentada pelo dispositivo ao sistema operacional. O SO pode solicitar a leitura ou escrita dessa unidade.
+[!IMPORTANT] **Bloco de Apagamento NAND:** Agrupamento físico de páginas NAND que o controlador precisa apagar como uma unidade
 ##### 4. Por que não devemos tratar todos os tipos de blocos como se fossem iguais?
 > - Porque isso pode quebrar o SO, cada bloco deve ser tratado de acordo com a camada em que está
 ##### 5. Se dois SSDs possuem estruturas físicas diferentes, como o ZenithOS pode utilizar ambos através de uma mesma arquitetura?
 > - Através do Controlador de SSDs.
+[!WARNING] Sua resposta está no caminho certo. O controlador interno do SSD abstrai as particularidades da memória NAND. Além disso, o ZenithOS precisa de uma camada de drivers e comunicação com interfaces NVMe e SATA.
