@@ -1,0 +1,18 @@
+// AULA 5 — EXERCÍCIO 1
+// Próximo endereço alinhado
+//
+// Implemente proximo_alinhado(endereco, alinhamento).
+// Devolva o menor endereço maior ou igual ao endereço informado
+// que seja múltiplo do alinhamento.
+//
+// Considere endereco >= 0, alinhamento > 0 e resultado representável.
+// Não é necessário tratar alinhamentos que não sejam potências de dois.
+//
+// Casos:
+// proximo_alinhado(0, 8)  -> 0
+// proximo_alinhado(8, 8)  -> 8
+// proximo_alinhado(9, 8)  -> 16
+// proximo_alinhado(13, 8) -> 16
+// proximo_alinhado(17, 4) -> 20
+//
+// Escreva sua solução abaixo.

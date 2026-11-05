@@ -1,0 +1,19 @@
+// AULA 10 — EXERCÍCIO 1
+// Checksum didático
+//
+// Implemente um checksum simplificado para uma sequência de valores.
+// O objetivo é praticar detecção de alteração, não criptografia.
+//
+// Defina quais valores são aceitos, como o acumulador é atualizado,
+// como o resultado é limitado e como comparar o valor armazenado
+// com o recalculado.
+//
+// Casos:
+// mesma sequência e mesmo checksum -> correspondência
+// sequência alterada -> diferença nos casos definidos
+// sequência vazia -> comportamento documentado
+//
+// Não chame o algoritmo de hash criptográfico nem afirme que protege
+// contra adulteração intencional.
+//
+// Escreva sua solução abaixo.

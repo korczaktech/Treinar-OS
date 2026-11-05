@@ -1,0 +1,18 @@
+// AULA 9 — EXERCÍCIO 3
+// Validação de extensão
+//
+// Uma extensão é uma sequência de unidades consecutivas.
+// Implemente uma função que valide uma extensão dentro de uma partição.
+//
+// Receba início da extensão, quantidade, início da partição e total da partição.
+// Rejeite valores negativos, quantidade zero e qualquer faixa que ultrapasse
+// a partição. Use limites exclusivos e validação segura.
+//
+// Casos:
+// extensão [10,15), partição [0,100) -> verdadeiro
+// extensão [95,100), partição [0,100) -> verdadeiro
+// extensão [95,101), partição [0,100) -> falso
+// extensão [0,1), partição [10,100) -> falso
+// extensão vazia -> falso
+//
+// Escreva sua solução abaixo.

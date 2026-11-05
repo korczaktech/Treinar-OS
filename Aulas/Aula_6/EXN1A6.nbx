@@ -1,0 +1,15 @@
+// AULA 6 — EXERCÍCIO 1
+// Capacidade do buffer
+//
+// Implemente buffer_comporta(quantidade, tamanho_bloco, capacidade).
+// Devolva verdadeiro se os parâmetros forem válidos e o buffer comportar
+// todos os bytes solicitados. Considere que a multiplicação não estoura.
+//
+// Casos:
+// buffer_comporta(2, 512, 1024) -> verdadeiro
+// buffer_comporta(2, 512, 1000) -> falso
+// buffer_comporta(1, 4096, 4096) -> verdadeiro
+// buffer_comporta(0, 512, 1024) -> falso
+// buffer_comporta(3, 0, 1024) -> falso
+//
+// Escreva sua solução abaixo.

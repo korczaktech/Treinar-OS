@@ -1,0 +1,16 @@
+// AULA 8 — EXERCÍCIO 1
+// Validação de partição
+//
+// Implemente particao_valida(inicio, quantidade, total_dispositivo).
+// Valide os parâmetros e confirme que a partição cabe no dispositivo.
+// Use a regra segura de espaço restante da Aula 4.
+//
+// Casos:
+// particao_valida(0, 100, 1000) -> verdadeiro
+// particao_valida(900, 100, 1000) -> verdadeiro
+// particao_valida(900, 101, 1000) -> falso
+// particao_valida(1000, 1, 1000) -> falso
+// particao_valida(-1, 1, 1000) -> falso
+// particao_valida(10, 0, 1000) -> falso
+//
+// Escreva sua solução abaixo.

@@ -1,0 +1,18 @@
+// AULA 5 — EXERCÍCIO 2
+// Validação de região alinhada
+//
+// Implemente regiao_compativel(inicio, tamanho_regiao,
+// tamanho_estrutura, alinhamento).
+//
+// Devolva verdadeiro somente se os parâmetros forem válidos,
+// o início estiver alinhado e a estrutura couber inteiramente.
+// Use limite final exclusivo e evite estouro numérico.
+//
+// Casos:
+// regiao_compativel(16, 32, 8, 8) -> verdadeiro
+// regiao_compativel(18, 32, 8, 8) -> falso
+// regiao_compativel(16, 7, 8, 8)  -> falso
+// regiao_compativel(24, 8, 8, 8)  -> verdadeiro
+// regiao_compativel(24, 0, 8, 8)  -> falso
+//
+// Escreva sua solução abaixo.

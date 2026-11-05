@@ -1,0 +1,17 @@
+// AULA 9 — EXERCÍCIO 2
+// Quantidade de unidades de alocação
+//
+// Implemente unidades_necessarias(tamanho_arquivo, tamanho_unidade).
+// Devolva a quantidade mínima de unidades inteiras necessárias.
+// Rejeite tamanho_unidade <= 0 e tamanho_arquivo negativo.
+// Arquivo vazio exige zero unidades. Considere resultado representável.
+//
+// Casos:
+// unidades_necessarias(0, 4096) -> 0
+// unidades_necessarias(1, 4096) -> 1
+// unidades_necessarias(4096, 4096) -> 1
+// unidades_necessarias(4097, 4096) -> 2
+// unidades_necessarias(8192, 4096) -> 2
+// unidades_necessarias(5000, 0) -> inválido
+//
+// Escreva sua solução abaixo.

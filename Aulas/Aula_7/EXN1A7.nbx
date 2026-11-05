@@ -1,0 +1,19 @@
+// AULA 7 — EXERCÍCIO 1
+// Validação do descritor
+//
+// Implemente descritor_valido(identificador, total_blocos,
+// tamanho_bloco, alinhamento, disponivel).
+//
+// Rejeite identificador reservado/inválido, total_blocos <= 0,
+// tamanho_bloco <= 0, alinhamento <= 0 ou dispositivo indisponível.
+// Documente quais identificadores são reservados.
+// Não calcule capacidade em bytes sem considerar estouro.
+//
+// Casos:
+// id válido, total 500, bloco 512, alinhamento 8, disponível -> verdadeiro
+// id válido, total 0, bloco 512, alinhamento 8, disponível -> falso
+// id válido, total 500, bloco 0, alinhamento 8, disponível -> falso
+// id válido, total 500, bloco 512, alinhamento 0, disponível -> falso
+// id válido, total 500, bloco 512, alinhamento 8, indisponível -> falso
+//
+// Escreva sua solução abaixo.

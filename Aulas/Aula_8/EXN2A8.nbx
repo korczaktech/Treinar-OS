@@ -1,0 +1,19 @@
+// AULA 8 — EXERCÍCIO 2
+// Detecção de sobreposição
+//
+// Implemente particoes_sobrepostas(inicio_a, quantidade_a,
+// inicio_b, quantidade_b).
+// Considere que as duas partições já foram validadas e que seus limites
+// finais exclusivos podem ser calculados sem estouro.
+//
+// Devolva verdadeiro quando compartilham pelo menos um LBA.
+// Partições adjacentes não se sobrepõem.
+//
+// Casos:
+// [100, 200) e [200, 300) -> falso
+// [100, 200) e [150, 250) -> verdadeiro
+// [0, 100) e [0, 100) -> verdadeiro
+// [0, 50) e [50, 80) -> falso
+// [10, 20) e [19, 30) -> verdadeiro
+//
+// Escreva sua solução abaixo.

@@ -1,0 +1,25 @@
+// AULA 10 — EXERCÍCIO 2
+// Análise de recuperação
+//
+// Modele registros com identificador, intenção registrada,
+// estruturas principais atualizadas e conclusão registrada.
+//
+// Classifique cada operação como:
+// - concluída;
+// - precisa de recuperação;
+// - inconsistente/indeterminada.
+//
+// Não considere concluída sem confirmação de conclusão.
+// Intenção sem conclusão exige análise.
+// Não invente dados para resolver um estado indeterminado.
+//
+// Crie casos para:
+// 1. operação concluída normalmente;
+// 2. intenção registrada e atualização incompleta;
+// 3. atualização feita, mas conclusão não registrada;
+// 4. registro contraditório.
+//
+// Explique por que alguns casos não podem ser resolvidos apenas com
+// os campos disponíveis.
+//
+// Escreva sua solução abaixo.

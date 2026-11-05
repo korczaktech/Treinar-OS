@@ -1,0 +1,21 @@
+// AULA 6 — EXERCÍCIO 2
+// Validação de descritor
+//
+// Valide uma solicitação contendo dispositivo_valido, lba, quantidade,
+// total_blocos, tamanho_bloco e capacidade_buffer.
+//
+// Rejeite dispositivo inválido, quantidade ou tamanho de bloco não positivo,
+// LBA fora do intervalo, faixa que ultrapasse o dispositivo e buffer pequeno.
+// Reutilize a validação segura de faixa da Aula 4.
+//
+// Casos:
+// dispositivo válido, LBA 0, quantidade 1, total 100,
+// bloco 512, buffer 512 -> verdadeiro
+// dispositivo válido, LBA 99, quantidade 2, total 100,
+// bloco 512, buffer 1024 -> falso
+// dispositivo inválido, LBA 0, quantidade 1, total 100,
+// bloco 512, buffer 512 -> falso
+// dispositivo válido, LBA 10, quantidade 2, total 100,
+// bloco 512, buffer 512 -> falso
+//
+// Escreva sua solução abaixo.
