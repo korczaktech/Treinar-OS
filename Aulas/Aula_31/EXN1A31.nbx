@@ -1,0 +1,14 @@
+// AULA 31 — EXERCÍCIO DE CÓDIGO
+// Integridade e recuperação de tabelas de partição
+//
+// Objetivo:
+// Modele resultados de validação da GPT principal e de backup. Classifique ambas válidas, somente principal válida, somente backup válida ou ambas inválidas; não execute reparo.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
