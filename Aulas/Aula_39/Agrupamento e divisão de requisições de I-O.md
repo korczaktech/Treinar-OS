@@ -31,5 +31,5 @@ A camada de blocos pode manter uma etapa limitada de coalescência. O driver con
 
 Você concluiu quando conseguir agrupar operações compatíveis, dividir uma operação maior que o limite e explicar como os resultados parciais são comunicados.
 
-> - **Dificuldade:** Difícil
-> - **Duração:** 55 minutos
+> - **Dificuldade:** Muito difícil
+> - **Duração:** 50 minutos
