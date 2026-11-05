@@ -1,0 +1,14 @@
+// AULA 34 — EXERCÍCIO DE CÓDIGO
+// Setores lógicos, setores físicos e tamanhos avançados
+//
+// Objetivo:
+// Receba tamanho lógico e físico em bytes. Verifique se o tamanho físico é múltiplo compatível do lógico e calcule quantos setores lógicos compõem uma unidade física.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
