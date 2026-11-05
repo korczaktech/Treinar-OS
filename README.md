@@ -8,12 +8,20 @@ O planejamento não significa que as 500 aulas já estejam escritas. Cada aula s
 
 ## Padrão individual de cada aula
 
-Cada entrada abaixo segue o formato:
-- **Título:** identifica claramente o conteúdo estudado.
-- **Matéria da aula:** delimita o assunto central.
-- **Descrição breve:** informa o que será explicado e qual recorte será estudado.
-- **Dificuldade:** estimativa pedagógica, sujeita a ajuste conforme o conteúdo final.
-- **Duração:** tempo estimado de estudo, sem contar pausas ou prática adicional.
+Cada aula completa deve conter, de acordo com o assunto:
+
+- **Título e objetivo:** o tema central e o que o estudante deverá saber ao final.
+- **Pré-requisitos:** conhecimentos anteriores necessários, sem presumir conteúdos que ainda não foram ensinados.
+- **Explicação por tópicos:** conceitos definidos com clareza, funcionamento, finalidade, limites, consequências e relação com os demais componentes.
+- **Exemplos trabalhados:** situações concretas, cálculos ou fluxos explicados passo a passo. Não basta citar um exemplo sem demonstrar o raciocínio.
+- **Método de aprendizagem:** sequência sugerida para estudar, testar hipóteses, desenhar estruturas, comparar alternativas e reconhecer erros comuns.
+- **Aplicação no ZenithOS:** relação entre o conteúdo e as responsabilidades, decisões e limites do projeto.
+- **Exercícios de compreensão:** obrigatórios em todas as aulas, sem exceção. Devem avaliar especificamente o que foi ensinado naquela aula, incluir interpretação e raciocínio e não podem ser substituídos por exercícios de programação.
+- **Exercícios de código (.nbx):** opcionais. Devem ser incluídos quando a prática de programação realmente ajudar a consolidar o tema. O enunciado não deve entregar a solução.
+- **Critério de conclusão:** capacidades que o estudante deverá demonstrar antes de considerar a aula compreendida.
+- **Metadados:** dificuldade e duração estimada.
+
+Cada aula também deve possuir um arquivo de reforço próprio. O reforço deve revisar os conceitos essenciais, apresentar exemplos adicionais ou um raciocínio guiado e incluir perguntas de revisão relacionadas ao conteúdo da aula.
 
 ## Organização pedagógica
 
