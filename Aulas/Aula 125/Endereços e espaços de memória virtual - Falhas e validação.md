@@ -16,7 +16,7 @@ Não avance supondo que conceitos ainda não estudados estejam dominados. Se alg
 
 Endereços e espaços de memória virtual faz parte da infraestrutura central do ZenithOS. Sua função é compreender a separação entre endereços virtuais e físicos e como cada processo pode possuir um espaço lógico isolado. Esse componente não deve assumir responsabilidades que pertencem a outros módulos: a fronteira entre subsistemas precisa permanecer explícita.
 
-O problema central desta aula é entender undefined. A solução correta depende de contratos bem definidos, entradas verificadas e estados que possam ser explicados. Em um kernel, um erro de contabilidade ou de validação pode comprometer processos que não participaram da operação original.
+O problema central desta aula é entender casos inválidos, recuperação, invariantes e testes. A solução correta depende de contratos bem definidos, entradas verificadas e estados que possam ser explicados. Em um kernel, um erro de contabilidade ou de validação pode comprometer processos que não participaram da operação original.
 
 ## 2. Conceitos essenciais
 
