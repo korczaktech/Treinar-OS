@@ -32,6 +32,8 @@ O barramento transporta dados e comandos; o protocolo define como as operações
 
 Cada etapa pode falhar. O kernel deve preservar a associação entre solicitação e conclusão.
 
+**Exemplo prático:** o ZenithOS recebe uma leitura genérica do LBA 40. A camada de blocos valida o endereço e o buffer. O driver NVMe transforma a solicitação em uma entrada de fila conforme o protocolo. O controlador processa o comando e publica uma conclusão. O driver associa essa conclusão ao pedido original e devolve o resultado à camada superior. Se o controlador não foi inicializado, a requisição deve ser recusada antes da submissão.
+
 ## 5. Registradores, filas e memória
 Algumas interfaces usam registradores de controle e estado. Interfaces modernas também podem usar filas de submissão e conclusão em memória. O driver precisa respeitar a ordem de publicação, barreiras de memória e regras do protocolo.
 

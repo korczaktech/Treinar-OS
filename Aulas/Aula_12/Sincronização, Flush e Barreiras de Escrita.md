@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Na Aula 10 vimos que uma gravação pode não estar persistida quando a operação retorna. Nesta aula vamos aprofundar a sincronização: como solicitar que dados pendentes avancem pelas camadas, por que a ordem importa e como definir garantias realistas de durabilidade.
+Na Aula 11 vimos que uma gravação pode permanecer pendente em cache mesmo depois de a camada superior receber uma confirmação inicial. Nesta aula vamos aprofundar a sincronização: como solicitar que dados pendentes avancem pelas camadas, por que a ordem importa e como definir garantias realistas de durabilidade.
 
 ## 1. As várias etapas de uma gravação
 

@@ -91,3 +91,8 @@ Desenhe duas representações do mesmo dispositivo: primeiro, componentes físic
 
 ## Exemplo adicional
 Um SSD apresenta setores lógicos de 512 bytes. Internamente, sua NAND pode usar páginas de programação e blocos de apagamento maiores. O sistema operacional continua solicitando LBAs; o controlador traduz esses pedidos para suas operações internas. A camada de blocos não deve presumir que um setor lógico corresponda a uma página NAND.
+
+
+## Metadados da aula
+- Dificuldade: Fácil
+- Duração: 35 minutos

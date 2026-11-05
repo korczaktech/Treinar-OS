@@ -213,3 +213,8 @@ Não avance apenas por conseguir repetir uma fórmula. Tente explicar por que el
 
 ## Método de estudo
 Desenhe a faixa com início incluído e fim exclusivo. Marque cada bloco acessado, compare a quantidade com o espaço restante e só depois calcule o limite final. Repita com uma faixa válida no limite exato e outra que ultrapassa um bloco.
+
+
+## Metadados da aula
+- Dificuldade: Média
+- Duração: 35 minutos
