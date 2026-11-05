@@ -1,0 +1,14 @@
+// AULA 45 — EXERCÍCIO DE CÓDIGO
+// Reconstrução e sincronização de conjuntos RAID
+//
+// Objetivo:
+// Modele reconstrução por faixas com progresso, falha de leitura e falha de gravação. Permita retomar do último ponto confirmado sem marcar conjunto incompleto como sincronizado.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
