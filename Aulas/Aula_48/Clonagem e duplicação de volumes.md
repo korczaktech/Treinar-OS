@@ -26,13 +26,31 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Qual é a diferença entre cópia de arquivos, cópia bruta e clone lógico?
+2. Por que uma origem ativa pode produzir uma cópia inconsistente?
+3. Como um snapshot pode ajudar durante a clonagem?
+4. Por que identificadores duplicados podem causar conflitos?
+5. O que deve acontecer se o destino for menor que o escopo da origem?
+6. Quando um destino deve ser publicado como volume válido?
 
-## 6. Critério de conclusão
+## 6. Cópia bruta e clone lógico
+Uma cópia bruta transfere blocos da origem para o destino, incluindo regiões que não pertencem a arquivos ativos, conforme o escopo escolhido. Um clone lógico pode compartilhar blocos e copiar apenas quando uma das versões muda. Uma cópia de arquivos, por sua vez, interpreta diretórios e arquivos e não necessariamente preserva todo o layout do volume.
+
+Cada operação tem objetivos diferentes e deve declarar o que será copiado.
+
+## 7. Consistência da origem
+Se a origem continuar recebendo gravações durante a cópia, o destino pode misturar versões de momentos diferentes. Para obter uma imagem consistente, use snapshot, pause gravações ou coordene a operação com a camada superior.
+
+## 8. Identificadores duplicados
+Clonar um volume pode duplicar GUIDs, UUIDs e outros identificadores. Se origem e clone forem conectados ao mesmo tempo, o sistema pode confundir os volumes. O processo precisa decidir quais identificadores devem ser preservados e quais devem ser regenerados.
+
+## 9. Exemplo guiado
+Uma origem de 10.000 blocos é copiada para destino de 8.000 blocos. A operação deve ser rejeitada se o escopo exigir copiar os 10.000 blocos. Se o destino tiver espaço suficiente, ainda será necessário validar sobreposição, consistência da origem e identidade final.
+
+## 10. Método de aprendizagem
+Compare três cenários: cópia de arquivos, cópia bruta e clone copy-on-write. Para cada um, identifique o que é preservado, o que exige espaço e como lida com alterações concorrentes.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

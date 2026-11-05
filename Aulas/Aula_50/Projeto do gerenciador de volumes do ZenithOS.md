@@ -26,13 +26,43 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Qual é a responsabilidade do gerenciador de volumes?
+2. Quais campos essenciais devem existir em um descritor de volume?
+3. Por que o gerenciador só deve publicar volumes depois de validar todo o mapeamento?
+4. Como traduzir um LBA relativo para absoluto com segurança?
+5. O que deve acontecer com volumes dependentes quando o dispositivo de origem é removido?
+6. Qual ordem incremental reduz o risco de implementar todo o gerenciador de uma só vez?
+7. Por que identificar um volume não significa que seu sistema de arquivos já pode ser montado?
 
-## 6. Critério de conclusão
+## 6. Modelo de dados do gerenciador
+Uma representação inicial de volume deve conter identidade, dispositivo de origem, LBA inicial, quantidade de blocos, tamanho lógico, capacidades, estado e referências às dependências. Os campos precisam ter unidades explícitas. A identidade do volume não deve ser confundida com o endereço do dispositivo ou com o GUID encontrado no disco.
+
+## 7. Fluxo de descoberta até publicação
+1. Receber um dispositivo já inicializado.
+2. Validar o descritor e as capacidades.
+3. Ler a tabela de partições suportada.
+4. Validar cabeçalhos, entradas, limites e sobreposição.
+5. Aplicar regiões reservadas.
+6. Criar objetos de volume ainda não publicados.
+7. Validar cada mapeamento e dependência.
+8. Publicar somente volumes consistentes.
+9. Permitir que o sistema de arquivos tente identificar e montar o conteúdo.
+
+Falha em uma etapa não deve deixar objetos parcialmente acessíveis.
+
+## 8. Tradução de LBA relativo
+Se o volume começa no LBA absoluto V e a requisição usa início relativo R, o início absoluto é V + R. Mas a soma só ocorre depois de validar que a faixa relativa cabe na quantidade do volume. Em seguida, a camada confirma que o resultado continua dentro do dispositivo de origem.
+
+## 9. Estados e ciclo de vida
+Um volume pode estar DETECTADO, VALIDANDO, DISPONIVEL, MONTADO, INDISPONIVEL ou COM_ERRO. Remoção do dispositivo de origem deve propagar indisponibilidade. Desmontagem e remoção precisam respeitar referências ativas e operações pendentes.
+
+## 10. Plano de implementação incremental
+Comece com estruturas em memória e funções puras para intervalos e traduções. Depois use um dispositivo em RAM e testes de partições. Integre leitores GPT e MBR, depois descoberta real, montagem e drivers. Não comece com RAID, snapshots e hardware real simultaneamente.
+
+## 11. Método de aprendizagem
+Desenhe o fluxo completo, marque em cada etapa quais dados entram, quais validações são feitas e qual estado é publicado. Crie ao menos um cenário válido e três inválidos: partição sobreposta, offset fora do volume e dispositivo removido durante validação.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

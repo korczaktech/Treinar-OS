@@ -26,13 +26,33 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. O que um snapshot preserva?
+2. Como copy-on-write permite manter uma versão antiga enquanto o volume continua recebendo gravações?
+3. Por que um snapshot pode continuar ocupando espaço depois da exclusão de um arquivo?
+4. O que deve acontecer quando o espaço reservado para snapshots acaba?
+5. Por que snapshot não é necessariamente backup?
+6. Qual coordenação pode ser necessária para criar um snapshot consistente para uma aplicação?
 
-## 6. Critério de conclusão
+## 6. Copy-on-write
+Em uma estratégia copy-on-write, o snapshot e o volume ativo podem inicialmente apontar para os mesmos blocos. Antes de sobrescrever um bloco compartilhado, o sistema preserva a versão antiga em outra região e atualiza os mapas. Assim, o snapshot continua mostrando o conteúdo anterior enquanto o volume ativo recebe a nova versão.
+
+O custo aparece quando muitos blocos mudam: é preciso reservar espaço para versões antigas e manter mapas de referência.
+
+## 7. Espaço e ciclo de vida
+Snapshots consomem metadados e podem reter blocos que o volume ativo já não precisa. Apagar um arquivo no volume ativo não libera necessariamente a região física se um snapshot ainda referencia a versão antiga.
+
+Se o espaço reservado acabar, o sistema precisa definir comportamento explícito: interromper gravações, invalidar o snapshot, ou aplicar outra política documentada. Não pode sobrescrever silenciosamente a única cópia preservada.
+
+## 8. Exemplo guiado
+Bloco X contém “A” e é compartilhado pelo volume e pelo snapshot. O volume grava “B”. Antes da alteração, a estratégia preserva “A” para o snapshot e direciona o volume ativo para a nova versão. O snapshot continua lendo “A”; o volume ativo lê “B”.
+
+## 9. Consistência do snapshot
+Um snapshot em nível de bloco pode capturar uma visão que ainda não é consistente para uma aplicação se houver gravações relacionadas em andamento. É necessário coordenar flush, barreiras ou congelamento da camada superior conforme a garantia desejada.
+
+## 10. Método de aprendizagem
+Desenhe dois mapas: volume ativo e snapshot. Acompanhe uma gravação e conte quantas versões precisam ser preservadas. Depois simule falta de espaço e interrupção durante atualização dos mapas.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 
