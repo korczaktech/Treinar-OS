@@ -1,20 +1,20 @@
 # Reforço da Aula 43 — Volumes distribuídos e espelhados
 
-## 1. Ideia principal
+## Distribuição
+Divide dados entre membros para capacidade ou paralelismo. Sem redundância, a falha de um membro pode tornar parte do volume inacessível.
 
-Distribuição divide dados entre membros; espelhamento mantém cópias. Capacidade, paralelismo e tolerância variam conforme a estratégia.
+## Espelhamento
+Mantém cópias equivalentes. O conjunto precisa definir quando uma gravação é considerada concluída e como lidar com cópias divergentes.
 
-## 2. Cuidados que não podem ser esquecidos
+## Exemplo
+Em um espelho, A conclui a gravação e B falha. O conjunto não pode declarar ambos sincronizados. Precisa registrar o estado degradado e planejar verificação ou reconstrução.
 
-Redundância não substitui backup. Defina quando gravação é concluída e como detectar divergência entre cópias.
+## Não é backup
+Exclusão, corrupção lógica e malware podem ser replicados para todas as cópias.
 
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Qual é o objetivo da distribuição?
+2. Qual é o objetivo do espelhamento?
+3. Como tratar gravação concluída apenas em um membro?
+4. Por que redundância não protege contra exclusão?
+5. Como escolher uma cópia para leitura?

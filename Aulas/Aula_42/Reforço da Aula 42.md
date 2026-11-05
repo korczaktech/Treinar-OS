@@ -1,20 +1,17 @@
-# Reforço da Aula 42 — Dispositivos compostos e encadeamento de volumes
+# Reforço da Aula 42 — Dispositivos compostos
 
-## 1. Ideia principal
+## Composição
+Um dispositivo composto oferece uma interface lógica e encaminha pedidos para membros inferiores. Concatenação coloca regiões em sequência; mapeamento traduz faixas; outras camadas podem transformar dados.
 
-Um dispositivo composto encaminha operações a dispositivos inferiores e traduz endereços entre camadas.
+## Exemplo
+A concatena A com 1.000 blocos e B com 2.000. O pedido lógico 990–1.009 cruza a fronteira: 10 blocos vêm de A e 10 de B.
 
-## 2. Cuidados que não podem ser esquecidos
+## Cuidados
+Divida operações que cruzam fronteiras, propague falhas, controle referências e rejeite ciclos no grafo de dependências. Capacidade publicada deve ser respaldada pelos membros.
 
-Valide cada faixa, divida pedidos em fronteiras e impeça ciclos no grafo. Remoções e falhas inferiores precisam propagar estado.
-
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Qual a diferença entre concatenação e espelhamento?
+2. Como mapear uma operação que cruza membros?
+3. O que é um ciclo de dependência?
+4. O que acontece quando um membro é removido?
+5. Composição sempre oferece redundância?

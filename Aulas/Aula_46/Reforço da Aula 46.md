@@ -1,20 +1,17 @@
-# Reforço da Aula 46 — Falhas parciais e degradação de conjuntos RAID
+# Reforço da Aula 46 — Falhas parciais e degradação RAID
 
-## 1. Ideia principal
+## Estado degradado
+O conjunto perdeu um membro ou parte da redundância, mas ainda pode oferecer algumas operações. Não deve ser apresentado como saudável.
 
-Conjunto degradado perdeu parte da redundância, mas pode continuar oferecendo dados conforme o nível e as falhas.
+## Exemplo
+Em um espelho, A responde e B falha. Leituras podem continuar em A, mas B precisa ser marcado como indisponível ou desatualizado. Se voltar, não é automaticamente confiável: precisa de verificação ou reconstrução.
 
-## 2. Cuidados que não podem ser esquecidos
+## Escrita parcial
+Se alguns membros concluírem e outros falharem, registre o resultado de cada membro. Não declare sincronização completa. Erros silenciosos também podem exigir checksums ou comparação de cópias/paridade.
 
-Registre divergências e saúde de cada membro. Não apresente conjunto degradado como saudável nem esconda risco de nova falha.
-
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. O que significa RAID degradado?
+2. Por que uma gravação parcial exige registrar cada membro?
+3. Como tratar um membro que voltou a responder?
+4. O que é erro silencioso?
+5. Por que o estado degradado aumenta o risco de perda?

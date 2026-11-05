@@ -1,20 +1,20 @@
-# Reforço da Aula 45 — Reconstrução e sincronização de conjuntos RAID
+# Reforço da Aula 45 — Reconstrução e sincronização RAID
 
-## 1. Ideia principal
+## Reconstrução
+Após substituir um membro, o conjunto lê os membros restantes, calcula os dados ou paridade necessários e grava o novo membro. O processo percorre o volume e pode durar bastante.
 
-Reconstrução repõe dados em membro substituído; sincronização verifica ou iguala membros e paridade.
+## Verificação
+Verificação procura divergências entre dados e paridade/cópias. Reconstrução produz conteúdo para um membro ausente. São tarefas relacionadas, mas não iguais.
 
-## 2. Cuidados que não podem ser esquecidos
+## Exemplo
+Em um espelho, A é saudável e B foi substituído. O sistema copia faixas de A para B. Se uma gravação nova atingir uma faixa já copiada, a política precisa garantir que B receba a versão mais recente.
 
-Acompanhe progresso, erros e estado persistente. Outra falha durante reconstrução pode causar perda conforme o nível.
+## Cuidados
+Persistir progresso, tratar erros, permitir retomada e informar que o conjunto continua vulnerável durante a reconstrução.
 
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Qual a diferença entre reconstruir e verificar?
+2. Por que a reconstrução consome recursos?
+3. Por que o conjunto fica vulnerável durante o processo?
+4. Como tratar gravações concorrentes?
+5. O que precisa ser salvo para retomar após reinicialização?

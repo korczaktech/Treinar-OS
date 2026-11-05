@@ -1,20 +1,27 @@
-# Reforço da Aula 44 — Níveis RAID e tolerância a falhas
+# Reforço da Aula 44 — Níveis RAID
 
-## 1. Ideia principal
+## Resumo dos níveis
+- RAID 0: distribuição sem redundância.
+- RAID 1: espelhamento.
+- RAID 5: distribuição com paridade simples; tolera uma falha.
+- RAID 6: paridade dupla; tolera duas falhas.
+- RAID 10: espelhamento combinado com distribuição; depende de quais membros falham.
 
-RAID 0 distribui sem redundância; RAID 1 espelha; RAID 5 usa paridade simples; RAID 6 dupla; RAID 10 combina espelhamento e distribuição.
+## Exemplo de capacidade
+Quatro discos de 2 TB:
+- RAID 0: aproximadamente 8 TB;
+- RAID 5: aproximadamente 6 TB;
+- RAID 6: aproximadamente 4 TB;
+- RAID 10: aproximadamente 4 TB.
 
-## 2. Cuidados que não podem ser esquecidos
+Capacidade não revela sozinha desempenho ou tolerância.
 
-Capacidade e tolerância dependem do nível e da posição das falhas. RAID não protege contra exclusão acidental.
+## Cuidados
+RAID não substitui backup. Em RAID 10, falhas em dois membros do mesmo par podem destruir o conjunto, enquanto falhas em pares diferentes podem ser toleradas.
 
-## 3. Ligação com o ZenithOS
-
-A implementação deve separar política, validação e acesso ao dispositivo. O gerenciador de volumes oferece uma abstração consistente, enquanto drivers executam operações específicas e comunicam falhas reais.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Qual nível não possui redundância?
+2. Quantas falhas RAID 5 e RAID 6 toleram?
+3. Como RAID 10 pode tolerar duas falhas em alguns casos?
+4. Calcule a capacidade aproximada de quatro discos de 1 TB em RAID 5.
+5. Por que RAID não substitui backup?
