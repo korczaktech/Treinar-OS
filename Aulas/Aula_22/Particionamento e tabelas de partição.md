@@ -26,13 +26,28 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Em um disco com 100.000 blocos, uma partição começa em 2.048 e tem 20.000 blocos. Qual é seu limite final exclusivo?
+2. As faixas [2.048, 22.048) e [22.048, 30.000) se sobrepõem? Justifique.
+3. Por que uma partição pode existir sem conter um sistema de arquivos?
+4. Quais verificações devem acontecer antes de publicar uma partição para as camadas superiores?
+5. O que o ZenithOS deve fazer ao encontrar um tipo de partição desconhecido?
+6. Por que a tabela de partições não deve ser tratada como entrada confiável?
 
-## 6. Critério de conclusão
+## 6. Exemplo guiado: validar duas partições
+Considere um dispositivo com 100.000 LBAs. A partição A começa em 2.048 e possui 20.000 blocos: seu intervalo é [2.048, 22.048). A partição B começa em 22.048 e possui 10.000 blocos: seu intervalo é [22.048, 32.048). Elas são adjacentes, não sobrepostas. Se B começasse em 22.047, compartilharia um bloco com A e deveria ser rejeitada quando o formato não permite sobreposição.
+
+Antes de publicar qualquer região, o parser precisa validar os campos, confirmar que cada intervalo cabe no dispositivo e comparar as regiões entre si. Uma tabela sintaticamente legível ainda pode conter uma partição fora dos limites.
+
+## 7. Tipos e atributos
+O tipo de partição é um identificador que comunica a finalidade ou o formato esperado da região. Atributos podem indicar características adicionais. O ZenithOS não deve interpretar um tipo desconhecido como se fosse automaticamente um sistema de arquivos conhecido. Deve preservar ou ignorar de forma controlada, conforme a política de compatibilidade.
+
+## 8. Método de aprendizagem
+Desenhe o disco como uma linha de LBAs. Para cada entrada da tabela, marque início e limite exclusivo. Em seguida, verifique capacidade, sobreposição e tipo. Por último, explique por que localizar uma partição não equivale a montá-la.
+
+## 9. Erros comuns
+Confundir quantidade com LBA final; aceitar sobreposição; presumir que todas as regiões contêm arquivos; tratar a tabela como confiável só porque o dispositivo a forneceu.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

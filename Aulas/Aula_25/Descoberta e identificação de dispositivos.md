@@ -26,13 +26,30 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Qual é a diferença entre descobrir um dispositivo e inicializá-lo?
+2. Por que um endereço de barramento não é uma identidade permanente?
+3. Que informações mínimas o ZenithOS deve registrar sobre uma unidade?
+4. O que pode acontecer se uma referência antiga for reutilizada após remoção e reconexão?
+5. Por que as capacidades anunciadas precisam ser validadas?
+6. Como distinguir um dispositivo descoberto de um dispositivo operacional?
 
-## 6. Critério de conclusão
+## 6. Etapas de descoberta
+A descoberta normalmente começa com a enumeração do barramento e dos controladores conhecidos. O sistema identifica uma função ou dispositivo, associa um driver compatível, inicializa a interface e consulta informações como capacidade, tamanho lógico, limites de transferência e recursos opcionais.
+
+Nem todo dispositivo encontrado está pronto para receber operações. Descoberto, inicializado e operacional são estados diferentes.
+
+## 7. Identidade não é endereço físico
+Um endereço no barramento descreve onde o dispositivo foi encontrado naquele momento. Um número de série pode ajudar a identificar a unidade física, mas pode estar ausente, duplicado ou ser fornecido incorretamente. O ZenithOS deve manter um identificador interno e controlar o ciclo de vida da referência.
+
+Uma referência antiga não pode passar a apontar para um novo dispositivo só porque ele ocupou o mesmo endereço do barramento. Um contador de geração ou mecanismo equivalente ajuda a detectar referências obsoletas.
+
+## 8. Exemplo guiado
+Durante o boot, o sistema encontra uma unidade, atribui um identificador interno e registra suas capacidades. Depois a unidade é removida. O registro muda para indisponível e as operações pendentes são tratadas. Se outra unidade aparecer no mesmo endereço, ela recebe uma nova identidade operacional.
+
+## 9. Método de aprendizagem
+Separe o processo em quatro perguntas: onde o dispositivo foi encontrado? qual driver pode operá-lo? quais capacidades ele declarou? em que estado está? Não misture descoberta com autorização para executar operações.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 
