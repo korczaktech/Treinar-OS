@@ -1,0 +1,14 @@
+// AULA 50 — EXERCÍCIO DE CÓDIGO
+// Projeto do gerenciador de volumes do ZenithOS
+//
+// Objetivo:
+// Crie um modelo integrado com dispositivo, partição e volume. Valide capacidade, limites, estado e tradução de LBA relativo; inclua falhas de descoberta e remoção.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
