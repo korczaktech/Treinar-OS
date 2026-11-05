@@ -195,11 +195,15 @@ Não é necessário acessar um SSD real. O objetivo é implementar corretamente 
 Estas perguntas são diferentes dos exercícios NBX:
 
 1. Por que um dispositivo com 200 blocos tem endereços de 0 até 199, mas seu intervalo completo é escrito como [0, 200)?
+> R| Porque o computador vê o ultimo numero como a barreira, como um numero que nao deveria contar.
 2. Qual é a diferença entre o último bloco acessado e o limite final exclusivo?
+> R| O ultimo bloco acessado, é o ultimo que `Quantidade` pede, e limite final exclusivo é o numero logo após o ultimo bloco acessado
 3. Por que verificar somente se o LBA inicial é válido não garante que uma operação com vários blocos seja válida?
+> R | traria estouro numerico
 4. Por que a comparação quantidade <= total - início pode ser mais segura do que somar início e quantidade antes de validar?
+> R | Porque ja quebra dois erros, o de total - inicio dar negativo, e quantidade ser maior que o numero possivel de blocos.
 5. Se uma operação começa no LBA 40 e solicita 6 blocos, quais endereços serão acessados e qual será o limite final exclusivo?
-
+> R | 40, 41, 42, 43, 44, 45, 46. E o final Exclusivo é 47.
 ## 10. Critério de conclusão
 
 A aula estará compreendida quando você conseguir:

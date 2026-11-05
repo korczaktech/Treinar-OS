@@ -170,10 +170,15 @@ Essa função só verifica se a quantidade é positiva. Ela ainda não verifica 
 ## 9. Perguntas de fixação
 
 1. Em [20, 25), quais blocos estão incluídos?
+> R | Inicio 20, Quantidade 4, Final exclusivo 25
 2. Quantos blocos existem em [20, 25)?
+> R | Existem 4
 3. Um dispositivo possui 50 blocos. Uma solicitação começa no LBA 48 e pede 2 blocos. É válida? Por quê?
+> R | Não é válida, por que começa no LBA 0, e termina no 49. 48 + 2 é 50, estouro numerico.
 4. Por que uma solicitação que começa em um endereço válido ainda pode ultrapassar o dispositivo?
+> R | Talvez a validação foi feita errada.
 5. Qual é a vantagem de verificar a quantidade usando o espaço restante antes de calcular o limite final?
+> R | Não sei responder essa.
 
 ## 10. Preparação para os exercícios
 
