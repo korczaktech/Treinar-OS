@@ -1,0 +1,14 @@
+// AULA 48 — EXERCÍCIO DE CÓDIGO
+// Clonagem e duplicação de volumes
+//
+// Objetivo:
+// Modele cópia de um volume para outro, validando capacidade e sobreposição. Interrompa a cópia em um ponto e marque o destino como incompleto até validação final.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
