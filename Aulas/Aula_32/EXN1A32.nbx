@@ -1,0 +1,14 @@
+// AULA 32 — EXERCÍCIO DE CÓDIGO
+// Discos removíveis e detecção de hot-plug
+//
+// Objetivo:
+// Modele conexão, remoção e reconexão com geração de conexão. Uma referência antiga deve ser rejeitada mesmo se o novo dispositivo receber o mesmo identificador físico.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
