@@ -1,0 +1,14 @@
+// AULA 36 — EXERCÍCIO DE CÓDIGO
+// Leitura e escrita parcial de blocos
+//
+// Objetivo:
+// Receba offset e tamanho em bytes e calcule primeiro e último LBA e deslocamentos internos. Inclua uma operação que atravesse três setores e outra que ultrapasse o volume.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
