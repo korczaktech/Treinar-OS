@@ -68,3 +68,7 @@ O ZenithOS deve usar primitivas criptográficas consolidadas, separar chaves dos
 
 - EXN1A20.nbx — validar permissões de leitura, gravação e operação privilegiada.
 - EXN2A20.nbx — classificar pedidos de descarte conforme as capacidades declaradas, sem afirmar apagamento garantido.
+
+
+## Método de estudo e exemplo guiado
+Siga uma gravação desde o processo até o dispositivo. Pergunte em cada etapa: o solicitante tem permissão? a faixa é válida? o buffer pertence à operação? o DMA pode acessar apenas a região autorizada? os logs expõem segredos? Depois compare exclusão lógica, discard e apagamento seguro suportado pelo dispositivo. Cada mecanismo tem uma garantia diferente.

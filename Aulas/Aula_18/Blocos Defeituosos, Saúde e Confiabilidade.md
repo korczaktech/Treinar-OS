@@ -57,3 +57,7 @@ O driver deve traduzir códigos do dispositivo em erros compreensíveis. O servi
 
 - EXN1A18.nbx — traduzir códigos de erro de dispositivo em categorias do sistema.
 - EXN2A18.nbx — interpretar indicadores fictícios de saúde sem produzir previsões absolutas.
+
+
+## Método de estudo e exemplo guiado
+Considere um dispositivo que apresenta aumento de erros corrigidos e um alerta de desgaste, mas ainda conclui leituras. Classifique isso como sinal de saúde, não como falha definitiva. Depois simule uma leitura irrecuperável: o driver deve propagar erro, não preencher o buffer com conteúdo inventado. Por fim, explique como backup e verificação de integridade complementam o monitoramento do hardware.

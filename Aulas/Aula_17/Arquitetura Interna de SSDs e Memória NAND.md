@@ -69,3 +69,7 @@ O ZenithOS deve trabalhar com a interface lógica do dispositivo e usar comandos
 
 - EXN1A17.nbx — simular um mapa lógico para páginas físicas, permitindo remapeamento.
 - EXN2A17.nbx — simular coleta de lixo com páginas válidas e inválidas, preservando o conteúdo válido.
+
+
+## Método de estudo e exemplo guiado
+Acompanhe um LBA que aponta para uma página NAND. Quando o host atualiza o conteúdo, o controlador pode gravar uma nova página e alterar o mapeamento do FTL, deixando a página antiga inválida. Depois, a coleta de lixo precisa preservar páginas válidas antes de apagar o bloco. Marque quais decisões pertencem ao controlador e quais informações o host realmente conhece.

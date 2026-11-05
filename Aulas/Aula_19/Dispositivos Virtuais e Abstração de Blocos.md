@@ -61,3 +61,7 @@ O ZenithOS deve implementar primeiro uma interface de dispositivo de blocos e um
 
 - EXN1A19.nbx — implementar um dispositivo de blocos em memória com limites.
 - EXN2A19.nbx — criar uma camada de dispositivo virtual que encaminha operações para uma faixa de outro dispositivo.
+
+
+## Método de estudo e exemplo guiado
+Crie mentalmente dois dispositivos que implementam a mesma interface: um disco em RAM e um dispositivo físico. Faça uma leitura e uma gravação nos dois. A camada superior usa os mesmos parâmetros, mas o descritor informa capacidades diferentes. Depois encadeie um volume virtual sobre uma faixa inferior e verifique limites e propagação de erros.

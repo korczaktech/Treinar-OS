@@ -77,3 +77,7 @@ O ZenithOS deve definir erros tipados, prazos por operação, política de repet
 
 - EXN1A16.nbx — classificar erros e escolher ações permitidas.
 - EXN2A16.nbx — calcular agenda de tentativas com backoff e limite máximo.
+
+
+## Método de estudo e exemplo guiado
+Classifique cinco situações: parâmetro inválido, timeout, erro de mídia, falha de comunicação e remoção. Para cada uma, decida se a operação pode ser repetida. Uma leitura pode ser repetível em algumas condições; uma gravação pode ter resultado incerto se a conexão cair depois que o dispositivo recebeu o comando. Simule backoff com limite máximo e um número finito de tentativas. Explique por que repetir cegamente pode piorar a falha.

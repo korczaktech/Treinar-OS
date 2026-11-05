@@ -133,3 +133,7 @@ Não implemente tudo ao mesmo tempo. Cada etapa precisa manter testes verdes ant
 ## Critério de conclusão
 
 Você deve conseguir explicar o caminho de uma operação desde o sistema de arquivos até o dispositivo, identificar a responsabilidade de cada camada e propor testes que verifiquem os contratos essenciais do ZenithOS.
+
+
+## Método de estudo e exemplo guiado
+Escolha uma leitura de arquivo e percorra todas as camadas, anotando entrada, validação, transformação e resultado de cada uma. Repita com uma gravação que falha depois da submissão. Por fim, transforme invariantes em casos de teste: faixa fora do limite, buffer liberado cedo, conclusão atrasada, partição sobreposta e erro de mídia. A arquitetura só está clara quando é possível localizar a responsabilidade de cada falha.
