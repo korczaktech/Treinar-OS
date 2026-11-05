@@ -17,3 +17,7 @@ Volume começa no LBA 2.000 e possui 500 blocos. Uma requisição relativa no LB
 3. Qual é o LBA absoluto para início de volume 2.000 e LBA relativo 20?
 4. Um volume de 500 blocos aceita início relativo 499 e quantidade 1?
 5. Por que a tradução precisa validar a faixa antes de somar os endereços?
+
+
+## Exemplo guiado de limite do volume
+Um volume começa no LBA 10.000 e possui 5.000 blocos. O último LBA relativo válido é 4.999. Uma requisição relativa que começa em 4.990 e pede 10 blocos acessa 4.990 até 4.999 e cabe exatamente. Se pedir 11, ultrapassa o volume, mesmo que o dispositivo físico possua outros blocos depois dele.

@@ -15,3 +15,7 @@ A conclusão agregada precisa informar se todos os segmentos terminaram, quantos
 3. Divida 350 blocos em segmentos de no máximo 128.
 4. Como evitar lacunas e sobreposição?
 5. Como representar falha no último segmento?
+
+
+## Exemplo guiado de divisão
+Uma requisição começa no LBA 800 e pede 350 blocos, com máximo de 128 por comando. Os segmentos são: LBA 800 com 128 blocos; LBA 928 com 128; LBA 1.056 com 94. A soma é 350 e cada segmento começa imediatamente após o anterior.
