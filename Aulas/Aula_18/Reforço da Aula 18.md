@@ -23,3 +23,10 @@ Temperatura, desgaste e contadores ajudam no monitoramento. Não são uma previs
 3. Como tratar uma leitura irrecuperável?
 4. Um indicador de saúde baixo prova que a falha ocorrerá hoje?
 5. Por que checksum e backup têm funções diferentes?
+
+
+## Exemplo guiado: alerta não é certeza
+Um dispositivo informa temperatura elevada e aumento de erros corrigidos, mas continua lendo dados. Isso justifica monitoramento e alerta, não afirmar que a falha ocorrerá em determinado momento. Se uma leitura não puder ser recuperada, o driver deve propagar o erro.
+
+## Como revisar
+Separe indicadores preventivos, erros confirmados e dados irrecuperáveis. Explique como backup e verificação de integridade complementam a saúde do hardware.

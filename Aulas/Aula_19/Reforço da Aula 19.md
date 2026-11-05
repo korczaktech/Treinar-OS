@@ -27,3 +27,10 @@ Uma camada pode encaminhar para outra, mas deve validar limites, impedir ciclos 
 3. O que o descritor informa sobre capacidades?
 4. Qual problema um ciclo de encaminhamento pode causar?
 5. Por que um dispositivo virtual tem identidade própria?
+
+
+## Exemplo guiado: dispositivo em RAM
+Crie um dispositivo virtual de 100 blocos com 512 bytes por bloco. Uma gravação no LBA 10 altera o buffer em memória; uma leitura posterior retorna o conteúdo enquanto o dispositivo virtual existir. Ao desligar, o conteúdo normalmente desaparece, pois RAM não é persistente.
+
+## Como revisar
+Compare dispositivo físico, dispositivo em RAM e camada virtual que encaminha operações. Para cada um, registre identidade, capacidades, persistência e tratamento de falhas.

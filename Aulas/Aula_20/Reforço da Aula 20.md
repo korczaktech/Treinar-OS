@@ -27,3 +27,10 @@ Registre o tipo e o contexto do erro, mas não exponha senhas, chaves ou conteú
 3. O que acontece se a chave for perdida?
 4. Por que sobrescrever um LBA pode não apagar páginas antigas?
 5. Quais informações não devem aparecer em logs?
+
+
+## Exemplo guiado: proteger uma gravação
+Um processo sem privilégio solicita gravação direta em um LBA do disco do sistema. O kernel deve negar a operação. Se um serviço autorizado realizar a gravação, ainda precisa validar faixa, buffer, permissões e mapeamento DMA. Os logs registram o resultado sem copiar chaves ou conteúdo sensível.
+
+## Como revisar
+Para cada mecanismo, identifique a ameaça que reduz e o que não protege: permissões, isolamento de buffers, criptografia em repouso e descarte.

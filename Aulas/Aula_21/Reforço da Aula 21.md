@@ -32,3 +32,10 @@ Nenhuma faixa fora dos limites; nenhum buffer usado depois de liberado; nenhuma 
 4. Cite três regras que devem ser verificadas automaticamente.
 5. Por que uma gravação concluída não significa sempre que os dados estão persistidos?
 6. O que o ZBL precisa fazer antes de o kernel assumir o controle?
+
+
+## Exemplo guiado: caminho integrado
+Um programa solicita leitura de arquivo. O sistema de arquivos converte a posição do arquivo em blocos; o cache procura os dados; a camada de blocos valida faixa e buffer; o driver prepara a operação; o dispositivo transfere os bytes; a conclusão retorna até o programa. Se o dispositivo falhar, cada camada propaga o erro sem inventar sucesso.
+
+## Como revisar
+Desenhe o caminho da leitura e da gravação. Para cada camada, escreva responsabilidade, entrada, validação, saída e falhas possíveis. Depois transforme os invariantes em testes.

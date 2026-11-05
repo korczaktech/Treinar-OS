@@ -28,3 +28,10 @@ Wear leveling distribui ciclos de apagamento. TRIM informa que certos LBAs não 
 4. Por que existe coleta de lixo?
 5. TRIM é uma ferramenta de destruição segura?
 6. O que o wear leveling tenta evitar?
+
+
+## Exemplo guiado: atualização de página NAND
+O LBA 12 está mapeado para a página física P. O host grava novos dados. O controlador pode programar outra página Q e atualizar o FTL para que o LBA 12 passe a apontar para Q. P torna-se inválida e poderá ser apagada depois, quando o bloco que a contém passar pela coleta de lixo.
+
+## Como revisar
+Desenhe o mapeamento LBA → página. Simule uma atualização, marque a página antiga como inválida e explique por que o host não escolhe diretamente a página NAND.
