@@ -55,3 +55,7 @@ Você concluiu a aula quando conseguir explicar o conceito com suas palavras, re
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
+
+
+## Método de estudo
+Desenhe o primeiro setor lógico e marque o código de inicialização, o identificador do disco, as quatro entradas e a assinatura. Depois crie uma partição estendida e percorra uma cadeia de EBRs. Em cada passo, anote o endereço do registro, a referência relativa, o intervalo da partição lógica e os limites da região estendida. Termine simulando um ciclo e uma entrada fora dos limites.
