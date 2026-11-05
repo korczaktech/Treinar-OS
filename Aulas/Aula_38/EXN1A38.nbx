@@ -1,0 +1,14 @@
+// AULA 38 — EXERCÍCIO DE CÓDIGO
+// Ordenação de requisições de armazenamento
+//
+// Objetivo:
+// Modele requisições com identificador e dependências. Só libere para execução pedidos cujas dependências tenham sido concluídas; detecte dependências inexistentes e ciclos.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
