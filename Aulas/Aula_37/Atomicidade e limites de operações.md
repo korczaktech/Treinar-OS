@@ -26,13 +26,33 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Qual é a diferença entre atomicidade e durabilidade?
+2. Uma gravação de 8 KiB é automaticamente atômica se o dispositivo garante atomicidade de 4 KiB?
+3. Por que flush não transforma várias gravações em uma transação indivisível?
+4. Qual é o papel de journal ou copy-on-write quando o hardware não oferece atomicidade suficiente?
+5. Como distinguir conclusão, consistência e persistência?
+6. Por que o ZenithOS deve consultar os limites de atomicidade anunciados?
 
-## 6. Critério de conclusão
+## 6. Atomicidade, consistência e durabilidade
+Esses três conceitos não são sinônimos:
+- **Atomicidade:** a operação é observada como uma unidade conforme o contrato; não aparece parcialmente aplicada.
+- **Consistência:** as regras e invariantes do formato continuam verdadeiras.
+- **Durabilidade:** depois da confirmação definida pelo contrato, a alteração sobrevive às falhas cobertas pela garantia.
+
+Uma gravação pode ser atômica, mas ainda estar em cache volátil e não ser durável. Uma sequência de várias gravações pode ser durável individualmente e ainda deixar estruturas inconsistentes se a ordem estiver errada.
+
+## 7. Limites de atomicidade
+O dispositivo pode anunciar limites de escrita atômica, tamanho máximo, alinhamento e condições específicas. Essas garantias normalmente se aplicam a determinadas unidades e circunstâncias, não a qualquer sequência arbitrária de comandos.
+
+Sem garantia explícita, o kernel deve considerar que uma gravação pode ser interrompida parcialmente.
+
+## 8. Exemplo guiado
+Um sistema precisa atualizar um registro de 8 KiB, mas o dispositivo só garante atomicidade de 4 KiB sob alinhamento específico. Não é correto assumir que duas gravações de 4 KiB formam automaticamente uma operação atômica de 8 KiB. A camada superior precisa de journal, copy-on-write ou outro mecanismo para preservar consistência.
+
+## 9. Método de aprendizagem
+Para cada cenário, pergunte: a operação pode aparecer parcialmente? as invariantes continuam válidas? a alteração sobrevive à falta de energia? Responda separadamente.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

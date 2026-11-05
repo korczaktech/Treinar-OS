@@ -26,13 +26,34 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Qual é a diferença entre despacho e escalonamento?
+2. Como FIFO escolhe o próximo pedido?
+3. O que é starvation e como aging pode reduzi-lo?
+4. Por que maximizar throughput pode aumentar a latência?
+5. Qual é a finalidade de uma política baseada em deadline?
+6. Por que o ZenithOS deve medir antes de trocar sua política de escalonamento?
 
-## 6. Critério de conclusão
+## 6. Políticas comuns
+- **FIFO:** atende pela ordem de chegada. É simples e previsível, mas pode não maximizar desempenho.
+- **Prioridade:** atende pedidos importantes antes de outros. Sem controle, pode deixar pedidos comuns esperando indefinidamente.
+- **Aging:** aumenta gradualmente a prioridade de pedidos que esperam há muito tempo.
+- **Agrupamento:** combina pedidos compatíveis para reduzir overhead.
+- **Deadline:** tenta impedir que uma requisição ultrapasse um tempo máximo de espera definido pela política.
+
+Nenhuma política é ideal para todos os dispositivos e cargas.
+
+## 7. Métricas que entram em conflito
+Throughput mede volume de dados por tempo. Latência mede quanto uma requisição demora. Justiça observa como o tempo de espera é distribuído. Melhorar uma métrica pode piorar outra.
+
+Por exemplo, manter uma fila cheia pode aumentar throughput em um dispositivo, mas elevar latência para operações interativas.
+
+## 8. Exemplo guiado
+Três pedidos chegam: A de baixa prioridade, B e C de alta prioridade. Uma política estrita pode executar B e C primeiro repetidamente, deixando A sem atendimento. Aging aumenta a prioridade de A enquanto espera e reduz o risco de starvation.
+
+## 9. Método de aprendizagem
+Use uma pequena fila de pedidos com chegada, prioridade e duração. Simule FIFO e prioridade, compare ordem, espera e latência. Depois aplique aging e veja se todos recebem oportunidade.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

@@ -33,3 +33,26 @@ Você concluiu quando conseguir agrupar operações compatíveis, dividir uma op
 
 > - **Dificuldade:** Muito difícil
 > - **Duração:** 50 minutos
+
+
+## 6. Exemplo completo de divisão
+Uma solicitação começa no LBA 800 e pede 350 blocos. O limite máximo por comando é 128 blocos. A divisão correta é:
+- segmento 1: LBA 800, quantidade 128;
+- segmento 2: LBA 928, quantidade 128;
+- segmento 3: LBA 1.056, quantidade 94.
+
+Os segmentos devem cobrir exatamente a faixa original. A soma 128 + 128 + 94 é 350. O segundo começa no primeiro LBA depois do segmento anterior, e o terceiro segue a mesma regra.
+
+## 7. Compatibilidade para agrupamento
+Além de adjacência, verifique mesmo dispositivo, mesma direção, compatibilidade dos buffers, mesma classe de prioridade e ausência de dependências que impeçam a união. Um pedido de leitura não deve ser unido a uma gravação só porque os LBAs são vizinhos.
+
+## 8. Método de aprendizagem
+Desenhe a faixa original, divida-a, confira a soma, confira o LBA inicial de cada segmento e simule erro em um deles. Registre o resultado agregado sem esconder a falha parcial.
+
+## Exercícios de compreensão
+1. Quais condições precisam ser verdadeiras para agrupar duas requisições?
+2. Por que duas faixas adjacentes de dispositivos diferentes não podem ser agrupadas?
+3. Divida uma requisição de 350 blocos em segmentos de no máximo 128 blocos.
+4. Como garantir que a divisão não crie lacunas nem sobreposição?
+5. O que fazer se um dos segmentos falhar depois que os anteriores concluíram?
+6. Por que direção, prioridade e dependências importam no agrupamento?

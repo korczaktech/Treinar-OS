@@ -26,13 +26,35 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Qual é a diferença entre latência, throughput e IOPS?
+2. Por que p95 e p99 podem revelar problemas que a média esconde?
+3. Calcule o throughput de 1.000 MiB transferidos em 10 segundos.
+4. Por que o tamanho do bloco e o padrão de acesso precisam ser documentados?
+5. Cite três camadas que podem ser responsáveis por um gargalo.
+6. Por que benchmarks de escrita precisam de cuidado com dados e desgaste do SSD?
 
-## 6. Critério de conclusão
+## 6. Métricas fundamentais
+- **Latência:** tempo entre solicitar e concluir uma operação.
+- **Throughput:** quantidade de dados transferidos por unidade de tempo.
+- **IOPS:** quantidade de operações concluídas por segundo.
+- **Profundidade de fila:** quantidade de pedidos pendentes ou em andamento.
+- **Percentis:** p50, p95 e p99 mostram pontos da distribuição de latência.
+
+Uma média baixa não garante que todas as operações sejam rápidas. p99 elevado pode indicar que uma pequena parte dos pedidos sofre atrasos importantes.
+
+## 7. Carga de teste importa
+Leitura sequencial, leitura aleatória, gravação sequencial e gravação aleatória podem produzir resultados muito diferentes. Tamanho do bloco, concorrência, aquecimento, cache e sincronização alteram o resultado. Um benchmark deve documentar essas condições para que a comparação seja justa.
+
+## 8. Exemplo guiado
+Se um teste transfere 1.000 MiB em 10 segundos, throughput médio é 100 MiB/s. Se conclui 2.000 operações em 10 segundos, IOPS médio é 200. Essas métricas não dizem sozinhas se a latência p99 é aceitável; precisamos observar a distribuição dos tempos.
+
+## 9. Encontrar o gargalo
+O atraso pode estar na fila do kernel, no driver, no barramento, no controlador, no dispositivo ou na sincronização da aplicação. Medir apenas o tempo total não identifica a camada responsável. O ZenithOS deve registrar tempos por etapa quando possível.
+
+## 10. Método de aprendizagem
+Defina hipótese, carga, métrica e resultado esperado antes de executar um teste. Altere uma variável por vez e compare resultados repetíveis. Não faça benchmarks destrutivos em dados importantes.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 
