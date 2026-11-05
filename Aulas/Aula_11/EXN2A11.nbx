@@ -1,0 +1,14 @@
+// AULA 11 — EXERCÍCIO 2
+// Identidade da entrada de cache
+//
+// Modele uma chave formada por identificador do dispositivo e LBA.
+// Implemente comparação de chaves e consulta em uma coleção pequena.
+//
+// Casos:
+// dispositivo 1, LBA 10 == dispositivo 1, LBA 10 -> verdadeiro
+// dispositivo 1, LBA 10 == dispositivo 2, LBA 10 -> falso
+// dispositivo 1, LBA 10 == dispositivo 1, LBA 11 -> falso
+//
+// Não use apenas o LBA para decidir se duas entradas são iguais.
+//
+// Escreva sua solução abaixo.

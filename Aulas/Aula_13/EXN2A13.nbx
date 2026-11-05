@@ -1,0 +1,12 @@
+// AULA 13 — EXERCÍCIO 2
+// Identificadores de operações
+//
+// Modele operações ativas com identificadores.
+// Uma conclusão deve encontrar exatamente uma operação ativa.
+// Não aceite identificador desconhecido nem reutilize identificador
+// enquanto estiver ativo.
+//
+// Crie casos com duas operações simultâneas, conclusão fora de ordem,
+// identificador repetido e conclusão desconhecida.
+//
+// Escreva sua solução abaixo.

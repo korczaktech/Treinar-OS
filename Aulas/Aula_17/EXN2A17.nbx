@@ -1,0 +1,11 @@
+// AULA 17 — EXERCÍCIO 2
+// Coleta de lixo didática
+//
+// Modele blocos contendo páginas válidas e inválidas.
+// Ao reutilizar um bloco, preserve todas as páginas válidas,
+// movendo-as para espaço disponível antes de apagar o bloco antigo.
+//
+// Teste bloco totalmente inválido, parcialmente válido e sem espaço
+// para mover páginas. Não descarte dados válidos.
+//
+// Escreva sua solução abaixo.

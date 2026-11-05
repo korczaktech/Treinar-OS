@@ -1,0 +1,12 @@
+// AULA 21 — EXERCÍCIO 1
+// Validador integrado
+//
+// Crie uma função que valide uma solicitação de bloco usando:
+// dispositivo registrado, capacidade, tamanho de bloco,
+// LBA inicial, quantidade, direção e capacidade do buffer.
+// Considere alinhamento e capacidades declaradas.
+// Rejeite parâmetros inválidos antes de encaminhar a operação.
+//
+// Crie casos válidos e inválidos combinando as regras das aulas anteriores.
+//
+// Escreva sua solução abaixo.

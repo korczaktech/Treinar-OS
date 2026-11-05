@@ -1,0 +1,11 @@
+// AULA 19 — EXERCÍCIO 1
+// Dispositivo de blocos em memória
+//
+// Implemente um dispositivo simulado com capacidade e tamanho de bloco.
+// Permita ler e gravar intervalos válidos.
+// Rejeite faixas fora dos limites e buffers insuficientes.
+// Preserve os dados entre operações enquanto a instância existir.
+//
+// Teste leitura inicial, gravação, leitura posterior e limites.
+//
+// Escreva sua solução abaixo.

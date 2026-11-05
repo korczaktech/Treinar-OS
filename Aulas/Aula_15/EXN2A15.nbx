@@ -1,0 +1,12 @@
+// AULA 15 — EXERCÍCIO 2
+// Vida útil do buffer
+//
+// Modele estados: PREPARADO, EM_USO_PELO_DISPOSITIVO,
+// CONCLUIDO e LIBERADO.
+// O buffer só pode ser liberado quando o dispositivo não puder
+// mais acessá-lo. Cancelamento solicitado não equivale a confirmação.
+//
+// Crie testes para conclusão normal, cancelamento pendente,
+// cancelamento confirmado e tentativa de liberação prematura.
+//
+// Escreva sua solução abaixo.

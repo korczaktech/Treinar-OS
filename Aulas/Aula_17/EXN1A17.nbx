@@ -1,0 +1,11 @@
+// AULA 17 — EXERCÍCIO 1
+// Mapeamento lógico-físico didático
+//
+// Modele uma tabela que associa LBA a uma página física.
+// Atualize um LBA usando uma nova página e invalide a referência antiga.
+// Nunca deixe dois mapeamentos atuais para o mesmo LBA.
+//
+// Teste leitura, atualização, LBA inexistente e falta de página livre.
+// Esta simulação não representa um FTL real completo.
+//
+// Escreva sua solução abaixo.

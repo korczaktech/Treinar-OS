@@ -1,0 +1,11 @@
+// AULA 15 — EXERCÍCIO 1
+// Descritor DMA didático
+//
+// Valide endereço mapeado, tamanho positivo, direção permitida
+// e limites informados pelo mecanismo.
+// Não trate endereço virtual como endereço DMA automaticamente.
+//
+// Crie casos válidos, endereço ausente, tamanho zero,
+// tamanho acima do limite e direção inválida.
+//
+// Escreva sua solução abaixo.

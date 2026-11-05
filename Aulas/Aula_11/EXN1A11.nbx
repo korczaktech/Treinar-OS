@@ -1,0 +1,12 @@
+// AULA 11 — EXERCÍCIO 1
+// Estados de uma entrada de cache
+//
+// Modele LIMPA, SUJA, EM_CARREGAMENTO e INVALIDA.
+// Defina transições permitidas para leitura, modificação, conclusão
+// de gravação, falha e invalidação.
+// Não permita descartar uma entrada SUJA sem tratar a gravação pendente.
+//
+// Crie casos válidos e inválidos para cada transição.
+// Documente o resultado esperado de cada caso.
+//
+// Escreva sua solução abaixo.

@@ -1,0 +1,13 @@
+// AULA 12 — EXERCÍCIO 1
+// Dependências de ordenação
+//
+// Receba uma sequência de operações identificadas por etapa.
+// Verifique se cada dependência foi concluída antes da operação
+// que depende dela.
+// Modele ao menos: gravar_dados, sincronizar_dados,
+// gravar_metadados e sincronizar_metadados.
+//
+// Crie sequências corretas e incorretas.
+// Não considere a ordem de emissão como prova de persistência.
+//
+// Escreva sua solução abaixo.

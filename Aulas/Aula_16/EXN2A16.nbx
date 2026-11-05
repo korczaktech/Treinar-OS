@@ -1,0 +1,11 @@
+// AULA 16 — EXERCÍCIO 2
+// Backoff limitado
+//
+// Calcule os intervalos de espera de tentativas usando um intervalo
+// inicial e um fator de crescimento definidos por você.
+// Aplique limite máximo por intervalo e número máximo de tentativas.
+// Rejeite parâmetros inválidos e evite estouro numérico.
+//
+// Mostre a sequência esperada para alguns parâmetros pequenos.
+//
+// Escreva sua solução abaixo.

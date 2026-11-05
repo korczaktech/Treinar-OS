@@ -1,0 +1,11 @@
+// AULA 13 — EXERCÍCIO 1
+// Fila limitada
+//
+// Implemente uma fila com capacidade máxima definida.
+// Permita inserir e retirar solicitações sem ultrapassar a capacidade.
+// Trate fila vazia, fila cheia e ordem de atendimento.
+//
+// Casos: inserir até o limite; tentar inserir mais uma;
+// retirar da fila; inserir novamente; retirar de fila vazia.
+//
+// Escreva sua solução abaixo.

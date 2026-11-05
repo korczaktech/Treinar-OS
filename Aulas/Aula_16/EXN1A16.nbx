@@ -1,0 +1,12 @@
+// AULA 16 — EXERCÍCIO 1
+// Classificação e ação de erro
+//
+// Modele erros: PARAMETRO_INVALIDO, FORA_DOS_LIMITES,
+// TIMEOUT, FALHA_DE_COMUNICACAO, ERRO_DE_MIDIA e REMOVIDO.
+// Para cada tipo, devolva a ação permitida segundo uma política
+// documentada: rejeitar, investigar, tentar novamente se seguro,
+// ou marcar indisponível.
+//
+// Crie ao menos um caso para cada erro.
+//
+// Escreva sua solução abaixo.

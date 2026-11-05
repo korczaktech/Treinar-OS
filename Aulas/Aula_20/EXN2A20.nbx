@@ -1,0 +1,13 @@
+// AULA 20 — EXERCÍCIO 2
+// Capacidades de descarte
+//
+// Receba as capacidades declaradas por um dispositivo e um pedido
+// de descarte de faixa.
+// Valide suporte, limites e parâmetros.
+// Diferencie: não suportado, pedido aceito e resultado confirmado.
+// Não declare apagamento físico seguro sem garantia explícita.
+//
+// Crie casos para dispositivo sem suporte, faixa inválida,
+// pedido aceito e falha reportada.
+//
+// Escreva sua solução abaixo.

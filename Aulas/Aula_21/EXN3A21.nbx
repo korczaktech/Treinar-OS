@@ -1,0 +1,15 @@
+// AULA 21 — EXERCÍCIO 3
+// Testes de invariantes
+//
+// Use um dispositivo em RAM ou uma representação equivalente.
+// Crie testes automatizados para:
+// - rejeitar faixa fora dos limites;
+// - rejeitar buffer insuficiente;
+// - preservar dados após gravação e leitura;
+// - não liberar buffer em uso;
+// - não aceitar conclusão desconhecida;
+// - propagar falha sem declarar sucesso.
+//
+// Cada teste deve indicar claramente o resultado esperado.
+//
+// Escreva sua solução abaixo.

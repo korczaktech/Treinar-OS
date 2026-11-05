@@ -1,0 +1,11 @@
+// AULA 20 — EXERCÍCIO 1
+// Controle de permissões
+//
+// Modele permissões de leitura, gravação e operação administrativa.
+// Receba o nível de acesso do solicitante e a operação pretendida.
+// Autorize somente combinações permitidas pela política documentada.
+//
+// Teste usuário sem permissão, leitura autorizada, gravação autorizada
+// e operação administrativa solicitada por usuário comum.
+//
+// Escreva sua solução abaixo.

@@ -1,0 +1,12 @@
+// AULA 18 — EXERCÍCIO 2
+// Interpretação de saúde
+//
+// Receba indicadores fictícios: temperatura, percentual de desgaste,
+// contador de erros e alerta crítico.
+// Classifique em NORMAL, ATENCAO ou CRITICO usando limites
+// explicitamente documentados.
+//
+// Não calcule data de falha nem prometa vida útil restante.
+// Teste limites e combinações contraditórias.
+//
+// Escreva sua solução abaixo.

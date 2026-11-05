@@ -1,0 +1,11 @@
+// AULA 21 — EXERCÍCIO 2
+// Simulador de operações
+//
+// Modele fila, identificadores, estados, conclusão e falhas.
+// Simule operações concorrentes e conclusões fora de ordem.
+// Garanta que cada resultado pertença à solicitação correta.
+// Inclua timeout, remoção e cancelamento pendente.
+//
+// Documente os resultados esperados dos cenários.
+//
+// Escreva sua solução abaixo.

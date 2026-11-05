@@ -1,0 +1,11 @@
+// AULA 19 — EXERCÍCIO 2
+// Encaminhamento virtual
+//
+// Modele um dispositivo virtual que encaminha uma faixa lógica
+// para uma faixa de um dispositivo-base.
+// Valide o deslocamento e a quantidade antes de encaminhar.
+// Não permita acesso fora da região mapeada.
+//
+// Teste início, fim válido, ultrapassagem e dispositivo-base indisponível.
+//
+// Escreva sua solução abaixo.

@@ -1,0 +1,11 @@
+// AULA 12 — EXERCÍCIO 2
+// Pendências de sincronização
+//
+// Modele operações de escrita com estado pendente/concluído.
+// Implemente uma rotina que identifique se ainda há gravações
+// anteriores que precisam ser sincronizadas.
+//
+// Teste: nenhuma escrita pendente; uma escrita pendente;
+// várias escritas com apenas parte concluída.
+//
+// Escreva sua solução abaixo.

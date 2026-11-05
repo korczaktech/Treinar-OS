@@ -1,0 +1,10 @@
+// AULA 14 — EXERCÍCIO 2
+// Correlação de eventos
+//
+// Receba um evento com identificador e uma coleção de operações ativas.
+// Atualize somente a operação correspondente.
+// Evento desconhecido deve ser ignorado ou reportado sem alterar outras.
+//
+// Teste evento correto, identificador desconhecido e evento duplicado.
+//
+// Escreva sua solução abaixo.

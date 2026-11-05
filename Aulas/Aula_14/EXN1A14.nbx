@@ -1,0 +1,12 @@
+// AULA 14 — EXERCÍCIO 1
+// Polling com limite
+//
+// Modele uma consulta repetida a um estado.
+// A operação termina quando o estado indicar conclusão.
+// Se atingir o limite de consultas sem conclusão, devolva timeout.
+// Não crie laço infinito.
+//
+// Teste conclusão imediata, conclusão na última consulta permitida
+// e ausência de conclusão.
+//
+// Escreva sua solução abaixo.

@@ -1,0 +1,11 @@
+// AULA 18 — EXERCÍCIO 1
+// Tradução de erros
+//
+// Modele códigos fictícios recebidos do dispositivo e converta-os
+// em categorias: ERRO_DE_MIDIA, TIMEOUT, REMOVIDO,
+// FALHA_DE_COMUNICACAO ou DESCONHECIDO.
+// Preserve a distinção entre erro conhecido e código desconhecido.
+//
+// Crie pelo menos um teste por categoria.
+//
+// Escreva sua solução abaixo.
