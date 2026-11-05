@@ -1,0 +1,14 @@
+// AULA 29 — EXERCÍCIO DE CÓDIGO
+// Metadados e estruturas de armazenamento
+//
+// Objetivo:
+// Modele um cabeçalho persistente com assinatura, versão e tamanho. Valide campos e converta os dados em uma estrutura interna sem armazenar ponteiros ou estado temporário.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
