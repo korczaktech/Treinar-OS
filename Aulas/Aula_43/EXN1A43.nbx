@@ -1,0 +1,14 @@
+// AULA 43 — EXERCÍCIO DE CÓDIGO
+// Volumes distribuídos e espelhados
+//
+// Objetivo:
+// Simule um volume espelhado com dois membros. Modele gravação, leitura, remoção de um membro e divergência entre cópias. Exponha estado saudável ou degradado.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
