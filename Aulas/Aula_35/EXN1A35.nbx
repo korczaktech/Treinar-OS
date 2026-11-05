@@ -1,0 +1,14 @@
+// AULA 35 — EXERCÍCIO DE CÓDIGO
+// Operações de leitura e escrita em múltiplos blocos
+//
+// Objetivo:
+// Valide uma operação de múltiplos blocos e divida-a em segmentos que respeitem o limite máximo por comando. Garanta que segmentos sejam contíguos e cubram exatamente a operação original.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
