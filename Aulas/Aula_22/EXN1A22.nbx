@@ -1,0 +1,14 @@
+// AULA 22 — EXERCÍCIO DE CÓDIGO
+// Particionamento e tabelas de partição
+//
+// Objetivo:
+// Modele um disco com capacidade total e uma lista de partições. Valide início, quantidade, limite final exclusivo e sobreposição entre partições. Inclua partição que termina exatamente na capacidade e partição que ultrapassa o limite.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
