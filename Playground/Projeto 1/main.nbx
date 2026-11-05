@@ -1,0 +1,6 @@
+constante x: texto = "--------------------"
+variavel nome: texto = nulo
+variavel idade: inteiro = nulo
+variavel status: texto = "Sem Registro"
+variavel Conta: texto = "Sem Registro"
+

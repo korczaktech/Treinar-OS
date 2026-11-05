@@ -31,8 +31,20 @@
 // faixa_valida(10, 1, 0)     -> falso
 //
 // Escreva sua solução abaixo.
-variavel inicio: inteiro = 200
-variavel quantidade: inteiro = 200
-constante blocos: inteiro = 200
-quando inicio > 0 e quantidade > 0 e blocos > 0 e inicio <= blocos e quantidade <= inicio - blocos
-    exibir("Tudo corretamente interligado!")
+variavel inicio: inteiro = entrada("Escolha um número de inicio")
+variavel quantidade: inteiro = entrada("Escolha a quantidade de blocos que quer vistoriar")
+
+publico constante TOTAL: inteiro = 200
+funcao ValidarLBA(inteiro: inicio, inteiro: quantidade, inteiro: TOTAL): {
+    se TOTAL >= 0 e inicio >= 0 e quantidade > 0 e inicio <= TOTAL e quantidade <= TOTAL - inicio: {
+        exibir("Teste funcionando!")
+        para i dentro faixa(inicio, quantidade): {
+            exibir(f"Blocos acessados: faixa")
+            fim
+        }
+        fim
+    }
+    fim
+}
+
+ValidarLBA(inicio, quantidade)
