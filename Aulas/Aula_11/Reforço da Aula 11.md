@@ -23,3 +23,10 @@ LBA 10 do dispositivo A não é o mesmo bloco que LBA 10 do dispositivo B. A ide
 3. Por que uma leitura pode ficar desatualizada?
 4. O que deve acontecer antes de remover uma entrada suja?
 5. Por que dispositivo e LBA formam uma chave mais segura que LBA isolado?
+
+
+## Exemplo guiado: entrada suja
+O cache contém o bloco do dispositivo A, LBA 40. Uma gravação altera o conteúdo. A entrada passa a SUJA porque a nova versão ainda não foi enviada ou persistida conforme a política. Se o sistema precisar reutilizar a entrada, não pode simplesmente descartá-la. Deve tratar a gravação pendente ou manter a entrada. Se o dispositivo B também possui LBA 40, ele precisa de outra chave de cache: dispositivo + LBA.
+
+## Como revisar
+Desenhe uma entrada e acompanhe LIMPA → SUJA → LIMPA depois da gravação confirmada. Depois simule invalidação e recarga. Explique em qual momento a cópia pode ser lida com segurança.

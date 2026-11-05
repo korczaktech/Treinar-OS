@@ -23,3 +23,10 @@ O dispositivo pode continuar acessando o buffer até a conclusão real. Não lib
 3. Qual é o papel da IOMMU?
 4. Em leitura, quem escreve no buffer?
 5. Quando o buffer pode ser liberado?
+
+
+## Exemplo guiado: direção e vida útil
+Em uma leitura DMA, o dispositivo escreve no buffer. Em uma gravação DMA, o dispositivo lê o buffer. Em ambos os casos, o mapeamento precisa continuar válido até a conclusão ou cancelamento confirmado. Liberar a memória cedo pode permitir que o dispositivo acesse uma região que já foi reutilizada.
+
+## Como revisar
+Para cada operação, anote direção, endereço DMA/IOVA, proprietário do buffer, sincronização de cache e momento seguro de liberação.

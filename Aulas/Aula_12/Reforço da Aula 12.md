@@ -23,3 +23,10 @@ Uma barreira separa operações anteriores e posteriores segundo uma regra de or
 3. Por que a ordem entre dados e metadados importa?
 4. Uma barreira é igual a uma gravação?
 5. Qual é o custo de sincronizar a todo instante?
+
+
+## Exemplo guiado: dados antes do metadado
+A operação A grava o conteúdo de um arquivo. A operação B atualiza o metadado que aponta para esse conteúdo. Se B persistir primeiro, uma queda pode deixar uma referência para dados incompletos. A dependência exige que A alcance a garantia necessária antes de B ultrapassar a fronteira.
+
+## Como revisar
+Escreva as operações em ordem, marque as dependências e indique onde o flush/barreira é necessário. Diferencie envio, conclusão e persistência.

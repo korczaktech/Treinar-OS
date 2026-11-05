@@ -23,3 +23,10 @@ Timeout significa que o resultado não chegou no prazo definido. É necessário 
 3. O que deve ser adiado para fora da rotina de interrupção?
 4. Por que uma interrupção pode não pertencer ao seu dispositivo?
 5. O que timeout realmente informa?
+
+
+## Exemplo guiado: polling e interrupção
+Uma operação de inicialização curta pode usar polling limitado. Uma leitura longa pode aguardar uma interrupção para evitar consultar continuamente o estado. A rotina de interrupção registra o evento e agenda o processamento completo fora do contexto restrito.
+
+## Como revisar
+Compare custo de CPU, latência e complexidade. Simule um timeout e explique por que ele informa ausência de conclusão no prazo, não a causa física da falha.

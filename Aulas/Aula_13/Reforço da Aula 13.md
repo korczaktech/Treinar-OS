@@ -27,3 +27,10 @@ Solicitar cancelamento não prova que o hardware parou. O buffer continua proteg
 3. O que significa profundidade máxima da fila?
 4. Por que cancelamento solicitado não é cancelamento confirmado?
 5. Uma fila garante que duas gravações conflitantes serão ordenadas corretamente?
+
+
+## Exemplo guiado: conclusão fora de ordem
+Envie três pedidos com IDs 21, 22 e 23. As conclusões chegam como 23, 21 e 22. O sistema procura cada ID e atualiza o pedido correspondente. A ordem de conclusão não deve misturar buffers nem resultados. Se o pedido 22 foi cancelado, uma conclusão tardia ainda precisa ser reconhecida sem acessar memória liberada.
+
+## Como revisar
+Monte uma tabela com ID, estado, buffer e resultado. Simule fila cheia, cancelamento e conclusão tardia.
