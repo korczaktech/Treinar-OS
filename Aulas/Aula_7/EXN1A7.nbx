@@ -1,19 +1,16 @@
 // AULA 7 — EXERCÍCIO 1
-// Validação do descritor
+// Estado de inicialização do controlador
 //
-// Implemente descritor_valido(identificador, total_blocos,
-// tamanho_bloco, alinhamento, disponivel).
-//
-// Rejeite identificador reservado/inválido, total_blocos <= 0,
-// tamanho_bloco <= 0, alinhamento <= 0 ou dispositivo indisponível.
-// Documente quais identificadores são reservados.
-// Não calcule capacidade em bytes sem considerar estouro.
+// Modele os estados DESCOBERTO, INICIALIZANDO, PRONTO e FALHOU.
+// Implemente validação das transições permitidas e uma função que
+// informe se o controlador pode receber operações normais.
 //
 // Casos:
-// id válido, total 500, bloco 512, alinhamento 8, disponível -> verdadeiro
-// id válido, total 0, bloco 512, alinhamento 8, disponível -> falso
-// id válido, total 500, bloco 0, alinhamento 8, disponível -> falso
-// id válido, total 500, bloco 512, alinhamento 0, disponível -> falso
-// id válido, total 500, bloco 512, alinhamento 8, indisponível -> falso
+// DESCOBERTO -> INICIALIZANDO: permitido
+// INICIALIZANDO -> PRONTO: permitido
+// INICIALIZANDO -> FALHOU: permitido
+// DESCOBERTO -> PRONTO: rejeitado
+// FALHOU -> PRONTO: rejeitado sem nova rotina de recuperação
+// operação em INICIALIZANDO: rejeitada
 //
-// Escreva sua solução abaixo.
+// Documente a representação escolhida para cada estado.

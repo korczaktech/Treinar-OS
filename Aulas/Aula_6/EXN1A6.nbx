@@ -1,15 +1,15 @@
 // AULA 6 — EXERCÍCIO 1
-// Capacidade do buffer
+// Conversão LBA para deslocamento em bytes
 //
-// Implemente buffer_comporta(quantidade, tamanho_bloco, capacidade).
-// Devolva verdadeiro se os parâmetros forem válidos e o buffer comportar
-// todos os bytes solicitados. Considere que a multiplicação não estoura.
+// Implemente deslocamento_lba(lba, tamanho_logico).
+// Valide LBA >= 0 e tamanho_logico > 0.
+// Considere e trate o limite de multiplicação do tipo inteiro.
 //
 // Casos:
-// buffer_comporta(2, 512, 1024) -> verdadeiro
-// buffer_comporta(2, 512, 1000) -> falso
-// buffer_comporta(1, 4096, 4096) -> verdadeiro
-// buffer_comporta(0, 512, 1024) -> falso
-// buffer_comporta(3, 0, 1024) -> falso
+// deslocamento_lba(0, 512) -> 0
+// deslocamento_lba(8, 512) -> 4096
+// deslocamento_lba(8, 4096) -> 32768
+// deslocamento_lba(-1, 512) -> inválido
+// deslocamento_lba(1, 0) -> inválido
 //
 // Escreva sua solução abaixo.

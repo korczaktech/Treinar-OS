@@ -1,30 +1,24 @@
-# Reforço da Aula 6 — Leitura e Escrita de Blocos
+# Reforço da Aula 6 — Geometria lógica e organização de blocos
 
-## 1. Direção dos dados
+## 1. Modelo que o sistema enxerga
+O sistema operacional recebe uma sequência de LBAs. Cada endereço identifica uma unidade lógica; o tamanho dessa unidade informa quantos bytes são transferidos.
 
-Leitura: dispositivo para memória. Gravação: memória para dispositivo. O buffer é o ponto de encontro dos dados com a operação.
+## 2. CHS versus LBA
+CHS descreve cilindro, cabeça e setor. LBA usa um número linear. Em sistemas atuais, o driver e o controlador cuidam das particularidades do dispositivo; o restante do kernel usa endereços lógicos.
 
-## 2. Exemplo de leitura
+## 3. Exemplo
+Com 2.000 LBAs e 4.096 bytes por bloco:
+- primeiro LBA: 0;
+- último LBA: 1.999;
+- deslocamento inicial do LBA 10: 10 × 4.096 = 40.960 bytes;
+- capacidade apresentada: 2.000 × 4.096 = 8.192.000 bytes.
 
-Uma leitura pede 2 blocos de 512 bytes. O tamanho esperado é 1024 bytes. O buffer precisa ter pelo menos essa capacidade. Se tiver 800 bytes, a operação deve ser rejeitada antes de começar.
+## 4. Vocabulário que precisa ficar separado
+Setor lógico, setor físico, bloco de alocação, página NAND e bloco de apagamento não são sinônimos.
 
-## 3. Exemplo de gravação
-
-Se o buffer contém 1024 bytes e a operação grava 2 blocos de 512 bytes, o buffer é a origem e o dispositivo é o destino.
-
-## 4. Camada e driver
-
-A camada de armazenamento recebe uma solicitação genérica, valida seus parâmetros e seleciona o driver. O driver traduz o pedido para a interface do dispositivo. Isso evita que o sistema de arquivos dependa de detalhes de cada controlador.
-
-## 5. Estados não são resultados
-
-VALIDADA significa que os parâmetros passaram pelas verificações. EM_EXECUCAO significa que o trabalho começou. CONCLUIDA significa que o mecanismo reportou sucesso segundo seu contrato. Uma operação pode ser validada e depois falhar.
-
-## 6. Perguntas de fixação
-
-1. Em uma leitura, quem fornece os dados?
-2. Em uma gravação, quem contém inicialmente os dados?
-3. Por que 900 bytes não comportam 2 blocos de 512 bytes?
-4. Qual é a diferença entre erro de validação e erro de execução?
-5. Por que uma operação em execução não deve aparecer como concluída?
-6. Para que serve um dispositivo simulado nos testes?
+## 5. Perguntas de fixação
+1. O que o LBA representa?
+2. Qual é o último LBA de um dispositivo com 2.000 blocos?
+3. Como calcular o deslocamento em bytes?
+4. Por que CHS não descreve a organização interna de um SSD moderno?
+5. Cite três tipos diferentes de bloco e a camada a que pertencem.

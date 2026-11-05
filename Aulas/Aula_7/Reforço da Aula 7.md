@@ -1,34 +1,23 @@
-# Reforço da Aula 7 — Descritores e Metadados do Dispositivo
+# Reforço da Aula 7 — Controladores e comunicação
 
-## 1. O dispositivo precisa se apresentar
+## Caminho resumido
+Camada de blocos → driver → protocolo/controlador → dispositivo. A resposta percorre o caminho inverso, levando sucesso, erro e informações de conclusão.
 
-Antes de usar uma unidade, o ZenithOS precisa saber com qual dispositivo está trabalhando e quais operações ele suporta. O descritor é como um cadastro técnico: não contém arquivos, mas informações para usar a unidade corretamente.
+## Funções
+- A camada de blocos valida uma solicitação genérica.
+- O driver traduz a solicitação para o protocolo.
+- O controlador recebe comandos e coordena o dispositivo.
+- O dispositivo executa a operação de armazenamento.
 
-## 2. Capacidade
+## Protocolos
+SATA/AHCI e NVMe são interfaces/protocolos diferentes. O kernel não deve supor que um comando de um protocolo funcione em outro.
 
-Um dispositivo com 500 blocos possui LBAs de 0 a 499. O LBA 500 está fora do espaço apresentado.
+## Exemplo
+Uma leitura do LBA 20 chega à camada de blocos. Depois da validação, o driver prepara o comando apropriado. O controlador executa a solicitação e reporta conclusão. Se ocorrer erro de mídia, o driver não deve transformar o resultado em sucesso.
 
-O tamanho em bytes depende do tamanho de cada bloco. Dois dispositivos com a mesma quantidade de blocos podem ter capacidades em bytes diferentes.
-
-## 3. Identificador interno
-
-O ZenithOS pode atribuir um identificador para localizar a entrada no registro de dispositivos. Ele não precisa ser igual ao número de série físico.
-
-Quando a unidade é removida, a referência deve ser invalidada conforme as regras do sistema.
-
-## 4. Dois grupos de metadados
-
-Metadados do dispositivo descrevem a unidade. Metadados do sistema de arquivos descrevem arquivos e diretórios. Saber a capacidade do disco não informa quais arquivos estão nele.
-
-## 5. Não confie cegamente nos valores
-
-Tamanho de bloco zero impede calcular transferências. Capacidade zero não oferece blocos válidos. Identificadores duplicados podem apontar para a unidade errada. Os valores devem ser verificados antes do registro.
-
-## 6. Perguntas de fixação
-
-1. O que o descritor de dispositivo descreve?
-2. Quantos blocos existem entre LBA 0 e 499, incluindo ambos?
-3. Por que dispositivos com a mesma quantidade de blocos podem ter capacidade em bytes diferente?
-4. O número de série precisa ser o identificador interno?
-5. O descritor informa os nomes dos arquivos?
-6. Por que tamanho de bloco zero deve ser rejeitado?
+## Perguntas de fixação
+1. Quem traduz a solicitação genérica para o protocolo?
+2. O controlador é o mesmo que o dispositivo?
+3. Por que a inicialização precisa terminar antes de aceitar pedidos?
+4. O que muda entre um driver NVMe e um driver SATA?
+5. Por que a camada superior deve receber uma interface comum?

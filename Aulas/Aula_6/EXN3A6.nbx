@@ -1,21 +1,9 @@
 // AULA 6 — EXERCÍCIO 3
-// Transição de estado
+// Classificação de unidades
 //
-// Modele CRIADA, VALIDADA, EM_EXECUCAO, CONCLUIDA, FALHOU e CANCELADA.
-// Implemente uma função que diga se uma transição é permitida.
+// Crie uma função que classifique cada conceito:
+// LBA, bloco de alocação, página NAND e bloco de apagamento NAND.
+// A classificação deve indicar a camada responsável e não deve tratar
+// os quatro conceitos como unidades equivalentes.
 //
-// Regras:
-// CRIADA -> VALIDADA ou CANCELADA
-// VALIDADA -> EM_EXECUCAO ou CANCELADA
-// EM_EXECUCAO -> CONCLUIDA ou FALHOU
-// Estados finais não voltam à execução.
-//
-// Casos:
-// CRIADA -> VALIDADA -> verdadeiro
-// VALIDADA -> EM_EXECUCAO -> verdadeiro
-// EM_EXECUCAO -> FALHOU -> verdadeiro
-// CONCLUIDA -> EM_EXECUCAO -> falso
-// FALHOU -> CONCLUIDA -> falso
-// CANCELADA -> VALIDADA -> falso
-//
-// Documente a representação escolhida para cada estado.
+// Documente os valores usados para representar cada classificação.
