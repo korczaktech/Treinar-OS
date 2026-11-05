@@ -61,3 +61,7 @@ O driver deve traduzir códigos do dispositivo em erros compreensíveis. O servi
 
 ## Método de estudo e exemplo guiado
 Considere um dispositivo que apresenta aumento de erros corrigidos e um alerta de desgaste, mas ainda conclui leituras. Classifique isso como sinal de saúde, não como falha definitiva. Depois simule uma leitura irrecuperável: o driver deve propagar erro, não preencher o buffer com conteúdo inventado. Por fim, explique como backup e verificação de integridade complementam o monitoramento do hardware.
+
+## Metadados da aula
+- Dificuldade: Média
+- Duração: 45 minutos

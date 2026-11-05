@@ -65,3 +65,7 @@ O ZenithOS deve implementar primeiro uma interface de dispositivo de blocos e um
 
 ## Método de estudo e exemplo guiado
 Crie mentalmente dois dispositivos que implementam a mesma interface: um disco em RAM e um dispositivo físico. Faça uma leitura e uma gravação nos dois. A camada superior usa os mesmos parâmetros, mas o descritor informa capacidades diferentes. Depois encadeie um volume virtual sobre uma faixa inferior e verifique limites e propagação de erros.
+
+## Metadados da aula
+- Dificuldade: Média
+- Duração: 45 minutos

@@ -137,3 +137,7 @@ Você deve conseguir explicar o caminho de uma operação desde o sistema de arq
 
 ## Método de estudo e exemplo guiado
 Escolha uma leitura de arquivo e percorra todas as camadas, anotando entrada, validação, transformação e resultado de cada uma. Repita com uma gravação que falha depois da submissão. Por fim, transforme invariantes em casos de teste: faixa fora do limite, buffer liberado cedo, conclusão atrasada, partição sobreposta e erro de mídia. A arquitetura só está clara quando é possível localizar a responsabilidade de cada falha.
+
+## Metadados da aula
+- Dificuldade: Muito difícil
+- Duração: 50 minutos
