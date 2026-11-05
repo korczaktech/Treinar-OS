@@ -26,13 +26,33 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. Por que não devemos gravar diretamente ponteiros de uma estrutura em memória?
+2. O que significa serializar e desserializar metadados?
+3. Quais informações o formato binário precisa definir além dos nomes dos campos?
+4. Por que o padding de uma estrutura nativa pode causar incompatibilidade?
+5. Qual é a diferença entre um offset persistente e um ponteiro virtual?
+6. Como o parser deve reagir a uma versão desconhecida?
 
-## 6. Critério de conclusão
+## 6. Estrutura em memória e formato persistente
+Uma estrutura usada pelo kernel pode conter ponteiros, locks, referências e campos específicos da arquitetura. Esses elementos não devem ser gravados diretamente no disco como se fossem um formato estável. Endereços de memória mudam entre inicializações e não têm significado em outra execução.
+
+O formato persistente deve descrever os dados usando campos explicitamente definidos, tamanhos fixos e referências relativas ao próprio volume ou arquivo.
+
+## 7. Serialização
+Serializar é transformar os campos de uma estrutura em uma sequência de bytes segundo uma regra definida. Desserializar é interpretar esses bytes novamente. O formato precisa definir ordem dos bytes (endianness), tamanhos, alinhamento, versão e significado dos campos reservados.
+
+Padding automático da linguagem pode mudar entre compiladores ou arquiteturas. Por isso, não dependa do layout nativo de uma struct sem um contrato binário explícito.
+
+## 8. Exemplo guiado
+Um cabeçalho pode conter assinatura de 4 bytes, versão de 2 bytes, tamanho de 2 bytes e um offset de 8 bytes. O parser deve ler cada campo conforme a ordem definida e validar o offset antes de usá-lo. Não deve interpretar o offset como ponteiro direto.
+
+## 9. Evolução de versões
+Uma versão nova pode adicionar campos. O parser precisa verificar se conhece a versão e se o tamanho declarado comporta os campos obrigatórios. Campos desconhecidos só podem ser ignorados quando o formato permitir isso com segurança.
+
+## 10. Método de aprendizagem
+Faça uma tabela com nome do campo, tamanho, unidade, endianness, valores permitidos e regra de validação. Essa tabela é parte da especificação do formato.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 

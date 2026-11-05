@@ -26,13 +26,30 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 ## 5. Perguntas de compreensão
 
-1. Qual problema esta aula procura resolver?
-2. Quais informações precisam ser conhecidas antes de executar a operação estudada?
-3. Que dado inválido poderia causar acesso fora dos limites ou perda de consistência?
-4. Qual responsabilidade pertence ao ZenithOS e qual pertence ao driver?
-5. Que teste automatizado ajudaria a detectar uma implementação incorreta?
+1. O que significa montar um sistema de arquivos?
+2. Por que o ponto de montagem só deve ser publicado depois da validação?
+3. Por que um arquivo aberto pode impedir uma desmontagem normal?
+4. Qual é a diferença entre desmontagem forçada e remoção inesperada do dispositivo?
+5. O que deve acontecer com gravações pendentes antes de liberar as estruturas?
+6. Por que uma falha de sincronização pode impedir uma desmontagem segura?
 
-## 6. Critério de conclusão
+## 6. O que acontece durante a montagem?
+Montar um volume é associar um sistema de arquivos a um ponto da árvore de diretórios. O processo pode incluir identificar o formato, ler o superbloco, validar versão e tamanhos, carregar estruturas essenciais, reconstruir índices em memória e só então publicar o ponto de montagem.
+
+Se a validação falhar, o volume não deve aparecer como parcialmente montado. A montagem também precisa considerar opções como somente leitura quando o formato estiver danificado ou quando não houver suporte seguro para gravação.
+
+## 7. O que precisa acontecer antes de desmontar?
+A desmontagem normal impede novas referências, verifica arquivos e diretórios ainda em uso, finaliza ou aguarda operações pendentes, sincroniza dados e metadados quando possível e libera estruturas em memória. Se houver falha de I/O, a desmontagem pode não conseguir garantir persistência.
+
+Desmontagem forçada e remoção física inesperada são situações diferentes. A remoção pode tornar impossível concluir gravações; o kernel deve marcar o volume como indisponível e propagar os erros.
+
+## 8. Exemplo guiado
+Um volume possui um arquivo aberto e uma gravação pendente. Uma solicitação de desmontagem chega. O sistema não deve simplesmente liberar a estrutura do volume: isso deixaria o arquivo ou a operação apontando para memória inválida. Primeiro precisa resolver as referências e o trabalho pendente segundo o contrato.
+
+## 9. Método de aprendizagem
+Desenhe os estados DESMONTADO, MONTANDO, MONTADO, DESMONTANDO e ERRO. Para cada transição, escreva qual condição permite avançar e quais recursos precisam permanecer válidos.
+
+## 11. Critério de conclusão
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 
