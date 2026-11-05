@@ -1,20 +1,17 @@
-# Reforço da Aula 33 — Capacidades e características anunciadas por dispositivos
+# Reforço da Aula 33 — Capacidades anunciadas por dispositivos
 
-## 1. Ideia principal
+## O que deve ser consultado?
+Capacidade, tamanho lógico, tamanho físico quando disponível, máximo de transferência, alinhamento, profundidade de fila e suporte a flush ou discard.
 
-Dispositivos anunciam capacidade, tamanho de bloco, limites de transferência e recursos opcionais. O kernel normaliza esses dados.
+## Três estados
+Suportado significa que a interface declara o recurso. Não suportado significa que a interface informa sua ausência. Desconhecido significa que não há informação suficiente. Não trate desconhecido como suportado.
 
-## 2. Cuidados que não podem ser esquecidos
+## Exemplo
+Se o máximo por comando é 128 blocos, uma requisição maior precisa ser dividida. Se discard é desconhecido, não envie esse comando.
 
-Desconhecido não significa suportado. Valide os campos e trate falhas mesmo quando o recurso foi anunciado.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Cite quatro capacidades importantes.
+2. Por que unidades dos limites precisam ser explícitas?
+3. Suporte declarado garante sucesso de toda operação?
+4. Como tratar um recurso desconhecido?
+5. Por que normalizar capacidades em um descritor comum?

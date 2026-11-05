@@ -1,20 +1,22 @@
-# Reforço da Aula 35 — Operações de leitura e escrita em múltiplos blocos
+# Reforço da Aula 35 — Operações em múltiplos blocos
 
-## 1. Ideia principal
+## Dividir sem perder a faixa
+Uma solicitação de 300 blocos com limite de 128 por comando vira segmentos de 128, 128 e 44 blocos. Os LBAs iniciais avançam conforme a quantidade já coberta.
 
-Uma operação agrupa LBAs consecutivos. Limites de protocolo, controlador e buffer podem exigir dividir uma solicitação.
+## Exemplo
+Início 1.000:
+- 1.000 a 1.127;
+- 1.128 a 1.255;
+- 1.256 a 1.299.
 
-## 2. Cuidados que não podem ser esquecidos
+A soma precisa ser 300, sem lacunas e sem repetição.
 
-Valide capacidade, multiplicações e buffer. O resultado precisa representar conclusão parcial e erros.
+## Resultados parciais
+Se dois segmentos concluem e o terceiro falha, o resultado agregado não é sucesso total. Informe quantidade concluída e erro.
 
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Por que dividir uma requisição?
+2. Como calcular o início do próximo segmento?
+3. Por que a soma deve corresponder ao pedido original?
+4. O que informar após uma falha parcial?
+5. Que limites além da quantidade podem exigir divisão?

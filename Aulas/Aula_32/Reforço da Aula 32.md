@@ -1,20 +1,14 @@
-# Reforço da Aula 32 — Discos removíveis e detecção de hot-plug
+# Reforço da Aula 32 — Discos removíveis e hot-plug
 
-## 1. Ideia principal
+## Ciclo de vida
+Conectar não é o mesmo que inicializar. Ao remover, o kernel bloqueia novas requisições, trata as pendentes e invalida referências antigas. Uma reconexão cria uma nova instância operacional.
 
-Hot-plug permite conexão e remoção durante a execução. Remoção exige bloquear novas operações e tratar requisições pendentes.
+## Exemplo
+Uma leitura fica pendente e o pendrive é removido. O pedido deve receber erro ou resultado definido pelo protocolo. O buffer continua reservado até não existir possibilidade de DMA. Uma nova unidade no mesmo endereço não herda o pedido.
 
-## 2. Cuidados que não podem ser esquecidos
-
-Use estado e geração de conexão para invalidar referências antigas. Remoção pode interromper gravações e deixar dados não persistidos.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. O que é hot-plug?
+2. Qual a diferença entre PRESENTE e PRONTO?
+3. Por que a remoção bloqueia novas operações?
+4. Para que serve a geração de conexão?
+5. Quando o buffer pode ser liberado?

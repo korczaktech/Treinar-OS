@@ -1,20 +1,19 @@
-# Reforço da Aula 34 — Setores lógicos, setores físicos e tamanhos avançados
+# Reforço da Aula 34 — Setores lógicos e físicos
 
-## 1. Ideia principal
+## Três modelos
+- 512n: lógico 512 B, físico 512 B.
+- 512e: lógico 512 B, físico 4.096 B.
+- 4Kn: lógico 4.096 B, físico 4.096 B.
 
-Setor lógico é a unidade endereçável; setor físico é a unidade física reportada. 512e e 4Kn são exemplos de relações diferentes entre tamanhos.
+## Exemplo
+Em 512e, oito setores lógicos de 512 bytes correspondem a um setor físico de 4.096 bytes. Uma gravação pequena desalinhada pode exigir trabalho interno adicional.
 
-## 2. Cuidados que não podem ser esquecidos
+## Cuidados
+Use tamanho lógico para endereçar LBAs. Use informações físicas para decisões de alinhamento. Não confunda setor com página NAND, bloco de apagamento ou unidade de alocação.
 
-Use tamanho lógico para LBA. Não confunda setores com páginas NAND ou blocos de sistema de arquivos.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. O que caracteriza 512e?
+2. Quantos setores lógicos de 512 bytes formam 4 KiB?
+3. Qual tamanho entra no cálculo do deslocamento LBA?
+4. Por que gravações desalinhadas podem custar mais?
+5. Setor físico é o mesmo que bloco de apagamento NAND?
