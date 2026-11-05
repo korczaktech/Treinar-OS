@@ -1,0 +1,14 @@
+// AULA 47 — EXERCÍCIO DE CÓDIGO
+// Snapshots em nível de bloco
+//
+// Objetivo:
+// Simule mapa de blocos com copy-on-write. Após criar snapshot e modificar um bloco, preserve o valor anterior na visão do snapshot e o novo valor no volume ativo.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
