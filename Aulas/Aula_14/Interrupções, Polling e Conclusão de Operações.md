@@ -69,3 +69,7 @@ O ZenithOS deve manter o tratamento de interrupção separado do processamento c
 
 ## Método de estudo e exemplo guiado
 Considere uma operação curta e outra que demora. Para a curta, polling limitado pode ser simples; para a longa, consultar continuamente desperdiça CPU e uma interrupção pode ser mais adequada. Desenhe a rotina de interrupção como uma etapa curta que registra o evento, e o trabalho pesado como processamento adiado. Inclua um timeout e diferencie “não chegou a conclusão” de “hardware destruído”.
+
+## Metadados da aula
+- Dificuldade: Difícil
+- Duração: 45 minutos

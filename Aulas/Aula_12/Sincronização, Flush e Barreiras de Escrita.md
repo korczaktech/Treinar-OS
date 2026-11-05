@@ -66,3 +66,7 @@ O ZenithOS precisa oferecer uma operação explícita de sincronização e docum
 
 ## Método de estudo e exemplo guiado
 Desenhe duas gravações: A grava os dados de um arquivo; B atualiza o metadado que aponta para esses dados. Marque a dependência A antes de B. Agora imagine que o dispositivo pode reordenar comandos. Identifique onde uma barreira ou flush é necessário e qual garantia precisa ser obtida antes de confirmar a atualização. Repita o raciocínio com dados temporários, que podem aceitar uma política menos rigorosa.
+
+## Metadados da aula
+- Dificuldade: Difícil
+- Duração: 45 minutos

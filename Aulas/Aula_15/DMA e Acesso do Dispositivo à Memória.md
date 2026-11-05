@@ -65,3 +65,7 @@ A camada de armazenamento não deve fabricar endereços DMA. O driver solicita m
 
 ## Método de estudo e exemplo guiado
 Em uma leitura DMA, o dispositivo escreve no buffer; em uma gravação DMA, o dispositivo lê o buffer. Para cada caso, identifique quem é o proprietário da região, qual mapeamento DMA é necessário e em que momento o buffer pode ser liberado. Simule uma conclusão normal e um cancelamento ainda não confirmado. O buffer só pode ser reutilizado quando o dispositivo não puder mais acessá-lo.
+
+## Metadados da aula
+- Dificuldade: Difícil
+- Duração: 45 minutos

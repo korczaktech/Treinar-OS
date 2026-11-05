@@ -77,3 +77,7 @@ Você deve explicar quando uma cópia em cache é válida, o que diferencia uma 
 
 ## Método de estudo e exemplo guiado
 Imagine que o cache contém a versão A do LBA 20. Uma gravação produz a versão B. Antes de responder uma nova leitura, a política precisa garantir que ela não receba A por engano. Simule duas estratégias: atualizar a entrada ou invalidá-la para recarga. Depois marque a entrada como SUJA quando a nova versão ainda não foi persistida. O exercício deve separar validade da cópia e durabilidade no dispositivo.
+
+## Metadados da aula
+- Dificuldade: Difícil
+- Duração: 45 minutos
