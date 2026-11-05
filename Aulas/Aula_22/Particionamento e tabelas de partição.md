@@ -36,5 +36,5 @@ Mantenha as responsabilidades separadas: o gerenciador oferece abstrações comu
 
 Você concluiu a aula quando conseguir explicar o conceito com suas palavras, resolver um exemplo novo e justificar pelo menos duas validações necessárias antes de integrar esse recurso ao ZenithOS.
 
-> - **Dificuldade:** Média
-> - **Duração:** 45 minutos
+> - **Dificuldade:** Muito difícil
+> - **Duração:** 50 minutos
