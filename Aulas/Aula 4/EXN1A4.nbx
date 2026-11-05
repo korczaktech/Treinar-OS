@@ -20,3 +20,17 @@
 // Não confunda o deslocamento em bytes com o endereço físico da NAND.
 //
 // Escreva sua solução abaixo.
+
+funcao iniciar(): {
+    variavel LBA: inteiro = entrada("Escolha qual LBA você vai usar\n")
+    variavel bytes: inteiro = entrada("Escolha o tamanho do SETOR LÓGICO que você vai usar")
+    se LBA > 10: {
+        exibir("Escolha um número válido para LBA")
+        fim
+    fim
+}
+
+funcao calcularDeslocamento(inteiro: LBA, inteiro: bytes): {
+    exibir(LBA * bytes)
+    fim
+}

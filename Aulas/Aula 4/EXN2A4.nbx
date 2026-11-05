@@ -31,10 +31,16 @@
 // faixa_valida(10, 1, 0)     -> falso
 //
 // Escreva sua solução abaixo.
-variavel inicio: inteiro = entrada("Escolha um número de inicio")
-variavel quantidade: inteiro = entrada("Escolha a quantidade de blocos que quer vistoriar")
-
+    
 publico constante TOTAL: inteiro = 200
+
+funcao iniciar(): {
+    variavel inicio: inteiro = entrada("Escolha um número de inicio")
+    variavel quantidade: inteiro = entrada("Escolha a quantidade de blocos que quer vistoriar")
+    fim
+    }
+iniciar()
+
 funcao ValidarLBA(inteiro: inicio, inteiro: quantidade, inteiro: TOTAL): {
     se TOTAL >= 0 e inicio >= 0 e quantidade > 0 e inicio <= TOTAL e quantidade <= TOTAL - inicio: {
         exibir("Teste funcionando!")
@@ -45,6 +51,10 @@ funcao ValidarLBA(inteiro: inicio, inteiro: quantidade, inteiro: TOTAL): {
         fim
     }
     fim
+    senao: {
+        exibir("Coloque informações Válidas")
+        iniciar()
+    }
 }
 
 ValidarLBA(inicio, quantidade)
