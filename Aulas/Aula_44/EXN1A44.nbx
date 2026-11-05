@@ -1,0 +1,14 @@
+// AULA 44 — EXERCÍCIO DE CÓDIGO
+// Níveis RAID e tolerância a falhas
+//
+// Objetivo:
+// Receba nível RAID, quantidade de membros e capacidade individual. Calcule capacidade útil estimada e número de falhas toleradas conforme as regras estudadas; rejeite configurações impossíveis.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
