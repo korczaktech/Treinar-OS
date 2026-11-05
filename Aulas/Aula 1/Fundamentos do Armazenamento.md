@@ -28,7 +28,7 @@ R³ | Bits são a menor unidade de informação, representa 0 ou 1(`Sistema Bin�
 R | Mesmo que o Zenith só encontre um dispositivo como um SSD conectado, ele não saberia onde começa e onde termina as informações, e nem o que fazer com isso.
 R² | Por isso precisamos estabelecer regras para organização, isso é chamado de formato de disco.
 
-> - Exercícios de Compressão
+> - Exercícios de Compreensão
 
 - 1. Se um SSD possui 1.000GB de capacidade, isso significa que ele sabe organizar arquivos automaticamente?
 > Não, mesmo que possua bilhoes de PB de capacidade, a única forma de saber como organizar os bits, bytes e blocos, é tendo um formato de disco.
