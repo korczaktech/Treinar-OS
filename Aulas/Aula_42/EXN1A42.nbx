@@ -1,0 +1,14 @@
+// AULA 42 — EXERCÍCIO DE CÓDIGO
+// Dispositivos compostos e encadeamento de volumes
+//
+// Objetivo:
+// Modele um dispositivo composto que encaminha uma faixa relativa para um dispositivo inferior. Valide limites, traduza endereços e detecte dependência circular entre dispositivos.
+//
+// Requisitos:
+// - Organize a solução em funções com responsabilidades claras.
+// - Valide os dados antes de realizar cálculos ou alterar estados.
+// - Inclua casos válidos, inválidos e de fronteira.
+// - Não acesse hardware físico: use dados simulados.
+// - Não trate uma entrada inválida como sucesso.
+//
+// Escreva sua solução abaixo.
