@@ -1,98 +1,96 @@
-# Aula 2 - Organização Física e Lógica do Armazenamento
-## Fundamentos da Arquitetura
+# Aula 2 — Organização física e lógica do armazenamento
 
-### - Organização Física.
+## Objetivos de aprendizagem
+Ao final, você deverá distinguir a organização física da organização lógica, explicar o papel do controlador, reconhecer setores lógicos e compreender por que a palavra “bloco” pode representar unidades diferentes.
 
-- Um dispositivo de armazenamento possui uma estrutura física responsável por guardar os dados.
-- Por exemplo, em um SSD, existem células de memória NAND que armazenam informações por meio de diferentes níveis de carga elétrica.
-- **`O importante é entender`**
-1. O SSD possui componentes físicos
-2. Esses componentes guardam as informações
-3. O controlador do dispositivo gerencia operações de leitura e escrita
-4. O sistema operacional não precisa conhecer todos os detalhes elétricos do dispositivo
+## 1. Organização física
+A organização física descreve como a tecnologia do dispositivo guarda os dados. Em um HDD, os dados são registrados magneticamente em pratos que giram. Em um SSD, as informações são armazenadas em células de memória flash NAND.
 
-**__Uma distinção importante__** : O ZenithOS não precisa controlar diretamente cada célula NAND. Essa responsabilidade normalmente pertence ao controlador do SSD
+Uma célula NAND mantém estados elétricos que representam informação. Dependendo da tecnologia, uma célula pode representar um ou mais bits. O dispositivo também precisa de circuitos para controlar leitura, programação, apagamento e correção de erros.
 
-### Organização Lógica
+O sistema operacional não precisa controlar diretamente a carga elétrica de cada célula. Essa tarefa pertence à eletrônica e ao controlador do dispositivo.
 
-- A organização lógica é a maneira como o sistema operacional enxerga e organiza o armazenamento
-- Imagine um disco com capacidade para armazenar milhões de bytes.
-- O ZenithOS pode enxergar esse espaço como uma sequência de endereços.
-{ Endereço 0 }
-{ Endereço 1 }
-{ Endereço X }
+## 2. O papel do controlador
+O controlador recebe comandos da interface apresentada ao computador e coordena o funcionamento interno do dispositivo. Em um SSD, pode administrar:
+- tradução entre endereços lógicos e páginas físicas;
+- correção de erros;
+- remapeamento de regiões inadequadas;
+- distribuição de desgaste;
+- coleta de lixo;
+- cache e filas internas.
 
-- Cada endereço representa uma posição dentro do espaço de armazenamento disponibilizado pelo dispositivo.
-- Isso permite que o sistema solicite operações como:
-> 1. Ler dados de determinado endereço
-> 2. Gravar dados em determinado endereço
-> 3. Identificar regiões ocupadas
-> 4. Identificar regiões disponíveis
+Essas tarefas escondem grande parte da complexidade física. O ZenithOS solicita operações usando a interface lógica, enquanto o controlador decide como executá-las internamente.
 
-### Setores
+## 3. Organização lógica
+A organização lógica é a representação do espaço que o dispositivo apresenta ao sistema operacional. Em uma interface de blocos, o sistema pode enxergar uma sequência de endereços:
+- LBA 0;
+- LBA 1;
+- LBA 2;
+- e assim por diante.
 
-- Em discos rígidos tradicionais, os dados são organizados fisicamente em estruturas chamadas **`trilhas`** e **`setores`**.
-- Um setor é uma unidade de endereçamento e transferência de dados.
+Cada endereço identifica uma unidade lógica. O sistema pode solicitar leitura ou gravação nessa unidade sem saber em qual célula NAND ou região magnética os dados estão fisicamente.
 
-- Valores comuns incluem:
+## 4. Setores lógicos
+Um setor lógico é uma unidade de endereçamento apresentada pelo dispositivo. Tamanhos comuns incluem 512 bytes e 4.096 bytes. O tamanho precisa ser consultado; não se deve presumir que todos os dispositivos usam o mesmo valor.
 
-> 1. 512 bytes;
-> 2. 4096 bytes;
-> 3. 4KiB
+Em HDDs tradicionais, a organização física envolve trilhas e setores. Em dispositivos modernos, a interface lógica pode esconder detalhes da geometria física. Em SSDs, setor lógico não significa página NAND.
 
-- Em SSDs, a organização interna é diferente, mas o dispositivo pode apresentar setores lógicos de 512 ou 4096 bytes ao sistema operacional.
-[!Warning] Setor lógico, página NAND e bloco de apagamento NAND são coisas diferentes. Vamos estudar esas diferenças posteriormente
+## 5. Tipos diferentes de bloco
+A palavra “bloco” depende da camada:
+| Camada | Unidade | Função |
+|---|---|---|
+| Interface do dispositivo | Bloco lógico/LBA | Unidade endereçável pelo host |
+| Sistema de arquivos | Bloco de alocação | Unidade reservada para arquivos |
+| Memória NAND | Página | Unidade de leitura/programação conforme a tecnologia |
+| Memória NAND | Bloco de apagamento | Grupo de páginas apagado como unidade |
 
-### Blocos
+Essas unidades não são equivalentes. Podem possuir tamanhos e regras diferentes. Uma camada não deve usar automaticamente o tamanho de outra.
 
-> Lembra que na aula 1 identificamos os blocos?
-> Agora iremos nos aprofundar mais
+## 6. Exemplo guiado
+Considere um SSD que apresenta setores lógicos de 512 bytes. O sistema solicita o LBA 10. Para o host, essa solicitação identifica o décimo primeiro bloco lógico, porque a contagem começa em zero. O controlador traduz o pedido para sua organização interna, que pode envolver páginas NAND e mapeamentos diferentes.
 
-- A palavra bloco pode representar unidades diferentes, dependendo da camada:
-| Camada | Exemplo |
-| Dispositivo | Bloco Lógico |
-| Sistema de Arquivos | Bloco de Alocação |
-| SSD NAND | Bloco de Apagamento |
-> Não podemos tratar todos como se fossem a mesma coisa
+O sistema operacional não precisa saber qual página física foi usada. Precisa saber que o dispositivo concluiu a leitura ou reportou um erro.
 
-- No nosso projeto, precisaremos definir cuidadosamente o significado de cada unidade
+## 7. Arquitetura que estamos construindo
+O ZenithOS deve separar:
+1. formato de disco e estruturas lógicas;
+2. camada de armazenamento e validação de requisições;
+3. driver que conhece a interface do dispositivo;
+4. controlador que administra o hardware;
+5. mídia física que guarda os dados.
 
-### A Arquitetura que estamos construindo
+Essa separação permite que o mesmo sistema utilize dispositivos com organizações internas diferentes.
 
-#### O Objetivo é separar as responsabilidades
+## 8. Método de estudo
+Desenhe duas representações do mesmo dispositivo. Na primeira, mostre a mídia física e o controlador. Na segunda, mostre a sequência de LBAs apresentada ao sistema. Compare o que cada camada conhece e o que permanece escondido.
 
-- ZenithOS >
-  - Formato de Disco Zenith >
-    - Camada de Armazenamento >
-      - SSD / HDD / NVMe
+## 9. Erros comuns
+- Achar que o sistema operacional precisa manipular diretamente as células NAND.
+- Confundir setor lógico com página NAND.
+- Tratar bloco de alocação e bloco de apagamento como a mesma unidade.
+- Achar que o controlador substitui completamente o driver. O controlador é hardware; o driver é código que o sistema operacional usa para comunicar com ele.
 
-- Essa separação é importante porque queremos desenvolver um formato próprio sem precisar reinventar o funcionamento elétrico de cada dispositivo.
+## 10. Exercícios de compreensão
+1. Qual é a diferença entre organização física e organização lógica?
+2. Por que o ZenithOS não precisa conhecer diretamente as células NAND de um SSD?
+3. Qual é a diferença entre um setor lógico de 4.096 bytes e um bloco de apagamento NAND?
+4. Por que não devemos tratar todos os tipos de blocos como se fossem iguais?
+5. Se dois SSDs possuem estruturas físicas diferentes, como o ZenithOS pode utilizar ambos por meio de uma arquitetura comum?
+6. Qual é a diferença entre controlador e driver?
+7. O que o sistema operacional precisa receber depois de solicitar uma leitura?
 
-### Exercicios de Compreensão
+## 11. Anotações originais do estudante
+As respostas abaixo foram registradas durante o estudo inicial e são mantidas como histórico de aprendizagem.
 
-##### 1. Qual é a diferença entre organização física e organização lógica?
-> - Na física, eles são armazenados de acordo com diferentes niveis de carga elétrica. Na lógica, é a maneira como o SO armazena essas informações e como enxerga
-[!WARNING] Organização Lógica não é necessariamente como o SO armazena os dados, mas a maneira como ele representa, endereça e organiza o espaço.
-##### 2. Por que o ZenithOS não precisa conhecer diretamente as células NAND de um SSD?
-> - Por que o controlador já faz esse trabalho pelo SO.
-##### 3. Qual é a diferença entre um setor lógico de 4096 bytes e um bloco de apagamento NAND?
-> - Não sei, não foi explicado na aula. Você disse que seria feito nas posteriores.
-[!IMPORTANT] **Setor Lógico de 4096 bytes:** unidade de endereçamento apresentada pelo dispositivo ao sistema operacional. O SO pode solicitar a leitura ou escrita dessa unidade.
-[!IMPORTANT] **Bloco de Apagamento NAND:** Agrupamento físico de páginas NAND que o controlador precisa apagar como uma unidade
-##### 4. Por que não devemos tratar todos os tipos de blocos como se fossem iguais?
-> - Porque isso pode quebrar o SO, cada bloco deve ser tratado de acordo com a camada em que está
-##### 5. Se dois SSDs possuem estruturas físicas diferentes, como o ZenithOS pode utilizar ambos através de uma mesma arquitetura?
-> - Através do Controlador de SSDs.
-[!WARNING] Sua resposta está no caminho certo. O controlador interno do SSD abstrai as particularidades da memória NAND. Além disso, o ZenithOS precisa de uma camada de drivers e comunicação com interfaces NVMe e SATA.
+- **Organização física e lógica:** a física trata de como a mídia guarda os dados; a lógica é como o sistema representa e endereça o espaço.
+- **Controlador NAND:** o controlador administra o funcionamento interno do SSD.
+- **Setor lógico e bloco de apagamento:** o setor lógico é apresentado ao sistema operacional para endereçamento; o bloco de apagamento reúne páginas NAND que o controlador apaga como unidade.
+- **Tipos de bloco:** cada unidade precisa ser tratada conforme a camada em que existe.
+- **Uso de SSDs diferentes:** a interface lógica, a camada de drivers e os controladores permitem que o ZenithOS use dispositivos diferentes sem conhecer todos os detalhes físicos.
 
+## Critério de conclusão
+Você deve explicar a diferença entre físico e lógico, descrever o papel do controlador e distinguir pelo menos três unidades de armazenamento de camadas diferentes.
 
-## Método de estudo
-Desenhe duas representações do mesmo dispositivo: primeiro, componentes físicos simplificados; depois, a sequência lógica de endereços apresentada ao sistema. Compare o que cada camada conhece e o que permanece escondido pelo controlador.
-
-## Exemplo adicional
-Um SSD apresenta setores lógicos de 512 bytes. Internamente, sua NAND pode usar páginas de programação e blocos de apagamento maiores. O sistema operacional continua solicitando LBAs; o controlador traduz esses pedidos para suas operações internas. A camada de blocos não deve presumir que um setor lógico corresponda a uma página NAND.
-
-
-## Metadados da aula
+## Metadados
 - Dificuldade: Fácil
 - Duração: 35 minutos
