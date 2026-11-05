@@ -1,18 +1,14 @@
 // AULA 5 — EXERCÍCIO 1
-// Próximo endereço alinhado
+// Conversão binária
 //
-// Implemente proximo_alinhado(endereco, alinhamento).
-// Devolva o menor endereço maior ou igual ao endereço informado
-// que seja múltiplo do alinhamento.
-//
-// Considere endereco >= 0, alinhamento > 0 e resultado representável.
-// Não é necessário tratar alinhamentos que não sejam potências de dois.
+// Implemente bytes_para_kib(bytes) e bytes_para_mib(bytes).
+// Use divisões inteiras e preserve o resto quando solicitado.
+// Rejeite valores negativos.
 //
 // Casos:
-// proximo_alinhado(0, 8)  -> 0
-// proximo_alinhado(8, 8)  -> 8
-// proximo_alinhado(9, 8)  -> 16
-// proximo_alinhado(13, 8) -> 16
-// proximo_alinhado(17, 4) -> 20
+// bytes_para_kib(1024) -> 1
+// bytes_para_kib(1536) -> 1 com resto 512
+// bytes_para_mib(1048576) -> 1
+// bytes_para_mib(1000) -> 0 com resto 1000
 //
 // Escreva sua solução abaixo.

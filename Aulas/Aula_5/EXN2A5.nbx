@@ -1,18 +1,14 @@
 // AULA 5 — EXERCÍCIO 2
-// Validação de região alinhada
+// Conversão decimal para binária
 //
-// Implemente regiao_compativel(inicio, tamanho_regiao,
-// tamanho_estrutura, alinhamento).
+// Implemente gb_decimal_para_gib(valor_gb).
+// Converta primeiro GB decimal para bytes e depois para GiB.
+// Rejeite valores negativos e detecte overflow na multiplicação.
 //
-// Devolva verdadeiro somente se os parâmetros forem válidos,
-// o início estiver alinhado e a estrutura couber inteiramente.
-// Use limite final exclusivo e evite estouro numérico.
+// Casos aproximados:
+// gb_decimal_para_gib(1) -> 0,9313...
+// gb_decimal_para_gib(500) -> 465,661...
+// gb_decimal_para_gib(0) -> 0
+// valor negativo -> inválido
 //
-// Casos:
-// regiao_compativel(16, 32, 8, 8) -> verdadeiro
-// regiao_compativel(18, 32, 8, 8) -> falso
-// regiao_compativel(16, 7, 8, 8)  -> falso
-// regiao_compativel(24, 8, 8, 8)  -> verdadeiro
-// regiao_compativel(24, 0, 8, 8)  -> falso
-//
-// Escreva sua solução abaixo.
+// Informe a unidade de cada resultado.
