@@ -123,9 +123,15 @@ Exemplo: se o ZenithOS passar a oferecer suporte a outro tipo de dispositivo, po
 Estas perguntas são uma verificação de aprendizagem, não uma avaliação. Tente responder sem consultar o texto; se não souber, volte à seção correspondente.
 
 1. Quando o ZenithOS solicita o LBA 10, está informando uma posição física exata da NAND ou um endereço lógico?
+> R | Um endereço lógico, que se for em 512 bytes, o inicio é 5120, se for 4096, o inicio é 40960
 2. Um dispositivo possui setores lógicos de 4096 bytes. Qual é o deslocamento inicial, em bytes, do LBA 5? Mostre a conta.
+> R | 20480 bytes.
+> R | eu fiz assim: 4096 x 10 = 40960; 10/2 = 5; 4096/2 = 20480
+> R | E voce deu a resposta dessa pergunta na tabela do LBA
 3. Quem administra a tradução entre os endereços lógicos e a organização física da memória NAND?
+> R | Controlador de SSD
 4. Um dispositivo possui 100 blocos, numerados de 0 a 99. Uma solicitação tenta acessar o bloco 100. O que deve acontecer e por quê?
+> R | Deve sempre dar erro.
 5. Por que é útil manter a camada de armazenamento separada do driver?
-
+> Porque os dois tem funcionalidades e objetivos diferentes.
 Não é necessário responder tudo de uma vez. O importante é conseguir explicar o raciocínio com suas próprias palavras.

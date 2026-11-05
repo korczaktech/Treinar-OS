@@ -72,12 +72,13 @@ $$
 ### Exercicios de Compreensão
 
 ##### 1. Qual a diferença entre um endereço lógico e uma posição física dentro do SSD?
-> R | 
+> R | O endereçamento lógico, é apenas o que o dispositivo usa para conseguir representar o endereçamento físico sem precisar mexer em toda a parte elétrica do hardware. 
+> R | O endereçamento lógico não diz exatamente sobre o endereçamento físico, é mais como uma forma de representá-lo, é o que é usado na interface, o Fisico é o endereçamento real do armazenamento, como em um ssd, hdd, nvme, ou pendrive.
 ##### 2. Se um dispositivo possui setores lógicos de 4096 ytes, quanto representa o início do LBA 5 em bytes?
-> R |
+> R | 20480
 ##### 3. Por que o ZenithOS não deveria precisar conhecer a posição exata de cada célula NAND?
-> R |
+> R | O Controlador SSD ja faz isso por nós, para que não precisemos conhecer totalmente a rede elétrica e o hardware do dispositivo, facilitando muito as coisas
 ##### 4. Um dispositivo possui 200 blocos, numerados de 0 a 199. Uma solicitação tenta acessar o bloco 200. O que deve acontecer?
-> R |
+> R | Deve dar erro, Mas não sei qual erro exato, por que voce disse que ia explicar posteriormente
 ##### 5. Por que precisamos separar a camada de armazenamento do driver do dispositivo?
-> R |
+> R | Porque cada uma possui uma funcionalidade diferente
