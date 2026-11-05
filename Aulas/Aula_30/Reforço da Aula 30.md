@@ -1,20 +1,17 @@
 # Reforço da Aula 30 — Validação defensiva de metadados
 
-## 1. Ideia principal
+## Ordem de validação
+Comece pelo tamanho mínimo do buffer; valide assinatura e versão; imponha limites; verifique multiplicações e somas; valide offsets; depois examine referências e estruturas relacionadas.
 
-Metadados do disco são entrada não confiável. Valide assinatura, versão, tamanhos, referências, alinhamento, intervalos e profundidade.
+## Exemplo
+Uma matriz possui 200 entradas de 64 bytes. Seu tamanho é 12.800 bytes. Antes de acessar, confirme que a multiplicação é representável e que o intervalo completo cabe no volume.
 
-## 2. Cuidados que não podem ser esquecidos
+## Segurança
+Ciclos, profundidade excessiva e declarações enormes podem consumir CPU e memória. O parser deve falhar de modo controlado. Diagnóstico e reparo são etapas separadas.
 
-Detecte overflow, ciclos e alocações excessivas. Parser deve recusar inconsistências em vez de adivinhar.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Por que o parser não deve confiar em um tamanho declarado?
+2. O que precisa ser verificado antes de ler uma matriz?
+3. Como um ciclo pode prejudicar o parser?
+4. Por que impor limites de memória e profundidade?
+5. Qual é a diferença entre rejeitar dados inválidos e reparar o disco?

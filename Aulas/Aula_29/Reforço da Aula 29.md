@@ -1,20 +1,17 @@
 # Reforço da Aula 29 — Metadados e estruturas de armazenamento
 
-## 1. Ideia principal
+## Persistente versus temporário
+Estruturas em memória podem conter ponteiros, locks e referências que só fazem sentido durante aquela execução. Formatos persistentes devem usar campos definidos e referências relativas.
 
-Metadados descrevem organização, atributos, alocação e estado. Estruturas persistentes precisam de formato binário especificado.
+## Exemplo de formato
+Um cabeçalho pode definir assinatura, versão, tamanho e offset. O parser lê cada campo conforme o tamanho e endianness especificados. O offset é validado contra o volume; não é convertido diretamente em ponteiro.
 
-## 2. Cuidados que não podem ser esquecidos
+## Compatibilidade
+Defina versão, tamanho mínimo, campos obrigatórios e política para campos desconhecidos. Não dependa do padding automático da linguagem.
 
-Não grave diretamente structs nativas com padding e ponteiros. Defina versão, endianness, tamanho e serialização.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Por que ponteiros não devem ser gravados como metadados persistentes?
+2. O que endianness define?
+3. Qual a diferença entre offset e ponteiro?
+4. Por que uma estrutura nativa pode mudar de layout?
+5. Como lidar com uma versão de formato desconhecida?

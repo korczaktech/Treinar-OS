@@ -1,20 +1,17 @@
 # Reforço da Aula 28 — Montagem e desmontagem de volumes
 
-## 1. Ideia principal
+## Montagem
+Identifique o formato, valide metadados, prepare estruturas em memória e publique o ponto de montagem somente quando estiver consistente. Um volume que falhou na validação não deve aparecer parcialmente montado.
 
-Montagem associa um sistema de arquivos a um ponto da árvore após validar metadados. Desmontagem coordena referências, operações e dados pendentes.
+## Desmontagem
+Impeça novas operações, trate referências abertas, conclua ou cancele operações conforme o contrato, sincronize dados quando possível e só então libere estruturas. Se o dispositivo foi removido, a persistência pode não ser possível.
 
-## 2. Cuidados que não podem ser esquecidos
+## Exemplo
+Um arquivo está aberto e possui gravação pendente. Liberar imediatamente o volume deixaria referências apontando para objetos inválidos. A desmontagem precisa coordenar o ciclo de vida desses recursos.
 
-Não remover estruturas enquanto houver referências ativas. Forçar desmontagem não garante persistência de gravações.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Por que a montagem precisa validar metadados?
+2. O que impede uma desmontagem normal?
+3. Qual o risco de liberar estruturas com I/O pendente?
+4. O que muda quando o dispositivo é removido inesperadamente?
+5. Por que desmontagem forçada não garante persistência?

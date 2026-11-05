@@ -1,20 +1,17 @@
 # Reforço da Aula 27 — Alinhamento de partições e limites físicos
 
-## 1. Ideia principal
+## Regra de conversão
+Para transformar uma fronteira de alinhamento em LBAs, divida o tamanho da fronteira em bytes pelo tamanho do setor lógico, quando a divisão for exata.
 
-Alinhamento posiciona regiões em múltiplos de uma unidade. Setor lógico, setor físico, página NAND e bloco de apagamento pertencem a camadas diferentes.
+## Exemplo
+Setor lógico de 512 bytes e fronteira de 4.096 bytes: 4.096 / 512 = 8 LBAs. Inícios 0, 8, 16 e 24 respeitam esse alinhamento. O LBA 25 não respeita.
 
-## 2. Cuidados que não podem ser esquecidos
+## Cuidados
+Alinhamento de partição não é alinhamento de buffer DMA nem de estruturas na RAM. O alinhamento pode evitar trabalho extra, mas não garante por si só desempenho nem integridade.
 
-Consulte requisitos reais. O alinhamento interno de 8 bytes do ZenithOS não substitui alinhamento de partição ou DMA.
-
-## 3. Ligação com o ZenithOS
-
-A camada responsável deve validar os dados antes de encaminhar operações e expor um contrato claro às camadas superiores. O driver continua responsável pelos detalhes específicos do dispositivo.
-
-## 4. Revisão
-
-1. Explique a ideia principal sem consultar a aula.
-2. Cite duas validações importantes.
-3. Descreva uma falha que o sistema precisa detectar.
-4. Explique como o ZenithOS deve reagir sem comprometer dados ou memória.
+## Perguntas
+1. Quantos setores lógicos de 512 bytes formam 4 KiB?
+2. O LBA 40 está alinhado a uma fronteira de 8 setores?
+3. Por que alinhamento inadequado não significa necessariamente corrupção?
+4. Quem informa requisitos específicos do dispositivo?
+5. Por que o padrão de 8 bytes do ZenithOS não deve ser aplicado automaticamente às partições?
