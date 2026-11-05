@@ -31,3 +31,8 @@
 // faixa_valida(10, 1, 0)     -> falso
 //
 // Escreva sua solução abaixo.
+variavel inicio: inteiro = 200
+variavel quantidade: inteiro = 200
+constante blocos: inteiro = 200
+quando inicio > 0 e quantidade > 0 e blocos > 0 e inicio <= blocos e quantidade <= inicio - blocos
+    exibir("Tudo corretamente interligado!")
