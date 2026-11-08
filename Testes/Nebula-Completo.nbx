@@ -1,0 +1,340 @@
+# Nebula — arquivo de verificacao abrangente
+# Objetivo: exercitar realce da extensao, Lexer, Parser e verificacoes semanticas.
+# Baseado na gramatica normativa do compilador Nebula.
+# Este arquivo nao declara APIs de hardware como implementadas.
+# Nao usa a sintaxe antiga de encerramento por "fim": blocos fecham com chaves.
+
+# ============================================================
+# 1. Literais, tipos primitivos e declaracoes
+# ============================================================
+
+constante VERSAO_TESTE: texto = "Nebula"
+constante LIMITE: inteiro = 100
+constante TAXA: decimal = 2.5
+constante ATIVO: logico = verdadeiro
+constante INATIVO: logico = falso
+constante LETRA: caractere = 'N'
+constante OCTETO: byte = 255
+
+variavel numero: inteiro = 10
+variavel negativo: inteiro = -20
+variavel fracao: decimal = 3.14159
+variavel mensagem: texto = "Teste de sintaxe"
+variavel estadoLogico: logico = verdadeiro
+
+# Conversoes numericas explicitas
+variavel numero8: inteiro8 = inteiro8(8)
+variavel numero16: inteiro16 = inteiro16(16)
+variavel numero32: inteiro32 = inteiro32(32)
+variavel numero64: inteiro64 = inteiro64(64)
+variavel numero128: inteiro128 = inteiro128(128)
+variavel semSinal8: inteiro_u8 = inteiro_u8(8)
+variavel semSinal16: inteiro_u16 = inteiro_u16(16)
+variavel semSinal32: inteiro_u32 = inteiro_u32(32)
+variavel semSinal64: inteiro_u64 = inteiro_u64(64)
+variavel semSinal128: inteiro_u128 = inteiro_u128(128)
+variavel decimal32Teste: decimal32 = decimal32(1.25)
+variavel decimal64Teste: decimal64 = decimal64(2.5)
+
+# ============================================================
+# 2. Tipos compostos: listas, tuplas, aliases, estruturas
+# ============================================================
+
+tipo Numero = inteiro
+tipo ListaDeNumeros = [inteiro]
+
+estrutura Ponto: {
+    x: inteiro
+    y: inteiro
+}
+
+estrutura Pessoa: {
+    nome: texto
+    idade: inteiro
+}
+
+variavel ponto: Ponto = Ponto { x: 10, y: 20 }
+variavel pessoa: Pessoa = Pessoa { nome: "Ada", idade: 36 }
+variavel lista: [inteiro] = [1, 2, 3, 4]
+variavel listaVazia: [inteiro] = []
+variavel tupla: (inteiro, texto) = (7, "sete")
+variavel tuplaUnitária: (inteiro,) = (9,)
+variavel tuplaVazia: () = ()
+
+# Acesso a campos, indices e agrupamento
+variavel coordenadaX: inteiro = ponto.x
+variavel primeiro: inteiro = lista[0]
+variavel primeiroDaTupla: inteiro = tupla[0]
+variavel agrupado: inteiro = (2 + 3) * 4
+
+# ============================================================
+# 3. Enumeracoes e correspondencia de padroes
+# ============================================================
+
+enumeracao Estado: {
+    Inativo
+    Ativo
+    Falha(texto)
+}
+
+funcao descreverEstado(estado: Estado) -> texto: {
+    escolha estado: {
+        caso Estado::Inativo: {
+            retorne "inativo"
+        }
+        caso Estado::Ativo: {
+            retorne "ativo"
+        }
+        caso Estado::Falha(mensagemErro): {
+            retorne mensagemErro
+        }
+    }
+}
+
+# ============================================================
+# 4. Funcoes, parametros, retornos, genericos e chamadas
+# ============================================================
+
+funcao somar(a: inteiro, b: inteiro) -> inteiro: {
+    retorne a + b
+}
+
+funcao semRetorno(valor: inteiro): {
+    variavel copia: inteiro = valor
+}
+
+funcao comPadrao(valor: inteiro, incremento: inteiro = 1) -> inteiro: {
+    retorne valor + incremento
+}
+
+funcao identidade<T>(valor: T) -> T: {
+    retorne valor
+}
+
+funcao aplicar(valor: inteiro, operacao: funcao(inteiro) -> inteiro) -> inteiro: {
+    retorne operacao(valor)
+}
+
+variavel resultadoSoma: inteiro = somar(10, 20)
+variavel resultadoPadrao: inteiro = comPadrao(5)
+variavel resultadoNomeado: inteiro = somar(a = 3, b = 4)
+variavel resultadoGenerico: inteiro = identidade<inteiro>(42)
+variavel funcaoSeta = (valor) -> valor * 2
+variavel funcaoLambda = lambda valor: valor + 1
+variavel resultadoSeta: inteiro = aplicar(5, funcaoSeta)
+
+# ============================================================
+# 5. Condicionais: se, sendo, senao e aliases
+# ============================================================
+
+funcao classificar(valor: inteiro) -> texto: {
+    se valor > 10: {
+        retorne "maior"
+    }
+    sendo valor == 10: {
+        retorne "igual"
+    }
+    senao: {
+        retorne "menor"
+    }
+}
+
+funcao testarAliasCondicional(valor: inteiro) -> logico: {
+    quando valor >= 0: {
+        retorne verdadeiro
+    }
+    senao: {
+        retorne falso
+    }
+}
+
+# ============================================================
+# 6. Repeticoes: para, enquanto, cada, pulso e controle
+# ============================================================
+
+funcao somarIntervalo() -> inteiro: {
+    variavel total: inteiro = 0
+
+    para indice dentro 0..5: {
+        alterar total = total + indice
+    }
+
+    retorne total
+}
+
+funcao repetirEnquanto() -> inteiro: {
+    variavel contador: inteiro = 0
+
+    enquanto contador < 3: {
+        alterar contador = contador + 1
+    }
+
+    retorne contador
+}
+
+funcao repetirFormaC() -> inteiro: {
+    variavel contador: inteiro = 0
+
+    para (variavel indice: inteiro = 0; indice < 3; indice++): {
+        alterar contador = contador + indice
+    }
+
+    retorne contador
+}
+
+funcao percorrerLista() -> inteiro: {
+    variavel total: inteiro = 0
+
+    cada item em lista: {
+        alterar total = total + item
+    }
+
+    retorne total
+}
+
+funcao testarPulso() -> vazio: {
+    pulso(3): {
+        passar
+    }
+}
+
+funcao testarControle() -> inteiro: {
+    variavel indice: inteiro = 0
+
+    enquanto indice < 10: {
+        alterar indice = indice + 1
+
+        se indice == 2: {
+            prossiga
+        }
+
+        se indice == 5: {
+            pare
+        }
+    }
+
+    retorne indice
+}
+
+# ============================================================
+# 7. Operadores aritmeticos, relacionais e logicos
+# ============================================================
+
+variavel soma: inteiro = 10 + 5
+variavel subtracao: inteiro = 10 - 5
+variavel multiplicacao: inteiro = 10 * 5
+variavel divisao: decimal = 10 / 5
+variavel divisaoInteira: inteiro = 10 \\ 3
+variavel resto: inteiro = 10 % 3
+variavel potencia: inteiro = 2 ** 3
+
+variavel igual: logico = 10 == 10
+variavel diferente: logico = 10 != 5
+variavel menor: logico = 3 < 5
+variavel menorIgual: logico = 3 <= 3
+variavel maior: logico = 5 > 3
+variavel maiorIgual: logico = 5 >= 5
+
+variavel conjuncao: logico = verdadeiro e falso
+variavel disjuncao: logico = verdadeiro ou falso
+variavel negacao: logico = nao falso
+variavel agrupamentoLogico: logico = (verdadeiro e verdadeiro) ou falso
+
+# ============================================================
+# 8. Atribuicoes, incremento e decremento
+# ============================================================
+
+funcao testarAtribuicoes() -> inteiro: {
+    variavel valor: inteiro = 10
+
+    alterar valor = 11
+    alterar valor =+ 2
+    alterar valor =- 1
+    alterar valor =* 2
+    alterar valor =/ 2
+    alterar valor =\\ 2
+    alterar valor =% 3
+    valor++
+    valor--
+
+    retorne valor
+}
+
+# ============================================================
+# 9. Operadores bit a bit e deslocamentos
+# ============================================================
+
+variavel bitE: inteiro = 6 & 3
+variavel bitOu: inteiro = 6 | 3
+variavel bitXor: inteiro = 6 ^ 3
+variavel bitNao: inteiro = ~1
+variavel deslocarEsquerda: inteiro = 1 << 2
+variavel deslocarDireita: inteiro = 8 >> 1
+variavel intervalo: Intervalo<inteiro> = 1..5
+
+# ============================================================
+# 10. Tratamento de erros e verificacoes
+# ============================================================
+
+funcao testarErros() -> vazio: {
+    tente: {
+        verifique verdadeiro, "condicao de teste"
+    }
+    erro falha: {
+        lancar falha
+    }
+    sempre: {
+        passar
+    }
+}
+
+# ============================================================
+# 11. Classes, construtor, metodos e modificadores
+# ============================================================
+
+classe Contador: {
+    variavel valor: inteiro = 0
+
+    construtor(): {
+        alterar isto.valor = 0
+    }
+
+    publico funcao incrementar() -> inteiro: {
+        alterar isto.valor = isto.valor + 1
+        retorne isto.valor
+    }
+
+    privado funcao zerar(): {
+        alterar isto.valor = 0
+    }
+
+    estatico funcao inicial() -> inteiro: {
+        retorne 0
+    }
+}
+
+# ============================================================
+# 12. Contextos especiais reconhecidos pela gramatica
+# ============================================================
+
+seguro: {
+    variavel operacaoSegura: inteiro = 1
+}
+
+critico: {
+    variavel operacaoCritica: inteiro = 2
+}
+
+# ============================================================
+# 13. Chamadas encadeadas e expressoes adicionais
+# ============================================================
+
+variavel tamanhoLista: inteiro = lista[0] + lista[1]
+variavel comparacaoIdentica: logico = 1 identico 1
+variavel pertenceIntervalo: logico = 3 dentro intervalo
+variavel condicionalExpressao = verdadeiro ? 1 : 0
+variavel coalescencia = nulo ?? 10
+
+# ============================================================
+# 14. Fim do arquivo de verificacao
+# ============================================================
