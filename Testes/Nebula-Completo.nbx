@@ -130,8 +130,8 @@ variavel resultadoNomeado: inteiro = somar(a = 3, b = 4)
 
 # 8. Lambdas e tipos de funcao
 
-variavel duplicar = valor -> valor * 2
-variavel incrementar = lambda valor: valor + 1
+variavel duplicar: funcao(inteiro): inteiro = valor -> valor * 2
+variavel incrementar: funcao(inteiro): inteiro = lambda valor: valor + 1
 variavel operacao: funcao(inteiro): inteiro = duplicar
 
 # 9. Condicionais e clausulas encadeadas
@@ -215,7 +215,7 @@ funcao testarTratamento() -> vazio: {
 classe Contador: {
     variavel valor: inteiro = 0
 
-    construtor(): {
+    funcao construtor(): {
         alterar isto.valor = 0
     }
 
